@@ -62,7 +62,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="bg-gradient-to-br from-blue-300 to-indigo-700 rounded-2xl p-8 text-white h-full">
+            <div className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-8 text-white h-full">
               <h3 className="text-2xl font-bold mb-6">
                 ¿Por qué elegir Skyline?
               </h3>
@@ -213,7 +213,7 @@ const Contact = () => {
 
                 <motion.button
                   type="submit"
-                  className="w-full bg-gradient-to-br from-blue-400 to-purple-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-700 transition-colors duration-200 flex items-center justify-center space-x-2"
+                  className="w-full bg-gradient-to-br from-blue-300 to-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-700 transition-colors duration-200 flex items-center justify-center space-x-2"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >

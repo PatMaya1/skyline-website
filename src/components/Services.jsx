@@ -102,7 +102,7 @@ const Services = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="bg-gradient-to-r from-blue-400 to-purple-600 rounded-2xl p-8 lg:p-12 text-white text-center"
+          className="bg-gradient-to-r from-blue-600 to-blue-300 rounded-2xl p-8 lg:p-12 text-white text-center"
         >
           <div className="flex items-center justify-center mb-6">
             <Gift className="w-12 h-12 mr-4" />
@@ -119,7 +119,7 @@ const Services = () => {
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             <div className="bg-white/10 rounded-lg p-6">
               <Clock className="w-8 h-8 mx-auto mb-3" />
-              <h4 className="font-semibold mb-2">7 Días Completos</h4>
+              <h4 className="font-semibold mb-2">5 Días Completos</h4>
               <p className="text-sm opacity-80">Análisis exhaustivo de tu negocio</p>
             </div>
             <div className="bg-white/10 rounded-lg p-6">

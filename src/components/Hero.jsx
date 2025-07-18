@@ -75,9 +75,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="bg-white rounded-2xl shadow-2xl p-8 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary-100 rounded-full -translate-y-6 translate-x-6"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-indigo-100 rounded-full translate-y-6 -translate-x-6"></div>
+            <div className="bg-gradient-to-r from-white-600 to-blue-300 rounded-2xl shadow-2xl p-8 relative overflow-hidden">
               
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -97,16 +95,7 @@ const Hero = () => {
                     <span className="text-gray-700">Sin compromiso inicial</span>
                   </div>
                 </div>
-                
-                <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-                  <p className="text-sm text-gray-600 italic">
-                    "Skyline transformó completamente nuestros procesos. En solo 3 meses 
-                    aumentamos nuestra eficiencia en un 45%"
-                  </p>
-                  <p className="text-sm font-semibold text-gray-800 mt-2">
-                    - Cliente satisfecho
-                  </p>
-                </div>
+              
               </div>
             </div>
           </motion.div>
