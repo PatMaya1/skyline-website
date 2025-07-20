@@ -26,7 +26,7 @@ const Process = () => {
         "Análisis de competencia",
         "Evaluación de recursos actuales"
       ],
-      color: "from-blue-500 to-blue-700"
+      color: "from-blue-400 via-blue-600 to-blue-800"
     },
     {
       icon: <FileText className="w-8 h-8" />,
@@ -40,7 +40,7 @@ const Process = () => {
         "Análisis de costo-beneficio",
         "Cronograma realista"
       ],
-      color: "from-purple-500 to-purple-700"
+      color: "from-purple-400 via-purple-600 to-purple-800"
     },
     {
       icon: <Rocket className="w-8 h-8" />,
@@ -54,7 +54,7 @@ const Process = () => {
         "Capacitación del equipo",
         "Ajustes sobre la marcha"
       ],
-      color: "from-green-500 to-green-700"
+      color: "from-green-400 via-green-600 to-green-800"
     },
     {
       icon: <CheckCircle className="w-8 h-8" />,
@@ -68,12 +68,12 @@ const Process = () => {
         "Soporte técnico 24/7",
         "Actualizaciones regulares"
       ],
-      color: "from-orange-500 to-orange-700"
+      color: "from-orange-400 via-orange-600 to-orange-800"
     }
   ];
 
   return (
-    <section id="proceso" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+    <section id="proceso" className="py-20 bg-blue-100 to-indigo-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -81,7 +81,7 @@ const Process = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-blue-800 via-gray-800 to-blue-800 bg-clip-text text-transparent mb-6 leading-tight">
             Cómo Transformamos Tu Negocio
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -99,9 +99,16 @@ const Process = () => {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <div className="bg-gradient-to-r from-blue-400 to-blue-700 rounded-3xl p-8 text-white relative overflow-hidden">
+          <div className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 rounded-3xl p-8 text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-32 translate-x-32"></div>
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-24 -translate-x-24"></div>
+
+            <div className="absolute inset-0 bg-black/10">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+              backgroundSize: '24px 24px'
+            }}></div>
+          </div>
             
             <div className="relative z-10 grid lg:grid-cols-2 gap-8 items-center">
               <div>
@@ -153,6 +160,8 @@ const Process = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className={`${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex flex-col lg:flex items-center gap-12`}
             >
+
+
               {/* Contenido del paso */}
               <div className="flex-1">
                 <div className="bg-white rounded-2xl shadow-xl p-8 relative">
@@ -183,6 +192,8 @@ const Process = () => {
                         <div className={`w-2 h-2 bg-gradient-to-r ${step.color} rounded-full`}></div>
                         <span className="text-sm text-gray-700">{benefit}</span>
                       </div>
+                  
+
                     ))}
                   </div>
                 </div>
@@ -191,13 +202,21 @@ const Process = () => {
               {/* Ilustración visual */}
               <div className="flex-1 flex justify-center">
                 <div className={`bg-gradient-to-br ${step.color} rounded-3xl p-8 text-white min-h-80 flex flex-col justify-center items-center relative overflow-hidden`}>
+                  {/* Background pattern */}
+                  <div className="absolute inset-0 bg-black/10">
+                    <div className="absolute inset-0" style={{
+                      backgroundImage: `radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+                      backgroundSize: '24px 24px'
+                    }}></div>
+                  </div>
+                  
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
                   
                   <div className="relative z-10 text-center">
                     <div className="mb-6">
                       <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <div className="w-12 h-12 text-white">
+                        <div className="w-8 h-8 text-white flex items-center justify-center">
                           {step.icon}
                         </div>
                       </div>
