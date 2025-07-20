@@ -8,7 +8,7 @@ const Header = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+    <header className="fixed w-full bg-white/90 to-indigo-100/90 backdrop-blur-md z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <motion.div
@@ -17,7 +17,7 @@ const Header = () => {
             className="flex items-center"
           >
             <h1 className="text-2xl font-bold text-gray-900">
-              <span className="text-primary-600">Sky</span>line
+              <span className="text-blue-500">Sky</span>Line
             </h1>
           </motion.div>
 
@@ -37,7 +37,7 @@ const Header = () => {
 
           <div className="hidden md:flex">
             <motion.button
-              className="bg-primary-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200"
+              className="bg-black-600 text-blue-900 px-6 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -70,7 +70,7 @@ const Header = () => {
                   {item}
                 </a>
               ))}
-              <button className="bg-primary-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200 w-full">
+              <button className="bg-black-600 text-blue-900 px-6 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200 w-full">
                 Consulta Gratuita
               </button>
             </nav>
