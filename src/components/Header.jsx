@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import SKY2Logo from '../assets/logos_skyline/SKY2.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,9 +17,11 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center"
           >
-            <h1 className="text-2xl font-bold text-gray-900">
-              <span className="text-blue-500">Sky</span>Line
-            </h1>
+            <img 
+              src={SKY2Logo} 
+              alt="SkyLine Logo" 
+              className="h-10 w-auto"
+            />
           </motion.div>
 
           <nav className="hidden md:flex space-x-8">
@@ -26,7 +29,7 @@ const Header = () => {
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200"
+                className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-blue-900 font-medium transition-all duration-200"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
               >
@@ -37,7 +40,7 @@ const Header = () => {
 
           <div className="hidden md:flex">
             <motion.button
-              className="bg-black-600 text-blue-900 px-6 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200"
+              className="bg-gradient-to-r from-blue-300 to-blue-500 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-400 hover:to-blue-600 transition-all duration-200"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -46,7 +49,7 @@ const Header = () => {
           </div>
 
           <div className="md:hidden">
-            <button onClick={toggleMenu} className="text-gray-700">
+            <button onClick={toggleMenu} className="bg-gradient-to-r from-green-500 to-blue-700 bg-clip-text text-transparent">
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -64,13 +67,13 @@ const Header = () => {
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-gray-700 hover:text-primary-600 font-medium"
+                  className="bg-gradient-to-r  from-blue-500 to-blue-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-blue-900 font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   {item}
                 </a>
               ))}
-              <button className="bg-black-600 text-blue-900 px-6 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200 w-full">
+              <button className="bg-gradient-to-r from-blue-300 to-blue-500 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-400 hover:to-blue-600 transition-all duration-200 w-full">
                 Consulta Gratuita
               </button>
             </nav>
