@@ -1,0 +1,36 @@
+{
+  "technologiesSection": [
+    {
+      "value": "25+",
+      "label": "Tecnologías",
+      "color": "blue-600"
+    },
+    {
+      "value": "6",
+      "label": "Categorías",
+      "color": "orange-600"
+    },
+    {
+      "value": "100%",
+      "label": "Actualizadas",
+      "color": "green-600"
+    },
+    {
+      "value": "24/7",
+      "label": "Soporte",
+      "color": "purple-600"
+    }
+  ],
+  "awsSection": [
+    {
+      "value": "6+",
+      "label": "Certificaciones AWS",
+      "color": "orange-600"
+    },
+    {
+      "value": "100%",
+      "label": "Team Certified",
+      "color": "blue-600"
+    }
+  ]
+}

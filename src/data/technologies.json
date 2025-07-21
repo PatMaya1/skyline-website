@@ -1,0 +1,177 @@
+[
+  {
+    "name": "Python",
+    "category": "automatizacion",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "description": "Automatización de procesos con scripts y workflows",
+    "color": "from-yellow-400 to-yellow-600"
+  },
+  {
+    "name": "Node.js",
+    "category": "automatizacion",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    "description": "APIs y microservicios para automatización",
+    "color": "from-green-400 to-green-600"
+  },
+  {
+    "name": "Zapier",
+    "category": "automatizacion",
+    "logo": "https://www.zapier.com/favicon.ico",
+    "description": "Integración automática entre aplicaciones",
+    "color": "from-orange-400 to-orange-600"
+  },
+  {
+    "name": "Microsoft Power Automate",
+    "category": "automatizacion",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Microsoft_Power_Automate.svg",
+    "description": "Automatización empresarial en el ecosistema Microsoft",
+    "color": "from-blue-400 to-blue-600"
+  },
+  {
+    "name": "Power BI",
+    "category": "analisis",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg",
+    "description": "Dashboards y reportes interactivos",
+    "color": "from-yellow-400 to-yellow-600"
+  },
+  {
+    "name": "Tableau",
+    "category": "analisis",
+    "logo": "https://logos-world.net/wp-content/uploads/2021/10/Tableau-Symbol.png",
+    "description": "Visualización avanzada de datos",
+    "color": "from-blue-400 to-blue-600"
+  },
+  {
+    "name": "Google Analytics",
+    "category": "analisis",
+    "logo": "https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg",
+    "description": "Análisis de comportamiento web",
+    "color": "from-green-400 to-green-600"
+  },
+  {
+    "name": "SQL Server",
+    "category": "analisis",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg",
+    "description": "Gestión y análisis de bases de datos",
+    "color": "from-red-400 to-red-600"
+  },
+  {
+    "name": "Pandas",
+    "category": "analisis",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
+    "description": "Análisis de datos con Python",
+    "color": "from-purple-400 to-purple-600"
+  },
+  {
+    "name": "Redis",
+    "category": "optimizacion",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
+    "description": "Cache en memoria para mejor rendimiento",
+    "color": "from-red-400 to-red-600"
+  },
+  {
+    "name": "MongoDB",
+    "category": "optimizacion",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    "description": "Base de datos NoSQL optimizada",
+    "color": "from-green-400 to-green-600"
+  },
+  {
+    "name": "AWS CloudFront",
+    "category": "optimizacion",
+    "logo": "https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png",
+    "description": "CDN para optimización de contenido",
+    "color": "from-orange-400 to-orange-600"
+  },
+  {
+    "name": "Docker",
+    "category": "optimizacion",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    "description": "Contenedorización para mejor rendimiento",
+    "color": "from-blue-400 to-blue-600"
+  },
+  {
+    "name": "Auth0",
+    "category": "seguridad",
+    "logo": "https://auth0.com/lib/badge.svg",
+    "description": "Autenticación y autorización segura",
+    "color": "from-orange-400 to-orange-600"
+  },
+  {
+    "name": "SSL/TLS",
+    "category": "seguridad",
+    "logo": "https://letsencrypt.org/images/le-logo-wide.svg",
+    "description": "Certificados de seguridad",
+    "color": "from-green-400 to-green-600"
+  },
+  {
+    "name": "AWS Security",
+    "category": "seguridad",
+    "logo": "https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico",
+    "description": "Servicios de seguridad en la nube",
+    "color": "from-yellow-400 to-yellow-600"
+  },
+  {
+    "name": "Penetration Testing",
+    "category": "seguridad",
+    "logo": "https://www.metasploit.com/includes/images/metasploit-r7-logo.svg",
+    "description": "Auditorías de seguridad",
+    "color": "from-red-400 to-red-600"
+  },
+  {
+    "name": "Slack",
+    "category": "equipos",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg",
+    "description": "Comunicación empresarial",
+    "color": "from-purple-400 to-purple-600"
+  },
+  {
+    "name": "Microsoft Teams",
+    "category": "equipos",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Microsoft_Office_Teams_%282018%E2%80%93present%29.svg",
+    "description": "Colaboración y videoconferencias",
+    "color": "from-blue-400 to-blue-600"
+  },
+  {
+    "name": "Jira",
+    "category": "equipos",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg",
+    "description": "Gestión de proyectos ágiles",
+    "color": "from-blue-400 to-blue-600"
+  },
+  {
+    "name": "Trello",
+    "category": "equipos",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg",
+    "description": "Organización visual de tareas",
+    "color": "from-blue-400 to-blue-600"
+  },
+  {
+    "name": "React Native",
+    "category": "moviles",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    "description": "Desarrollo de apps multiplataforma",
+    "color": "from-blue-400 to-blue-600"
+  },
+  {
+    "name": "Flutter",
+    "category": "moviles",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",
+    "description": "Apps nativas con Flutter",
+    "color": "from-blue-400 to-blue-600"
+  },
+  {
+    "name": "Progressive Web Apps",
+    "category": "moviles",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Progressive_Web_Apps_Logo.svg",
+    "description": "Aplicaciones web progresivas",
+    "color": "from-purple-400 to-purple-600"
+  },
+  {
+    "name": "Firebase",
+    "category": "moviles",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+    "description": "Backend como servicio para móviles",
+    "color": "from-orange-400 to-orange-600"
+  }
+]

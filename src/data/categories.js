@@ -1,0 +1,38 @@
+// Categorías de tecnologías
+export const categories = [
+  {
+    "id": "all",
+    "name": "Todas las Tecnologías",
+    "icon": "Globe"
+  },
+  {
+    "id": "automatizacion",
+    "name": "Automatización",
+    "icon": "Cog"
+  },
+  {
+    "id": "analisis",
+    "name": "Análisis de Datos",
+    "icon": "BarChart3"
+  },
+  {
+    "id": "optimizacion",
+    "name": "Optimización",
+    "icon": "Zap"
+  },
+  {
+    "id": "seguridad",
+    "name": "Seguridad",
+    "icon": "Shield"
+  },
+  {
+    "id": "equipos",
+    "name": "Gestión de Equipos",
+    "icon": "Users"
+  },
+  {
+    "id": "moviles",
+    "name": "Soluciones Móviles",
+    "icon": "Smartphone"
+  }
+];
