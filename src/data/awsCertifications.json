@@ -1,0 +1,44 @@
+[
+  {
+    "name": "AWS Solutions Architect",
+    "level": "Professional",
+    "image": "https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png",
+    "description": "Diseño y deployment de sistemas escalables en AWS",
+    "color": "from-orange-400 to-orange-600"
+  },
+  {
+    "name": "AWS DevOps Engineer",
+    "level": "Professional",
+    "image": "https://images.credly.com/size/340x340/images/bd31ef42-d460-493e-8503-39592aaf0458/image.png",
+    "description": "Automatización y optimización de operaciones",
+    "color": "from-blue-400 to-blue-600"
+  },
+  {
+    "name": "AWS Developer",
+    "level": "Associate",
+    "image": "https://images.credly.com/size/340x340/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png",
+    "description": "Desarrollo de aplicaciones nativas en la nube",
+    "color": "from-green-400 to-green-600"
+  },
+  {
+    "name": "AWS Security Specialty",
+    "level": "Specialty",
+    "image": "https://images.credly.com/size/340x340/images/53acdae5-d69f-4dda-b650-d02ed7a50dd7/image.png",
+    "description": "Implementación de seguridad avanzada",
+    "color": "from-red-400 to-red-600"
+  },
+  {
+    "name": "AWS SysOps Administrator",
+    "level": "Associate",
+    "image": "https://images.credly.com/size/340x340/images/f0d3fbb9-bfa7-4017-9989-7bde8eaf42b1/image.png",
+    "description": "Administración y monitoreo de sistemas",
+    "color": "from-purple-400 to-purple-600"
+  },
+  {
+    "name": "AWS Cloud Practitioner",
+    "level": "Foundational",
+    "image": "https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png",
+    "description": "Fundamentos y mejores prácticas de AWS",
+    "color": "from-yellow-400 to-yellow-600"
+  }
+]

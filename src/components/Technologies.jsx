@@ -1,20 +1,35 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { 
-  Globe,
-  Smartphone,
-  Shield,
-  BarChart3,
-  Cog,
-  Users,
-  Zap,
-  ChevronDown,
-  ChevronUp
-} from 'lucide-react';
+import { ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { getIcon } from '../utils/icons.jsx';
+
+// Importar datos desde archivos JSON
+import categoriesData from '../data/categories.json';
+import technologiesData from '../data/technologies.json';
+import awsCertificationsData from '../data/awsCertifications.json';
+import statsData from '../data/stats.json';
+import configData from '../data/config.json';
 
 const Technologies = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [showAll, setShowAll] = useState(false);
+  const [currentCertIndex, setCurrentCertIndex] = useState(0);
+
+  // Cargar datos desde archivos JSON
+  const categories = categoriesData;
+  const technologies = technologiesData;
+  const awsCertifications = awsCertificationsData;
+  const stats = statsData;
+  const config = configData;
+
+  // Debug temporal - remover después
+  console.log('Datos cargados:', {
+    categories: categories?.length,
+    technologies: technologies?.length,
+    awsCertifications: awsCertifications?.length,
+    stats: Object.keys(stats || {}),
+    config: Object.keys(config || {})
+  });
 
   // Escuchar eventos de filtrado desde otros componentes
   useEffect(() => {
@@ -31,215 +46,60 @@ const Technologies = () => {
     };
   }, []);
 
-  const categories = [
-    { id: 'all', name: 'Todas las Tecnologías', icon: <Globe className="w-5 h-5" /> },
-    { id: 'automatizacion', name: 'Automatización', icon: <Cog className="w-5 h-5" /> },
-    { id: 'analisis', name: 'Análisis de Datos', icon: <BarChart3 className="w-5 h-5" /> },
-    { id: 'optimizacion', name: 'Optimización', icon: <Zap className="w-5 h-5" /> },
-    { id: 'seguridad', name: 'Seguridad', icon: <Shield className="w-5 h-5" /> },
-    { id: 'equipos', name: 'Gestión de Equipos', icon: <Users className="w-5 h-5" /> },
-    { id: 'moviles', name: 'Soluciones Móviles', icon: <Smartphone className="w-5 h-5" /> }
-  ];  const technologies = [
-    // Automatización de Procesos
-    {
-      name: 'Python',
-      category: 'automatizacion',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-      description: 'Automatización de procesos con scripts y workflows',
-      color: 'from-yellow-400 to-yellow-600'
-    },
-    {
-      name: 'Node.js',
-      category: 'automatizacion',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-      description: 'APIs y microservicios para automatización',
-      color: 'from-green-400 to-green-600'
-    },
-    {
-      name: 'Zapier',
-      category: 'automatizacion',
-      logo: 'https://www.zapier.com/favicon.ico',
-      description: 'Integración automática entre aplicaciones',
-      color: 'from-orange-400 to-orange-600'
-    },
-    {
-      name: 'Microsoft Power Automate',
-      category: 'automatizacion',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Microsoft_Power_Automate.svg',
-      description: 'Automatización empresarial en el ecosistema Microsoft',
-      color: 'from-blue-400 to-blue-600'
-    },
+  // Auto-rotación del carrusel de certificaciones
+  useEffect(() => {
+    if (!awsCertifications?.length || !config?.carousel?.autoRotationInterval) return;
+    
+    const interval = setInterval(() => {
+      setCurrentCertIndex((prevIndex) => 
+        prevIndex === awsCertifications.length - 1 ? 0 : prevIndex + 1
+      );
+    }, config.carousel.autoRotationInterval);
 
-    // Análisis de Datos
-    {
-      name: 'Power BI',
-      category: 'analisis',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg',
-      description: 'Dashboards y reportes interactivos',
-      color: 'from-yellow-400 to-yellow-600'
-    },
-    {
-      name: 'Tableau',
-      category: 'analisis',
-      logo: 'https://logos-world.net/wp-content/uploads/2021/10/Tableau-Symbol.png',
-      description: 'Visualización avanzada de datos',
-      color: 'from-blue-400 to-blue-600'
-    },
-    {
-      name: 'Google Analytics',
-      category: 'analisis',
-      logo: 'https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg',
-      description: 'Análisis de comportamiento web',
-      color: 'from-green-400 to-green-600'
-    },
-    {
-      name: 'SQL Server',
-      category: 'analisis',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg',
-      description: 'Gestión y análisis de bases de datos',
-      color: 'from-red-400 to-red-600'
-    },
-    {
-      name: 'Pandas',
-      category: 'analisis',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg',
-      description: 'Análisis de datos con Python',
-      color: 'from-purple-400 to-purple-600'
-    },
+    return () => clearInterval(interval);
+  }, [awsCertifications?.length, config?.carousel?.autoRotationInterval]);
 
-    // Optimización de Rendimiento
-    {
-      name: 'Redis',
-      category: 'optimizacion',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg',
-      description: 'Cache en memoria para mejor rendimiento',
-      color: 'from-red-400 to-red-600'
-    },
-    {
-      name: 'MongoDB',
-      category: 'optimizacion',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-      description: 'Base de datos NoSQL optimizada',
-      color: 'from-green-400 to-green-600'
-    },
-    {
-      name: 'AWS CloudFront',
-      category: 'optimizacion',
-      logo: 'https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png',
-      description: 'CDN para optimización de contenido',
-      color: 'from-orange-400 to-orange-600'
-    },
-    {
-      name: 'Docker',
-      category: 'optimizacion',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
-      description: 'Contenedorización para mejor rendimiento',
-      color: 'from-blue-400 to-blue-600'
-    },
+  const nextCertification = () => {
+    if (!awsCertifications?.length) return;
+    setCurrentCertIndex((prevIndex) => 
+      prevIndex === awsCertifications.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
-    // Seguridad Digital
-    {
-      name: 'Auth0',
-      category: 'seguridad',
-      logo: 'https://auth0.com/lib/badge.svg',
-      description: 'Autenticación y autorización segura',
-      color: 'from-orange-400 to-orange-600'
-    },
-    {
-      name: 'SSL/TLS',
-      category: 'seguridad',
-      logo: 'https://letsencrypt.org/images/le-logo-wide.svg',
-      description: 'Certificados de seguridad',
-      color: 'from-green-400 to-green-600'
-    },
-    {
-      name: 'AWS Security',
-      category: 'seguridad',
-      logo: 'https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico',
-      description: 'Servicios de seguridad en la nube',
-      color: 'from-yellow-400 to-yellow-600'
-    },
-    {
-      name: 'Penetration Testing',
-      category: 'seguridad',
-      logo: 'https://www.metasploit.com/includes/images/metasploit-r7-logo.svg',
-      description: 'Auditorías de seguridad',
-      color: 'from-red-400 to-red-600'
-    },
-
-    // Gestión de Equipos
-    {
-      name: 'Slack',
-      category: 'equipos',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg',
-      description: 'Comunicación empresarial',
-      color: 'from-purple-400 to-purple-600'
-    },
-    {
-      name: 'Microsoft Teams',
-      category: 'equipos',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Microsoft_Office_Teams_%282018%E2%80%93present%29.svg',
-      description: 'Colaboración y videoconferencias',
-      color: 'from-blue-400 to-blue-600'
-    },
-    {
-      name: 'Jira',
-      category: 'equipos',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg',
-      description: 'Gestión de proyectos ágiles',
-      color: 'from-blue-400 to-blue-600'
-    },
-    {
-      name: 'Trello',
-      category: 'equipos',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg',
-      description: 'Organización visual de tareas',
-      color: 'from-blue-400 to-blue-600'
-    },
-
-    // Soluciones Móviles
-    {
-      name: 'React Native',
-      category: 'moviles',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-      description: 'Desarrollo de apps multiplataforma',
-      color: 'from-blue-400 to-blue-600'
-    },
-    {
-      name: 'Flutter',
-      category: 'moviles',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
-      description: 'Apps nativas con Flutter',
-      color: 'from-blue-400 to-blue-600'
-    },
-    {
-      name: 'Progressive Web Apps',
-      category: 'moviles',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Progressive_Web_Apps_Logo.svg',
-      description: 'Aplicaciones web progresivas',
-      color: 'from-purple-400 to-purple-600'
-    },
-    {
-      name: 'Firebase',
-      category: 'moviles',
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
-      description: 'Backend como servicio para móviles',
-      color: 'from-orange-400 to-orange-600'
-    }
-  ];
+  const prevCertification = () => {
+    if (!awsCertifications?.length) return;
+    setCurrentCertIndex((prevIndex) => 
+      prevIndex === 0 ? awsCertifications.length - 1 : prevIndex - 1
+    );
+  };
 
   const filteredTechnologies = selectedCategory === 'all' 
-    ? technologies 
-    : technologies.filter(tech => tech.category === selectedCategory);
+    ? (technologies || [])
+    : (technologies || []).filter(tech => tech.category === selectedCategory);
 
   const displayedTechnologies = showAll 
     ? filteredTechnologies 
-    : filteredTechnologies.slice(0, 8);
+    : filteredTechnologies.slice(0, config?.display?.initialTechnologiesShown || 8);
 
-  const hasMoreTechnologies = filteredTechnologies.length > 8;
+  const hasMoreTechnologies = filteredTechnologies.length > (config?.display?.initialTechnologiesShown || 8);
+
+  // Early return si no hay datos cargados
+  if (!categories || !technologies || !awsCertifications || !stats || !config) {
+    return (
+      <section id="tecnologias" className="py-20 bg-blue-100 to-indigo-100 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center">
+            <h2 className="text-4xl lg:text-6xl font-bold text-gray-800 mb-6">
+              Cargando tecnologías...
+            </h2>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
-    <section id="tecnologias" className="py-20 bg-blue-100 to-indigo-100 relative overflow-hidden">
+    <section id="tecnologias" className={config.ui.sectionBackgroundClass}>
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -left-32 w-64 h-64 bg-blue-100/40 rounded-full blur-3xl"></div>
@@ -254,7 +114,7 @@ const Technologies = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-blue-800 via-gray-800 to-blue-800 bg-clip-text text-transparent mb-6 leading-tight">
+          <h2 className={`text-4xl lg:text-6xl font-bold ${config.ui.titleGradient} bg-clip-text text-transparent mb-6 leading-tight`}>
             Nuestras Tecnologías
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
@@ -276,11 +136,11 @@ const Technologies = () => {
               onClick={() => setSelectedCategory(category.id)}
               className={`flex items-center px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
                 selectedCategory === category.id
-                  ? 'bg-gradient-to-r from-blue-400 to-blue-700 text-white shadow-lg scale-105'
-                  : 'bg-white/80 text-gray-600 hover:bg-blue-50 hover:text-blue-600 shadow-sm border border-gray-200'
+                  ? `${config.ui.buttonGradient.active} text-white shadow-lg scale-105`
+                  : `${config.ui.buttonGradient.inactive} shadow-sm border border-gray-200`
               }`}
             >
-              {category.icon}
+              {getIcon(category.icon, { className: "w-5 h-5" })}
               <span className="ml-2">{category.name}</span>
             </button>
           ))}
@@ -299,7 +159,7 @@ const Technologies = () => {
               key={tech.name}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * config.display.animationDelayMultiplier }}
               className="group relative h-48" // Altura fija para todas las tarjetas
             >
               {/* Card hover effect */}
@@ -309,8 +169,8 @@ const Technologies = () => {
                 {/* Logo and Title Row */}
                 <div className="flex items-center mb-4 flex-shrink-0">
                   <div className="relative mr-4 flex-shrink-0">
-                    <div className={`absolute inset-0 bg-gradient-to-r ${tech.color} rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity duration-300`}></div>
-                    <div className="relative w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className={`absolute inset-0 bg-transparent rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity duration-300`}></div>
+                    <div className="relative w-18 h-18 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <img 
                         src={tech.logo} 
                         alt={tech.name} 
@@ -341,7 +201,6 @@ const Technologies = () => {
 
                 {/* Hover indicator */}
                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full animate-pulse"></div>
                 </div>
               </div>
             </motion.div>
@@ -382,22 +241,25 @@ const Technologies = () => {
           transition={{ duration: 0.8 }}
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
-          <div className="text-center">
-            <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2">25+</div>
-            <div className="text-gray-600">Tecnologías</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl lg:text-4xl font-bold text-purple-600 mb-2">6</div>
-            <div className="text-gray-600">Categorías</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl lg:text-4xl font-bold text-green-600 mb-2">100%</div>
-            <div className="text-gray-600">Actualizadas</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl lg:text-4xl font-bold text-yellow-600 mb-2">24/7</div>
-            <div className="text-gray-600">Soporte</div>
-          </div>
+          {stats.technologiesSection.map((stat, index) => {
+            const getColorClass = (color) => {
+              switch(color) {
+                case 'blue-600': return 'text-blue-600';
+                case 'orange-600': return 'text-orange-600';
+                case 'green-600': return 'text-green-600';
+                case 'purple-600': return 'text-purple-600';
+                case 'yellow-600': return 'text-yellow-600';
+                default: return 'text-gray-600';
+              }
+            };
+            
+            return (
+              <div key={index} className="text-center">
+                <div className={`text-3xl lg:text-4xl font-bold ${getColorClass(stat.color)} mb-2`}>{stat.value}</div>
+                <div className="text-gray-600">{stat.label}</div>
+              </div>
+            );
+          })}
         </motion.div>
 
         {/* AWS Certifications Section */}
@@ -409,111 +271,160 @@ const Technologies = () => {
         >
           <div className="text-center mb-12">
             <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
-              Ingenieros <span className="text-orange-600"> AWS Certificados</span>
+              Ingenieros <span className="text-orange-600">AWS Certificados</span>
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Nuestro equipo cuenta con <span className="font-semibold text-orange-600">hasta 6+ certificaciones AWS </span> 
-               que avalan su expertise en la nube.
+              Nuestro equipo cuenta con <span className="font-semibold text-orange-600">hasta 6+ certificaciones AWS</span> 
+              que avalan su expertise en la nube.
             </p>
           </div>
 
-          {/* Rotating Certifications */}
-          <div className="flex justify-center items-center">
-            <div className="relative w-80 h-80">
-              {/* Center AWS Logo */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                <img 
-                  src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" 
-                  alt="AWS" 
-                  className="w-24 h-12 object-contain"
-                />
+          {/* Carrusel de Certificaciones */}
+          <div className="relative max-w-6xl mx-auto">
+            {/* Contenedor principal del carrusel */}
+            <div className="relative overflow-hidden rounded-2xl p-8">
+              
+              {/* Botones de navegación */}
+              <button
+                onClick={prevCertification}
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-gradient-to-r from-blue-400 to-blue-700 shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110"
+              >
+                <ChevronLeft className="w-5 h-5 text-gray-700" />
+              </button>
+              
+              <button
+                onClick={nextCertification}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-gradient-to-r from-blue-400 to-blue-700 hover:bg-blue-500/30 shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110"
+              >
+                <ChevronRight className="w-5 h-5 text-gray-700" />
+              </button>
+
+              {/* Contenido del carrusel */}
+              <div className="flex items-center justify-center">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center max-w-5xl">
+                  
+                  {/* Certificación anterior (solo visible en desktop) */}
+                  <div className="hidden lg:block">
+                    <motion.div
+                      key={`prev-${currentCertIndex}`}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 0.4, scale: 0.9 }}
+                      transition={{ duration: 0.5 }}
+                      className="text-center"
+                    >
+                      <div className="relative mb-4">
+                        <img 
+                          src={awsCertifications[(currentCertIndex - 1 + awsCertifications.length) % awsCertifications.length].image}
+                          alt={awsCertifications[(currentCertIndex - 1 + awsCertifications.length) % awsCertifications.length].name}
+                          className="w-24 h-24 mx-auto object-contain"
+                        />
+                      </div>
+                      <h4 className="text-sm font-semibold text-gray-600 mb-1">
+                        {awsCertifications[(currentCertIndex - 1 + awsCertifications.length) % awsCertifications.length].name}
+                      </h4>
+                      <span className="text-xs text-gray-500">
+                        {awsCertifications[(currentCertIndex - 1 + awsCertifications.length) % awsCertifications.length].level}
+                      </span>
+                    </motion.div>
+                  </div>
+
+                  {/* Certificación actual (destacada) */}
+                  <div className="relative">
+                    <motion.div
+                      key={`current-${currentCertIndex}`}
+                      initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      transition={{ duration: 0.6 }}
+                      className="text-center"
+                    >
+                      <div className="relative mb-6">
+                        <img 
+                          src={awsCertifications[currentCertIndex].image}
+                          alt={awsCertifications[currentCertIndex].name}
+                          className="w-32 h-32 mx-auto object-contain"
+                        />
+                      </div>
+
+                      <h4 className="text-xl font-bold text-gray-900 mb-2">
+                        {awsCertifications[currentCertIndex].name}
+                      </h4>
+                      
+                      <span className={`inline-block px-3 py-1 text-sm font-medium rounded-full bg-gradient-to-r ${awsCertifications[currentCertIndex].color} text-white`}>
+                        {awsCertifications[currentCertIndex].level}
+                      </span>
+                    </motion.div>
+                  </div>
+
+                  {/* Certificación siguiente (solo visible en desktop) */}
+                  <div className="hidden lg:block">
+                    <motion.div
+                      key={`next-${currentCertIndex}`}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 0.4, scale: 0.9 }}
+                      transition={{ duration: 0.5 }}
+                      className="text-center"
+                    >
+                      <div className="relative mb-4">
+                        <img 
+                          src={awsCertifications[(currentCertIndex + 1) % awsCertifications.length].image}
+                          alt={awsCertifications[(currentCertIndex + 1) % awsCertifications.length].name}
+                          className="w-24 h-24 mx-auto object-contain"
+                        />
+                      </div>
+                      <h4 className="text-sm font-semibold text-gray-600 mb-1">
+                        {awsCertifications[(currentCertIndex + 1) % awsCertifications.length].name}
+                      </h4>
+                      <span className="text-xs text-gray-500">
+                        {awsCertifications[(currentCertIndex + 1) % awsCertifications.length].level}
+                      </span>
+                    </motion.div>
+                  </div>
+                </div>
               </div>
 
-              {/* Rotating Certification Badges */}
-              <div className="absolute inset-0 animate-spin" style={{ animationDuration: '20s' }}>
-                {/* Solutions Architect - 0° (top) */}
-                <div className="absolute top-1 left-1/2 transform -translate-x-1/2">
-                  <div className="animate-spin" style={{ animationDuration: '20s', animationDirection: 'normal' }}>
-                    <img 
-                      src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" 
-                      alt="AWS Solutions Architect" 
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                </div>
-
-                {/* DevOps Engineer - 60° (top-right) */}
-                <div className="absolute top-16 right-6 transform translate-x-2 -translate-y-2">
-                  <div className="animate-spin" style={{ animationDuration: '20s', animationDirection: 'normal' }}>
-                    <img 
-                      src="https://images.credly.com/size/340x340/images/bd31ef42-d460-493e-8503-39592aaf0458/image.png" 
-                      alt="AWS DevOps Engineer" 
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                </div>
-
-                {/* Developer - 120° (bottom-right) */}
-                <div className="absolute bottom-16 right-6 transform translate-x-2 translate-y-2">
-                  <div className="animate-spin" style={{ animationDuration: '20s', animationDirection: 'normal' }}>
-                    <img 
-                      src="https://images.credly.com/size/340x340/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png" 
-                      alt="AWS Developer" 
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                </div>
-
-                {/* Cloud Practitioner - 180° (bottom) */}
-                <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2">
-                  <div className="animate-spin" style={{ animationDuration: '20s', animationDirection: 'normal' }}>
-                    <img 
-                      src="https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" 
-                      alt="AWS Cloud Practitioner" 
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                </div>
-
-                {/* SysOps Administrator - 240° (bottom-left) */}
-                <div className="absolute bottom-16 left-6 transform -translate-x-2 translate-y-2">
-                  <div className="animate-spin" style={{ animationDuration: '20s', animationDirection: 'normal' }}>
-                    <img 
-                      src="https://images.credly.com/size/340x340/images/f0d3fbb9-bfa7-4017-9989-7bde8eaf42b1/image.png" 
-                      alt="AWS SysOps Administrator" 
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                </div>
-
-                {/* Security - 300° (top-left) */}
-                <div className="absolute top-16 left-6 transform -translate-x-2 -translate-y-2">
-                  <div className="animate-spin" style={{ animationDuration: '20s', animationDirection: 'normal' }}>
-                    <img 
-                      src="https://images.credly.com/size/340x340/images/53acdae5-d69f-4dda-b650-d02ed7a50dd7/image.png" 
-                      alt="AWS Security Specialty" 
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                </div>
+              {/* Indicadores de progreso */}
+              <div className="flex justify-center mt-8 space-x-2">
+                {awsCertifications.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentCertIndex(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentCertIndex 
+                        ? 'bg-orange-500 scale-125' 
+                        : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
+                  />
+                ))}
               </div>
-
-              {/* Orbit Ring */}
-              <div className="absolute inset-8 border-2 border-dashed border-transparent rounded-full opacity-30"></div>
             </div>
-          </div>
 
-          {/* Bottom Stats */}
-          <div className="flex justify-center mt-12">
-            <div className="flex gap-8 text-center">
-              <div>
-                <div className="text-2xl font-bold text-orange-600">6+</div>
-                <div className="text-sm text-gray-600">Certificaciones</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-blue-600">100%</div>
-                <div className="text-sm text-gray-600">AWS Certified</div>
-              </div>
+            {/* Stats mejoradas */}
+            <div className="flex justify-center gap-6 mt-12">
+              {stats.awsSection.map((stat, index) => {
+                const getColorClass = (color) => {
+                  switch(color) {
+                    case 'blue-600': return 'text-blue-600';
+                    case 'orange-600': return 'text-orange-600';
+                    case 'green-600': return 'text-green-600';
+                    case 'purple-600': return 'text-purple-600';
+                    case 'yellow-600': return 'text-yellow-600';
+                    default: return 'text-gray-600';
+                  }
+                };
+                
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: config.display.animationDelayMultiplier * (index + 1) }}
+                    className="text-center bg-transparent"
+                  >
+                    <div className={`text-3xl font-bold ${getColorClass(stat.color)} mb-2`}>{stat.value}</div>
+                    <div className="text-gray-600 text-sm">{stat.label}</div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </motion.div>

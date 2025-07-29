@@ -1,0 +1,18 @@
+{
+  "carousel": {
+    "autoRotationInterval": 4000,
+    "showPrevNextOnDesktop": true
+  },
+  "display": {
+    "initialTechnologiesShown": 8,
+    "animationDelayMultiplier": 0.1
+  },
+  "ui": {
+    "sectionBackgroundClass": "py-20 bg-blue-100 to-indigo-100 relative overflow-hidden",
+    "titleGradient": "bg-gradient-to-r from-blue-800 via-gray-800 to-blue-800",
+    "buttonGradient": {
+      "active": "bg-gradient-to-r from-blue-400 to-blue-700",
+      "inactive": "bg-white/80 text-gray-600 hover:bg-blue-50 hover:text-blue-600"
+    }
+  }
+}

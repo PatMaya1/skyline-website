@@ -199,11 +199,12 @@ const Hero = () => {
               </div>
             </div>
             
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
               Transformamos tu{' '}
               <span className="text-primary-600">negocio</span>{' '}
               con tecnología
             </h1>
+            
             
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               Automatizamos procesos y optimizamos operaciones para impulsar la productividad 
