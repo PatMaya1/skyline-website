@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useState, useRef } from 'react';
 import { 
   Mail, 
   Phone, 
@@ -6,21 +7,87 @@ import {
   Send, 
   Clock,
   MessageSquare,
-  CheckCircle
+  CheckCircle,
+  AlertCircle,
+  Loader
 } from 'lucide-react';
+import { useContactForm } from '../hooks/useContactForm';
+import ReCaptcha from './ReCaptcha';
 
 const Contact = () => {
+  const { submitForm, isLoading, isSuccess, error, resetForm } = useContactForm();
+  const recaptchaRef = useRef(null);
+  const [formData, setFormData] = useState({
+    nombre: '',
+    empresa: '',
+    email: '',
+    telefono: '',
+    tamanoEmpresa: '',
+    mensaje: '',
+    acceptTerms: false,
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!formData.acceptTerms) {
+      alert('Por favor acepta los términos y condiciones.');
+      return;
+    }
+
+    try {
+      // Ejecutar reCAPTCHA v3
+      let captchaToken = null;
+      if (recaptchaRef.current) {
+        captchaToken = await recaptchaRef.current.executeAsync();
+        console.log('reCAPTCHA v3 token generado:', captchaToken ? 'Sí' : 'No');
+      }
+
+      await submitForm({ ...formData, captchaToken });
+      
+      // Resetear formulario en caso de éxito
+      setFormData({
+        nombre: '',
+        empresa: '',
+        email: '',
+        telefono: '',
+        tamanoEmpresa: '',
+        mensaje: '',
+        acceptTerms: false,
+      });
+      
+      // Resetear reCAPTCHA
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
+      }
+    } catch (err) {
+      console.error('Error en el envío:', err);
+      // Resetear reCAPTCHA en caso de error
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
+      }
+    }
+  };
+
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      info: "contacto@skyline-consulting.com",
+      info: "contacto@skylineit.mx",
       subtitle: "Respuesta en menos de 24h"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Teléfono",
-      info: "+1 (555) 123-4567",
+      info: "+52 (844) 770 4939",
       subtitle: "Lun - Vie: 9:00 - 18:00"
     },
     {
@@ -123,7 +190,39 @@ const Contact = () => {
                 </h3>
               </div>
 
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
+                {/* Mostrar mensaje de éxito */}
+                {isSuccess && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-start space-x-3"
+                  >
+                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-green-800 font-medium">¡Mensaje enviado correctamente!</p>
+                      <p className="text-green-600 text-sm mt-1">
+                        Te contactaremos en las próximas 24 horas.
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Mostrar mensaje de error */}
+                {error && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-start space-x-3"
+                  >
+                    <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-red-800 font-medium">Error al enviar el mensaje</p>
+                      <p className="text-red-600 text-sm mt-1">{error}</p>
+                    </div>
+                  </motion.div>
+                )}
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -131,9 +230,13 @@ const Contact = () => {
                     </label>
                     <input
                       type="text"
+                      name="nombre"
+                      value={formData.nombre}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
                       placeholder="Tu nombre completo"
                       required
+                      disabled={isLoading}
                     />
                   </div>
                   <div>
@@ -142,9 +245,13 @@ const Contact = () => {
                     </label>
                     <input
                       type="text"
+                      name="empresa"
+                      value={formData.empresa}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
                       placeholder="Nombre de tu empresa"
                       required
+                      disabled={isLoading}
                     />
                   </div>
                 </div>
@@ -156,9 +263,13 @@ const Contact = () => {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
                       placeholder="tu@email.com"
                       required
+                      disabled={isLoading}
                     />
                   </div>
                   <div>
@@ -167,8 +278,12 @@ const Contact = () => {
                     </label>
                     <input
                       type="tel"
+                      name="telefono"
+                      value={formData.telefono}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
                       placeholder="+1 (555) 123-4567"
+                      disabled={isLoading}
                     />
                   </div>
                 </div>
@@ -177,12 +292,18 @@ const Contact = () => {
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Tamaño de la empresa
                   </label>
-                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors">
-                    <option>Selecciona el tamaño</option>
-                    <option>1-10 empleados</option>
-                    <option>11-50 empleados</option>
-                    <option>51-200 empleados</option>
-                    <option>200+ empleados</option>
+                  <select 
+                    name="tamanoEmpresa"
+                    value={formData.tamanoEmpresa}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                    disabled={isLoading}
+                  >
+                    <option value="">Selecciona el tamaño</option>
+                    <option value="1-10 empleados">1-10 empleados</option>
+                    <option value="11-50 empleados">11-50 empleados</option>
+                    <option value="51-200 empleados">51-200 empleados</option>
+                    <option value="200+ empleados">200+ empleados</option>
                   </select>
                 </div>
 
@@ -192,9 +313,13 @@ const Contact = () => {
                   </label>
                   <textarea
                     rows={4}
+                    name="mensaje"
+                    value={formData.mensaje}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
                     placeholder="Describe brevemente tu negocio y los principales desafíos que enfrentas..."
                     required
+                    disabled={isLoading}
                   ></textarea>
                 </div>
 
@@ -202,8 +327,12 @@ const Contact = () => {
                   <input
                     type="checkbox"
                     id="terms"
+                    name="acceptTerms"
+                    checked={formData.acceptTerms}
+                    onChange={handleInputChange}
                     className="mt-1 w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
                     required
+                    disabled={isLoading}
                   />
                   <label htmlFor="terms" className="text-sm text-gray-600">
                     Acepto que Skyline se comunique conmigo para coordinar el análisis 
@@ -211,14 +340,27 @@ const Contact = () => {
                   </label>
                 </div>
 
+                {/* reCAPTCHA v3 - Invisible */}
+                <ReCaptcha ref={recaptchaRef} />
+
                 <motion.button
                   type="submit"
-                  className="w-full bg-gradient-to-br from-blue-300 to-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-700 transition-colors duration-200 flex items-center justify-center space-x-2"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  className="w-full bg-gradient-to-br from-blue-300 to-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-700 transition-colors duration-200 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  whileHover={!isLoading ? { scale: 1.02 } : {}}
+                  whileTap={!isLoading ? { scale: 0.98 } : {}}
+                  disabled={isLoading}
                 >
-                  <span>Solicitar Análisis Gratuito</span>
-                  <Send size={20} />
+                  {isLoading ? (
+                    <>
+                      <Loader className="w-5 h-5 animate-spin" />
+                      <span>Enviando...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Solicitar Análisis Gratuito</span>
+                      <Send size={20} />
+                    </>
+                  )}
                 </motion.button>
               </form>
 
@@ -244,14 +386,17 @@ const Contact = () => {
               y conocer más sobre tu proyecto.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
+              <motion.a
+                href="https://wa.me/528447704939?text=Hola%2C%20me%20interesa%20el%20análisis%20gratuito%20de%207%20días%20para%20mi%20empresa"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-200 flex items-center justify-center space-x-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <MessageSquare size={20} />
                 <span>WhatsApp</span>
-              </motion.button>
+              </motion.a>
               <motion.button
                 className="border-2 border-primary-600 text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-primary-600 hover:text-white transition-colors duration-200 flex items-center justify-center space-x-2"
                 whileHover={{ scale: 1.05 }}

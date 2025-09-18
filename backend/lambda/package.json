@@ -1,0 +1,9 @@
+{
+  "name": "skyline-contact-lambda",
+  "version": "1.0.0",
+  "description": "Lambda function for Skyline contact form",
+  "main": "contact-handler.js",
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.0.0"
+  }
+}

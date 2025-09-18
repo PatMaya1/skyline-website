@@ -109,11 +109,11 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-primary-400" />
-                <span className="text-gray-400">contacto@skyline-consulting.com</span>
+                <span className="text-gray-400">contacto@skylineit.mx</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="text-primary-400" />
-                <span className="text-gray-400">+1 (555) 123-4567</span>
+                <span className="text-gray-400">+52 (844) 770 4943 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin size={18} className="text-primary-400" />

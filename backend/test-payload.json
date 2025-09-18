@@ -1,0 +1,12 @@
+{
+  "httpMethod": "POST",
+  "body": "{\"nombre\":\"Test Directo\",\"empresa\":\"Test Company\",\"email\":\"contacto@skylineit.mx\",\"telefono\":\"+52 555 123 4567\",\"mensaje\":\"Prueba directa de la función Lambda\"}",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "requestContext": {
+    "identity": {
+      "sourceIp": "127.0.0.1"
+    }
+  }
+}

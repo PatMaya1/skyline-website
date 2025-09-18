@@ -11,16 +11,21 @@
     "deploy": "cdk deploy",
     "deploy:route53": "cdk deploy SkylineRoute53Stack",
     "deploy:website": "cdk deploy SkylineWebsiteStack",
+    "deploy:contact": "cdk deploy SkylineContactStack",
+    "deploy:all": "cdk deploy --all",
     "deploy:domain": "./deploy-domain.sh",
     "check:domain": "./check-domain.sh",
     "destroy": "cdk destroy",
     "destroy:all": "cdk destroy --all",
     "synth": "cdk synth",
+    "synth:contact": "cdk synth SkylineContactStack",
     "diff": "cdk diff",
+    "diff:contact": "cdk diff SkylineContactStack",
     "list": "cdk list",
     "outputs": "cdk outputs",
     "outputs:route53": "cdk outputs SkylineRoute53Stack",
-    "outputs:website": "cdk outputs SkylineWebsiteStack"
+    "outputs:website": "cdk outputs SkylineWebsiteStack",
+    "outputs:contact": "cdk outputs SkylineContactStack"
   },
   "devDependencies": {
     "@types/jest": "^29.5.5",
@@ -33,6 +38,7 @@
   },
   "dependencies": {
     "aws-cdk-lib": "2.96.2",
-    "constructs": "^10.0.0"
+    "constructs": "^10.0.0",
+    "dotenv": "^17.2.1"
   }
 }

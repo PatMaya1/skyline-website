@@ -3,6 +3,7 @@ import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
 import { SkylineWebsiteStack } from '../lib/skyline-website-stack';
 import { SkylineRoute53Stack } from '../lib/skyline-route53-stack';
+import { SkylineContactStack } from '../lib/skyline-contact-stack';
 
 const app = new cdk.App();
 
@@ -23,5 +24,14 @@ const websiteStack = new SkylineWebsiteStack(app, 'SkylineWebsiteStack', {
   env,
 });
 
-// Establecer dependencia
+// Stack 3: Servicio de contacto con Lambda y SES
+const contactStack = new SkylineContactStack(app, 'SkylineContactStack', {
+  env,
+  domainName: 'skylineit.mx',
+  fromEmail: 'contacto@skylineit.mx',
+  toEmail: 'contacto@skylineit.mx',
+});
+
+// Establecer dependencias
 websiteStack.addDependency(route53Stack);
+// El stack de contacto es independiente, pero puede beneficiarse del dominio verificado

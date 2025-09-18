@@ -2,32 +2,59 @@
 
 Este directorio contiene la infraestructura como código (IaC) para desplegar el sitio web de Skyline en AWS usando CDK.
 
-## Estructura
+## 🏗️ Arquitectura
+
+El proyecto incluye tres stacks principales:
+
+1. **SkylineRoute53Stack** - Gestión de DNS y dominio
+2. **SkylineWebsiteStack** - Hosting del sitio web estático
+3. **SkylineContactStack** - Servicio de formulario de contacto
+
+## 📁 Estructura
 
 ```
 backend/
 ├── bin/
-│   └── skyline-website.ts    # Punto de entrada de la aplicación CDK
+│   └── skyline-website.ts       # Punto de entrada de la aplicación CDK
 ├── lib/
-│   ├── skyline-website-stack.ts  # Definición del stack principal
-│   └── config.ts                 # Configuraciones del proyecto
-├── cdk.json                  # Configuración de CDK
-├── package.json             # Dependencias de Node.js
-├── tsconfig.json           # Configuración de TypeScript
-├── deploy.sh              # Script de despliegue automatizado
-├── update-content.sh      # Script para actualizar solo el contenido
-├── destroy.sh            # Script para destruir la infraestructura
+│   ├── skyline-website-stack.ts   # Stack principal del sitio web
+│   ├── skyline-route53-stack.ts   # Stack de DNS/Route53
+│   ├── skyline-contact-stack.ts   # Stack del servicio de contacto
+│   └── config.ts                  # Configuraciones del proyecto
+├── lambda/
+│   ├── contact-handler.js         # Función Lambda para formulario de contacto
+│   └── package.json              # Dependencias de Lambda
+├── cdk.json                      # Configuración de CDK
+├── package.json                 # Dependencias de Node.js
+├── tsconfig.json               # Configuración de TypeScript
+├── deploy.sh                  # Script de despliegue general
+├── deploy-contact.sh         # Script de despliegue del servicio de contacto
+├── test-contact.sh          # Script de pruebas del servicio de contacto
+├── update-content.sh       # Script para actualizar solo el contenido
+├── destroy.sh             # Script para destruir la infraestructura
+├── CONTACT-SERVICE.md    # Documentación del servicio de contacto
 └── README.md            # Esta documentación
 ```
 
-## Recursos AWS que se crean
+## 🚀 Recursos AWS
 
+### Stack Principal (Website)
 - **S3 Bucket**: Para hospedar los archivos estáticos del sitio web
 - **CloudFront Distribution**: CDN para entregar el contenido de manera rápida
 - **Origin Access Control**: Para securizar el acceso entre CloudFront y S3
 - **Cache Policies**: Optimización de cache para diferentes tipos de archivos
 
-## Requisitos previos
+### Stack de Contacto
+- **Lambda Function**: Procesa las solicitudes del formulario de contacto
+- **API Gateway**: Expone la función Lambda como REST API
+- **SES Email Identity**: Para envío de emails
+- **IAM Roles**: Permisos mínimos necesarios
+
+### Stack de Route53
+- **Hosted Zone**: Gestión de DNS del dominio
+- **SSL Certificate**: Certificado SSL/TLS para HTTPS
+
+## 📋 Requisitos previos
 
 1. **AWS CLI**: Instalar y configurar con credenciales válidas
    ```bash
