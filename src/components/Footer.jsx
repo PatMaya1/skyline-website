@@ -6,6 +6,8 @@ import {
   Linkedin, 
   Twitter, 
   Facebook,
+  Instagram,
+  MessageCircle,
   ArrowUp
 } from 'lucide-react';
 
@@ -48,9 +50,9 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               {[
-                { icon: <Linkedin size={20} />, href: '#' },
-                { icon: <Twitter size={20} />, href: '#' },
-                { icon: <Facebook size={20} />, href: '#' }
+                { icon: <Linkedin size={20} />, href: 'https://www.linkedin.com/company/skyline-it-mx/' },
+                { icon: <Instagram size={20} />, href: 'https://www.instagram.com/skylineit.mx/' },
+                { icon: <MessageCircle size={20} />, href: 'https://api.whatsapp.com/send/?phone=528447704939&text=Hola%2C+me+interesa+el+análisis+gratuito+de+7+días+para+mi+empresa&type=phone_number&app_absent=0' }
               ].map((social, index) => (
                 <motion.a
                   key={index}
@@ -113,7 +115,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="text-primary-400" />
-                <span className="text-gray-400">+52 (844) 770 4943 </span>
+                <span className="text-gray-400">+52 (844) 770 4939 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin size={18} className="text-primary-400" />

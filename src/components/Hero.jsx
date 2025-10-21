@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, TrendingUp, Target } from 'lucide-react';
 
-// Componente para las partículas animadas del fondo
+// Componente para las partículas animadas del fondo - OPTIMIZADO
 const AnimatedBackground = () => {
-  const particles = Array.from({ length: 8 }, (_, i) => i);
-  const geometricShapes = Array.from({ length: 5 }, (_, i) => i);
+  const particles = Array.from({ length: 4 }, (_, i) => i); // Reducido de 8 a 4
+  const geometricShapes = Array.from({ length: 3 }, (_, i) => i); // Reducido de 5 a 3
   
   // Función para generar posiciones más distribuidas
   const generateDistributedPositions = (count) => {
@@ -51,16 +51,16 @@ const AnimatedBackground = () => {
             top: `${Math.random() * 100}%`,
           }}
           animate={{
-            x: [0, Math.random() * 300 - 150],
-            y: [0, Math.random() * 300 - 150],
-            scale: [1, 1.3, 1],
-            opacity: [0.2, 0.5, 0.2],
+            x: [0, Math.random() * 200 - 100], // Reducido el rango de movimiento
+            y: [0, Math.random() * 200 - 100], // Reducido el rango de movimiento
+            scale: [1, 1.2, 1], // Reducida la escala
+            opacity: [0.1, 0.3, 0.1], // Reducida la opacidad
           }}
           transition={{
-            duration: Math.random() * 15 + 10,
+            duration: Math.random() * 12 + 8, // Animaciones más lentas
             repeat: Infinity,
             ease: "easeInOut",
-            delay: Math.random() * 8,
+            delay: Math.random() * 6, // Delays más cortos
           }}
         />
       ))}
@@ -80,15 +80,15 @@ const AnimatedBackground = () => {
             }}
             animate={{
               scale: [1, 1.1, 1],
-              opacity: [0.2, 0.4, 0.2],
-              x: [0, Math.random() * 80 - 40],
-              y: [0, Math.random() * 60 - 30],
+              opacity: [0.1, 0.3, 0.1], // Reducida la opacidad
+              x: [0, Math.random() * 60 - 30], // Reducido el movimiento
+              y: [0, Math.random() * 40 - 20], // Reducido el movimiento
             }}
             transition={{
-              duration: Math.random() * 25 + 20,
+              duration: Math.random() * 20 + 15, // Animaciones más lentas
               repeat: Infinity,
               ease: "easeInOut",
-              delay: Math.random() * 12,
+              delay: Math.random() * 8, // Delays más cortos
             }}
           >
             {/* Nube tipo 1 - Pequeña */}
@@ -155,8 +155,8 @@ const AnimatedBackground = () => {
         }}
       />
       
-      {/* Puntos flotantes adicionales */}
-      {Array.from({ length: 8 }, (_, i) => (
+      {/* Puntos flotantes adicionales - OPTIMIZADO */}
+      {Array.from({ length: 4 }, (_, i) => ( // Reducido de 8 a 4
         <motion.div
           key={`dot-${i}`}
           className="absolute w-2 h-2 bg-blue/50 rounded-full"
@@ -165,15 +165,15 @@ const AnimatedBackground = () => {
             top: `${Math.random() * 100}%`,
           }}
           animate={{
-            scale: [0.5, 1.5, 0.5],
-            opacity: [0.2, 0.8, 0.2],
-            y: [0, Math.random() * 50 - 25],
+            scale: [0.5, 1.2, 0.5], // Reducida la escala
+            opacity: [0.1, 0.4, 0.1], // Reducida la opacidad
+            y: [0, Math.random() * 30 - 15], // Reducido el movimiento
           }}
           transition={{
-            duration: Math.random() * 6 + 4,
+            duration: Math.random() * 8 + 6, // Animaciones más lentas
             repeat: Infinity,
             ease: "easeInOut",
-            delay: Math.random() * 5,
+            delay: Math.random() * 3, // Delays más cortos
           }}
         />
       ))}

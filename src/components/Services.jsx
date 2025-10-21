@@ -112,16 +112,17 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
               className="relative group cursor-pointer"
               onClick={() => handleServiceClick(service.techCategory)}
             >
               {/* Card background with gradient border */}
               <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
               
-              <div className="relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-gray-100 group-hover:border-transparent transform group-hover:-translate-y-2">
+              <div className="relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-gray-100 group-hover:border-transparent transform group-hover:-translate-y-1"> {/* Reducido de -translate-y-2 a -translate-y-1 */}
                 {/* Icon and title in the same row */}
                 <div className="flex items-center mb-6">
                   <div className="relative mr-4">
