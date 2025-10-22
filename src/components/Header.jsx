@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import SKY2Logo from '../assets/logos_skyline/SKY2.png';
 
 /**
@@ -11,9 +12,20 @@ import SKY2Logo from '../assets/logos_skyline/SKY2.png';
 const Header = () => {
   // Estado para controlar si el menú móvil está abierto o cerrado
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
   // Función para alternar el estado del menú móvil
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  // Función para generar el href correcto
+  const getHref = (item) => {
+    const section = item.toLowerCase();
+    if (section === 'demos') {
+      return isHome ? '#demos' : '/#demos';
+    }
+    return isHome ? `#${section}` : `/#${section}`;
+  };
 
   return (
     // Header principal - Fijo en la parte superior con backdrop blur
@@ -29,19 +41,21 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center"
           >
-            <img 
-              src={SKY2Logo} 
-              alt="SkyLine Logo" 
-              className="h-10 w-auto"
-            />
+            <Link to="/">
+              <img
+                src={SKY2Logo}
+                alt="SkyLine Logo"
+                className="h-10 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+              />
+            </Link>
           </motion.div>
 
           {/* SECCIÓN 2: Menú de navegación principal (oculto en móvil) */}
           <nav className="hidden md:flex space-x-8">
-            {['Inicio', 'Servicios', 'Proceso', 'Contacto'].map((item) => (
+            {['Inicio', 'Servicios', 'Demos', 'Proceso', 'Contacto'].map((item) => (
               <motion.a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={getHref(item)}
                 className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-blue-900 font-medium transition-all duration-200"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
@@ -53,13 +67,14 @@ const Header = () => {
 
           {/* SECCIÓN 3: Botón CTA principal (oculto en móvil) */}
           <div className="hidden md:flex">
-            <motion.button
+            <motion.a
+              href={isHome ? '#contacto' : '/#contacto'}
               className="bg-gradient-to-r from-blue-300 to-blue-500 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-400 hover:to-blue-600 transition-all duration-200"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Consulta Gratuita
-            </motion.button>
+            </motion.a>
           </div>
 
           {/* SECCIÓN 4: Botón hamburguesa para menú móvil (solo visible en móvil) */}
@@ -81,10 +96,10 @@ const Header = () => {
             {/* Navegación vertical para móvil */}
             <nav className="flex flex-col space-y-4">
               {/* Enlaces de navegación móvil */}
-              {['Inicio', 'Servicios', 'Proceso', 'Contacto'].map((item) => (
+              {['Inicio', 'Servicios', 'Demos', 'Proceso', 'Contacto'].map((item) => (
                 <a
                   key={item}
-                  href={`#${item.toLowerCase()}`}
+                  href={getHref(item)}
                   className="bg-gradient-to-r  from-blue-500 to-blue-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-blue-900 font-medium"
                   onClick={() => setIsOpen(false)} // Cierra el menú al hacer clic
                 >
@@ -92,9 +107,13 @@ const Header = () => {
                 </a>
               ))}
               {/* Botón CTA para móvil */}
-              <button className="bg-gradient-to-r from-blue-300 to-blue-500 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-400 hover:to-blue-600 transition-all duration-200 w-full">
+              <a
+                href={isHome ? '#contacto' : '/#contacto'}
+                className="bg-gradient-to-r from-blue-300 to-blue-500 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-400 hover:to-blue-600 transition-all duration-200 w-full text-center"
+                onClick={() => setIsOpen(false)}
+              >
                 Consulta Gratuita
-              </button>
+              </a>
             </nav>
           </motion.div>
         )}

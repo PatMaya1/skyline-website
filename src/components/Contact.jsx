@@ -106,7 +106,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contacto" className="py-20 bg-blue-100 to-indigo-100">
+    <section id="contacto" className="py-20 bg-white-100 to-indigo-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

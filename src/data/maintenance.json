@@ -1,0 +1,17 @@
+{
+  "title": "Mantenimiento y crecimiento continuo",
+  "service": {
+    "name": "Posicionamiento y crecimiento mensual",
+    "description": "Mejora tu ranking y tráfico mes a mes, con informes simples y medibles",
+    "price": "$1,500 MXN",
+    "priceNote": "mensual",
+    "icon": "TrendingUp",
+    "features": [
+      "Optimización continua de SEO",
+      "Reportes mensuales de rendimiento",
+      "Ajustes de contenido y keywords",
+      "Monitoreo de competencia",
+      "Soporte técnico prioritario"
+    ]
+  }
+}
