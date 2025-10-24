@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 
 // Importar datos desde archivos JSON
 import websitePlansData from '../data/websitePlans.json';
+import ecommercePlansData from '../data/ecommercePlans.json';
 import maintenanceData from '../data/maintenance.json';
 
 const categories = [
@@ -161,6 +162,28 @@ const PlanCard = memo(({ plan, index }) => {
                 Ver Demo en Vivo
               </a>
             )}
+            {plan.id === 'catalogo-digital' && (
+              <a
+                href="/demos/plan-catalogo-digital/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full bg-white border-2 border-current text-gray-700 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300"
+              >
+                <ExternalLink className="w-5 h-5" />
+                Ver Demo en Vivo
+              </a>
+            )}
+            {plan.id === 'tienda-online' && (
+              <a
+                href="/demos/plan-tienda-online/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full bg-white border-2 border-current text-gray-700 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300"
+              >
+                <ExternalLink className="w-5 h-5" />
+                Ver Demo en Vivo
+              </a>
+            )}
 
             {/* Botón Solicitar */}
             <a
@@ -180,10 +203,8 @@ const PlanesDetalle = () => {
   const [selectedCategory, setSelectedCategory] = useState('websites');
 
   const websitePlans = websitePlansData;
+  const ecommercePlans = ecommercePlansData;
   const maintenance = maintenanceData;
-
-  // Por ahora, los planes de ecommerce serán un placeholder
-  const ecommercePlans = [];
 
   const currentPlans = selectedCategory === 'websites' ? websitePlans : ecommercePlans;
 
@@ -253,7 +274,11 @@ const PlanesDetalle = () => {
 
           {/* Grid de planes */}
           {currentPlans.length > 0 ? (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <div className={`grid grid-cols-1 gap-8 mb-12 ${
+              currentPlans.length === 1 ? 'lg:grid-cols-1 max-w-md mx-auto' :
+              currentPlans.length === 2 ? 'lg:grid-cols-2 max-w-5xl mx-auto' :
+              'lg:grid-cols-3'
+            }`}>
               {currentPlans.map((plan, index) => (
                 <PlanCard key={plan.id} plan={plan} index={index} />
               ))}

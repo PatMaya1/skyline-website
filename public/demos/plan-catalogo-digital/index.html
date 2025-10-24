@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabores Mexicanos - Menú Digital</title>
+    <meta name="description" content="Explora nuestro menú tradicional mexicano con los mejores platillos caseros. Ordena fácilmente por WhatsApp.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sabores Mexicanos - Menú Digital">
+    <meta property="og:description" content="Descubre auténtica comida mexicana. Ordena ahora por WhatsApp.">
+    <meta property="og:type" content="restaurant.menu">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Sabores Mexicanos",
+      "description": "Restaurante de comida tradicional mexicana",
+      "servesCuisine": "Mexicana",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ciudad de México",
+        "addressCountry": "MX"
+      },
+      "hasMenu": {
+        "@type": "Menu",
+        "hasMenuSection": [
+          {
+            "@type": "MenuSection",
+            "name": "Entradas",
+            "description": "Comienza tu experiencia con nuestras entradas tradicionales"
+          },
+          {
+            "@type": "MenuSection",
+            "name": "Platos Principales",
+            "description": "Los sabores auténticos de México"
+          }
+        ]
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🍽️</span>
+                    <span class="logo-text">Sabores Mexicanos</span>
+                </div>
+                <nav class="nav">
+                    <a href="#menu" class="nav-link">Menú</a>
+                    <a href="#horarios" class="nav-link">Horarios</a>
+                    <a href="#contacto" class="nav-link">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Sabores Mexicanos</h1>
+            <p class="hero-subtitle">Tradición y sabor en cada platillo</p>
+            <a href="#menu" class="btn btn-primary">Ver Menú Completo</a>
+        </div>
+        <div class="scroll-indicator">
+            <span>Desliza para ver el menú</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- QR Code Banner -->
+    <section class="qr-banner">
+        <div class="container">
+            <div class="qr-content">
+                <div class="qr-text">
+                    <h3>¿Estás en el restaurante?</h3>
+                    <p>Escanea el código QR de tu mesa para ver el menú completo y hacer tu pedido</p>
+                </div>
+                <div class="qr-code">
+                    <div class="qr-placeholder">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <rect x="10" y="10" width="30" height="30" fill="#ea580c"/>
+                            <rect x="60" y="10" width="30" height="30" fill="#ea580c"/>
+                            <rect x="10" y="60" width="30" height="30" fill="#ea580c"/>
+                            <rect x="50" y="50" width="20" height="20" fill="#ea580c"/>
+                        </svg>
+                    </div>
+                    <span class="qr-label">QR del Menú</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestro Menú</h2>
+                <p class="section-subtitle">Platillos preparados con recetas tradicionales y amor</p>
+            </div>
+
+            <!-- Entradas -->
+            <div class="menu-category">
+                <h3 class="category-title">
+                    <span class="category-icon">🥑</span>
+                    Entradas
+                </h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                            <span class="image-placeholder">🥑</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h4 class="item-name">Guacamole Tradicional</h4>
+                                <span class="item-price">$85</span>
+                            </div>
+                            <p class="item-description">Aguacate fresco, cilantro, cebolla, chile y limón. Servido con totopos recién hechos.</p>
+                            <div class="item-tags">
+                                <span class="tag">Vegetariano</span>
+                                <span class="tag">Popular</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                            <span class="image-placeholder">🌮</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h4 class="item-name">Tacos Dorados de Pollo</h4>
+                                <span class="item-price">$95</span>
+                            </div>
+                            <p class="item-description">4 tacos dorados rellenos de pollo desebrado, con lechuga, crema, queso y salsa.</p>
+                            <div class="item-tags">
+                                <span class="tag">Favorito</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);">
+                            <span class="image-placeholder">🫔</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h4 class="item-name">Quesadillas de Flor de Calabaza</h4>
+                                <span class="item-price">$75</span>
+                            </div>
+                            <p class="item-description">Tortillas hechas a mano rellenas de flor de calabaza con queso oaxaca.</p>
+                            <div class="item-tags">
+                                <span class="tag">Vegetariano</span>
+                                <span class="tag">Hecho a mano</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Platos Principales -->
+            <div class="menu-category">
+                <h3 class="category-title">
+                    <span class="category-icon">🍖</span>
+                    Platos Principales
+                </h3>
+                <div class="menu-grid">
+                    <div class="menu-item featured">
+                        <div class="featured-badge">⭐ Especialidad</div>
+                        <div class="item-image" style="background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);">
+                            <span class="image-placeholder">🥘</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h4 class="item-name">Mole Poblano con Pollo</h4>
+                                <span class="item-price">$165</span>
+                            </div>
+                            <p class="item-description">Pechuga de pollo bañada en nuestro mole tradicional con 27 ingredientes. Incluye arroz y tortillas.</p>
+                            <div class="item-tags">
+                                <span class="tag">Receta familiar</span>
+                                <span class="tag">Best seller</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image" style="background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);">
+                            <span class="image-placeholder">🌮</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h4 class="item-name">Tacos al Pastor</h4>
+                                <span class="item-price">$125</span>
+                            </div>
+                            <p class="item-description">5 tacos de carne al pastor marinada con nuestra receta secreta. Incluye piña, cilantro y cebolla.</p>
+                            <div class="item-tags">
+                                <span class="tag">Popular</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                            <span class="image-placeholder">🫔</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h4 class="item-name">Enchiladas Verdes</h4>
+                                <span class="item-price">$135</span>
+                            </div>
+                            <p class="item-description">4 enchiladas bañadas en salsa verde, con pollo o queso, crema y cebolla. Incluye frijoles.</p>
+                            <div class="item-tags">
+                                <span class="tag">Casero</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+                            <span class="image-placeholder">🍲</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h4 class="item-name">Pozole Rojo</h4>
+                                <span class="item-price">$145</span>
+                            </div>
+                            <p class="item-description">Platón de pozole tradicional con carne de cerdo. Incluye tostadas, lechuga, rábano y orégano.</p>
+                            <div class="item-tags">
+                                <span class="tag">Tradicional</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
+                            <span class="image-placeholder">🥩</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h4 class="item-name">Arrachera a la Parrilla</h4>
+                                <span class="item-price">$185</span>
+                            </div>
+                            <p class="item-description">300g de arrachera marinada, asada al carbón. Incluye nopales, cebollitas, guacamole y tortillas.</p>
+                            <div class="item-tags">
+                                <span class="tag">Premium</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+                            <span class="image-placeholder">🐟</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h4 class="item-name">Ceviche de Pescado</h4>
+                                <span class="item-price">$155</span>
+                            </div>
+                            <p class="item-description">Pescado fresco marinado en limón con tomate, cebolla, cilantro y aguacate. Servido con tostadas.</p>
+                            <div class="item-tags">
+                                <span class="tag">Fresco</span>
+                                <span class="tag">Ligero</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bebidas -->
+            <div class="menu-category">
+                <h3 class="category-title">
+                    <span class="category-icon">🍹</span>
+                    Bebidas
+                </h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-image" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">
+                            <span class="image-placeholder">🍹</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h4 class="item-name">Agua de Horchata</h4>
+                                <span class="item-price">$35</span>
+                            </div>
+                            <p class="item-description">Refrescante agua de arroz con canela, preparada diariamente.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image" style="background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);">
+                            <span class="image-placeholder">🍉</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h4 class="item-name">Agua de Jamaica</h4>
+                                <span class="item-price">$35</span>
+                            </div>
+                            <p class="item-description">Flor de jamaica natural, refrescante y saludable.</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image" style="background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);">
+                            <span class="image-placeholder">🍋</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h4 class="item-name">Limonada Natural</h4>
+                                <span class="item-price">$40</span>
+                            </div>
+                            <p class="item-description">Limones recién exprimidos con un toque de menta.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Postres -->
+            <div class="menu-category">
+                <h3 class="category-title">
+                    <span class="category-icon">🍰</span>
+                    Postres
+                </h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="item-image" style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);">
+                            <span class="image-placeholder">🍮</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h4 class="item-name">Flan Napolitano</h4>
+                                <span class="item-price">$55</span>
+                            </div>
+                            <p class="item-description">Flan casero con caramelo natural y crema batida.</p>
+                            <div class="item-tags">
+                                <span class="tag">Casero</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image" style="background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);">
+                            <span class="image-placeholder">🍰</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h4 class="item-name">Pastel de Tres Leches</h4>
+                                <span class="item-price">$65</span>
+                        </div>
+                            <p class="item-description">Esponjoso pastel bañado en tres leches con betún de crema.</p>
+                            <div class="item-tags">
+                                <span class="tag">Popular</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="item-image" style="background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);">
+                            <span class="image-placeholder">🍨</span>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h4 class="item-name">Nieve de Garrafa</h4>
+                                <span class="item-price">$45</span>
+                            </div>
+                            <p class="item-description">Nieve artesanal de frutas naturales (sabores disponibles: limón, fresa, mango).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horarios Section -->
+    <section id="horarios" class="info-section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">🕐</div>
+                    <h3>Horarios</h3>
+                    <p><strong>Lunes - Viernes:</strong><br>9:00 AM - 9:00 PM</p>
+                    <p><strong>Sábado - Domingo:</strong><br>8:00 AM - 10:00 PM</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h3>Ubicación</h3>
+                    <p>Av. Revolución 123,<br>Col. Centro,<br>Ciudad de México, CDMX</p>
+                    <a href="#" class="link-button">Ver en Google Maps</a>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🎉</div>
+                    <h3>Eventos</h3>
+                    <p>Reserva tu evento especial con nosotros</p>
+                    <p><strong>Capacidad:</strong> hasta 80 personas</p>
+                    <a href="#contacto" class="link-button">Solicitar información</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp CTA Section -->
+    <section class="whatsapp-cta">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>¿Listo para ordenar?</h2>
+                    <p>Envíanos tu pedido por WhatsApp y te lo preparamos al momento</p>
+                    <ul class="cta-benefits">
+                        <li>✓ Respuesta inmediata</li>
+                        <li>✓ Servicio para llevar</li>
+                        <li>✓ Entrega a domicilio disponible</li>
+                    </ul>
+                </div>
+                <div class="cta-action">
+                    <a href="https://wa.me/525512345678?text=Hola,%20me%20gustaría%20hacer%20un%20pedido"
+                       class="whatsapp-btn"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Hacer Pedido por WhatsApp
+                    </a>
+                    <p class="cta-note">Te responderemos en menos de 5 minutos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contáctanos</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <strong>Teléfono</strong>
+                            <p>+52 55 1234 5678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <strong>Email</strong>
+                            <p>contacto@saboresmexicanos.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💬</span>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <p>+52 55 1234 5678</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <h3>Síguenos en redes</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon facebook">Facebook</a>
+                        <a href="#" class="social-icon instagram">Instagram</a>
+                        <a href="#" class="social-icon tiktok">TikTok</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">🍽️</span>
+                    <span>Sabores Mexicanos</span>
+                </div>
+                <p class="footer-text">Tradición culinaria mexicana desde 1995</p>
+                <p class="footer-note">© 2025 Sabores Mexicanos. Todos los derechos reservados.</p>
+                <p class="demo-badge">🎨 Sitio demo - Plan Catálogo Digital de Skyline</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/525512345678?text=Hola,%20me%20gustaría%20hacer%20un%20pedido"
+       class="floating-whatsapp"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

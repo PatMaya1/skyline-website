@@ -6,6 +6,7 @@ import { getIcon } from '../utils/icons.jsx';
 
 // Importar datos desde archivos JSON
 import websitePlansData from '../data/websitePlans.json';
+import ecommercePlansData from '../data/ecommercePlans.json';
 
 const DemosPreview = () => {
   const [selectedCategory, setSelectedCategory] = useState('websites');
@@ -16,9 +17,7 @@ const DemosPreview = () => {
   ];
 
   const websitePlans = websitePlansData;
-
-  // Por ahora, los planes de ecommerce serán un placeholder
-  const ecommercePlans = [];
+  const ecommercePlans = ecommercePlansData;
 
   const currentPlans = selectedCategory === 'websites' ? websitePlans : ecommercePlans;
 
@@ -68,7 +67,11 @@ const DemosPreview = () => {
 
         {/* Grid de planes resumidos */}
         {currentPlans.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className={`grid grid-cols-1 gap-8 mb-12 ${
+            currentPlans.length === 1 ? 'md:grid-cols-1 max-w-md mx-auto' :
+            currentPlans.length === 2 ? 'md:grid-cols-2 max-w-4xl mx-auto' :
+            'md:grid-cols-3'
+          }`}>
             {currentPlans.map((plan, index) => (
             <motion.div
               key={plan.id}
@@ -154,6 +157,28 @@ const DemosPreview = () => {
                     {plan.id === 'expansion' && (
                       <a
                         href="/demos/plan-expansion/index.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full bg-white border-2 border-gray-300 text-gray-700 py-2.5 rounded-lg font-medium text-center hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 text-sm"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Ver Demo
+                      </a>
+                    )}
+                    {plan.id === 'catalogo-digital' && (
+                      <a
+                        href="/demos/plan-catalogo-digital/index.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full bg-white border-2 border-gray-300 text-gray-700 py-2.5 rounded-lg font-medium text-center hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 text-sm"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Ver Demo
+                      </a>
+                    )}
+                    {plan.id === 'tienda-online' && (
+                      <a
+                        href="/demos/plan-tienda-online/index.html"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full bg-white border-2 border-gray-300 text-gray-700 py-2.5 rounded-lg font-medium text-center hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2 text-sm"
