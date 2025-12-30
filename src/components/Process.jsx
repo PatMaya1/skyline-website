@@ -73,18 +73,18 @@ const Process = () => {
   ];
 
   return (
-    <section id="proceso" className="py-20 bg-blue-100 to-white-200">
+    <section id="proceso" className="py-10 md:py-20 bg-blue-100 to-white-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
         >
-          <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-blue-800 via-gray-800 to-blue-800 bg-clip-text text-transparent mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold bg-gradient-to-r from-blue-800 via-gray-800 to-blue-800 bg-clip-text text-transparent mb-4 md:mb-6 leading-tight">
             Cómo Transformamos Tu Negocio
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto px-2">
             Un proceso estructurado de 4 fases que garantiza resultados medibles.
             <span className="block mt-2 text-primary-600 font-semibold">
               Comenzamos con 7 días de análisis completamente gratuito.
@@ -97,9 +97,9 @@ const Process = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="mb-20"
+          className="mb-10 md:mb-20"
         >
-          <div className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 rounded-3xl p-8 text-white relative overflow-hidden">
+          <div className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-800 rounded-3xl p-6 md:p-8 text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-32 translate-x-32"></div>
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-24 -translate-x-24"></div>
 
@@ -109,40 +109,40 @@ const Process = () => {
               backgroundSize: '24px 24px'
             }}></div>
           </div>
-            
-            <div className="relative z-10 grid lg:grid-cols-2 gap-8 items-center">
+
+            <div className="relative z-10 grid lg:grid-cols-2 gap-6 md:gap-8 items-center">
               <div>
-                <div className="flex items-center mb-4">
-                  <Calendar className="w-8 h-8 mr-3" />
-                  <h3 className="text-2xl font-bold">Análisis GRATUITO de 7 días</h3>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center mb-3 md:mb-4">
+                  <Calendar className="w-6 h-6 md:w-8 md:h-8 mr-0 sm:mr-3 mb-2 sm:mb-0" />
+                  <h3 className="text-xl md:text-2xl font-bold">Análisis GRATUITO de 7 días</h3>
                 </div>
-                <p className="text-lg mb-6 opacity-90">
-                  Invertimos una semana completa estudiando tu negocio sin costo. 
+                <p className="text-sm md:text-lg mb-4 md:mb-6 opacity-90">
+                  Invertimos una semana completa estudiando tu negocio sin costo.
                   Esta es nuestra forma de demostrar el valor que podemos aportar.
                 </p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-                    <h4 className="font-semibold mb-2">40+ Horas</h4>
-                    <p className="text-sm opacity-80">De análisis dedicado</p>
+                <div className="grid grid-cols-2 gap-3 md:gap-4">
+                  <div className="bg-white/10 rounded-lg p-3 md:p-4 backdrop-blur-sm">
+                    <h4 className="font-semibold text-sm md:text-base mb-1 md:mb-2">40+ Horas</h4>
+                    <p className="text-xs md:text-sm opacity-80">De análisis dedicado</p>
                   </div>
-                  <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-                    <h4 className="font-semibold mb-2">100% Gratis</h4>
-                    <p className="text-sm opacity-80">Sin compromisos</p>
+                  <div className="bg-white/10 rounded-lg p-3 md:p-4 backdrop-blur-sm">
+                    <h4 className="font-semibold text-sm md:text-base mb-1 md:mb-2">100% Gratis</h4>
+                    <p className="text-xs md:text-sm opacity-80">Sin compromisos</p>
                   </div>
                 </div>
               </div>
-              
-              <div className="space-y-4">
-                <h4 className="text-xl font-bold mb-4">¿Por qué lo hacemos gratis?</h4>
+
+              <div className="space-y-3 md:space-y-4">
+                <h4 className="text-lg md:text-xl font-bold mb-3 md:mb-4">¿Por qué lo hacemos gratis?</h4>
                 {[
                   "Demostramos valor antes de cualquier inversión",
                   "Entendemos completamente tu negocio",
                   "Construimos confianza desde el día uno",
                   "Creamos propuestas más precisas y efectivas"
                 ].map((reason, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-green-300 mt-0.5 flex-shrink-0" />
-                    <p className="text-sm opacity-90">{reason}</p>
+                  <div key={index} className="flex items-start space-x-2 md:space-x-3">
+                    <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-300 mt-0.5 flex-shrink-0" />
+                    <p className="text-xs md:text-sm opacity-90">{reason}</p>
                   </div>
                 ))}
               </div>
@@ -151,7 +151,7 @@ const Process = () => {
         </motion.div>
 
         {/* Proceso paso a paso */}
-        <div className="space-y-16">
+        <div className="space-y-8 md:space-y-16">
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -159,50 +159,50 @@ const Process = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.05 }} // Reducido delay
-              className={`${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex flex-col lg:flex items-center gap-12`}
+              className={`${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex flex-col lg:flex items-center gap-6 md:gap-12`}
             >
 
 
               {/* Contenido del paso */}
               <div className="flex-1">
-                <div className="bg-white rounded-2xl shadow-xl p-8 relative">
-                  <div className="absolute -top-4 -left-4 w-16 h-16 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-xl">
+                <div className="bg-white rounded-2xl shadow-xl p-4 md:p-8 relative">
+                  <div className="absolute -top-3 -left-3 md:-top-4 md:-left-4 w-12 h-12 md:w-16 md:h-16 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-base md:text-xl">
                     {index + 1}
                   </div>
-                  
-                  <div className="mb-6">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <div className={`bg-gradient-to-r ${step.color} text-white p-3 rounded-xl`}>
+
+                  <div className="mb-4 md:mb-6">
+                    <div className="flex items-center space-x-2 md:space-x-3 mb-2">
+                      <div className={`bg-gradient-to-r ${step.color} text-white p-2 md:p-3 rounded-xl`}>
                         {step.icon}
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900">{step.title}</h3>
-                        <p className="text-primary-600 font-semibold">{step.subtitle}</p>
+                        <h3 className="text-lg md:text-2xl font-bold text-gray-900">{step.title}</h3>
+                        <p className="text-sm md:text-base text-primary-600 font-semibold">{step.subtitle}</p>
                       </div>
                     </div>
-                    <div className="bg-gray-100 inline-block px-3 py-1 rounded-full text-sm font-medium text-gray-700">
+                    <div className="bg-gray-100 inline-block px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium text-gray-700">
                       {step.duration}
                     </div>
                   </div>
-                  
-                  <p className="text-gray-600 mb-6 text-lg">{step.description}</p>
-                  
-                  <div className="grid md:grid-cols-2 gap-3">
+
+                  <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6">{step.description}</p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
                     {step.benefits.map((benefit, idx) => (
                       <div key={idx} className="flex items-center space-x-2">
-                        <div className={`w-2 h-2 bg-gradient-to-r ${step.color} rounded-full`}></div>
-                        <span className="text-sm text-gray-700">{benefit}</span>
+                        <div className={`w-1.5 h-1.5 md:w-2 md:h-2 bg-gradient-to-r ${step.color} rounded-full flex-shrink-0`}></div>
+                        <span className="text-xs md:text-sm text-gray-700">{benefit}</span>
                       </div>
-                  
+
 
                     ))}
                   </div>
                 </div>
               </div>
-              
-              {/* Ilustración visual */}
-              <div className="flex-1 flex justify-center">
-                <div className={`bg-gradient-to-br ${step.color} rounded-3xl p-8 text-white min-h-80 flex flex-col justify-center items-center relative overflow-hidden`}>
+
+              {/* Ilustración visual - Hidden on mobile */}
+              <div className="flex-1 hidden lg:flex justify-center">
+                <div className={`bg-gradient-to-br ${step.color} rounded-3xl p-8 text-white min-h-80 flex flex-col justify-center items-center relative overflow-hidden w-full`}>
                   {/* Background pattern */}
                   <div className="absolute inset-0 bg-black/10">
                     <div className="absolute inset-0" style={{
@@ -210,10 +210,10 @@ const Process = () => {
                       backgroundSize: '24px 24px'
                     }}></div>
                   </div>
-                  
+
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
-                  
+
                   <div className="relative z-10 text-center">
                     <div className="mb-6">
                       <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -224,7 +224,7 @@ const Process = () => {
                       <h4 className="text-xl font-bold mb-2">{step.title}</h4>
                       <p className="text-white/80">{step.subtitle}</p>
                     </div>
-                    
+
                     <div className="space-y-3">
                       {step.benefits.slice(0, 2).map((benefit, idx) => (
                         <div key={idx} className="bg-white/10 rounded-lg p-3 backdrop-blur-sm">
@@ -253,43 +253,43 @@ const Process = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mt-20"
+          className="text-center mt-10 md:mt-20"
         >
-          <div className="bg-gradient-to-r from-gray-900 to-gray-500 rounded-3xl shadow-2xl p-12 text-white relative overflow-hidden">
+          <div className="bg-gradient-to-r from-gray-900 to-gray-500 rounded-3xl shadow-2xl p-6 md:p-12 text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary-600/10 rounded-full -translate-y-32 translate-x-32"></div>
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary-600/10 rounded-full translate-y-24 -translate-x-24"></div>
-            
+
             <div className="relative z-10">
-              <h3 className="text-3xl font-bold mb-4">
+              <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">
                 ¿Listo para transformar tu negocio?
               </h3>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                No arriesgues nada. Comenzamos con 7 días de análisis completamente gratuito 
+              <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto px-2">
+                No arriesgues nada. Comenzamos con 7 días de análisis completamente gratuito
                 para mostrarte el potencial de tu empresa.
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
                 <motion.button
-                  className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 inline-flex items-center space-x-2 shadow-lg"
+                  className="bg-primary-600 hover:bg-primary-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold text-base md:text-lg transition-all duration-200 inline-flex items-center space-x-2 shadow-lg"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => {
-                    document.getElementById('contacto')?.scrollIntoView({ 
-                      behavior: 'smooth' 
+                    document.getElementById('contacto')?.scrollIntoView({
+                      behavior: 'smooth'
                     });
                   }}
                 >
                   <span>Iniciar Análisis Gratuito</span>
-                  <ArrowRight size={20} />
+                  <ArrowRight size={18} className="md:w-5 md:h-5" />
                 </motion.button>
-                
-                <div className="flex items-center space-x-4 text-sm text-gray-400">
+
+                <div className="flex items-center gap-3 md:gap-4 text-xs md:text-sm text-gray-400">
                   <div className="flex items-center space-x-1">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
+                    <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-400" />
                     <span>Sin compromiso</span>
                   </div>
                   <div className="flex items-center space-x-1">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
+                    <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-400" />
                     <span>100% gratis</span>
                   </div>
                 </div>

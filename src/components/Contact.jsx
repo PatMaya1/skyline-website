@@ -106,71 +106,71 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contacto" className="py-20 bg-white-100 to-indigo-100">
+    <section id="contacto" className="py-10 md:py-20 bg-white-100 to-indigo-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
             Comienza Tu Transformación
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Estamos listos para analizar tu negocio y mostrarte el potencial de mejora. 
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto px-2">
+            Estamos listos para analizar tu negocio y mostrarte el potencial de mejora.
             El primer paso es completamente gratuito.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-12">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-8 text-white h-full">
-              <h3 className="text-2xl font-bold mb-6">
+            <div className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl p-6 md:p-8 text-white h-full">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">
                 ¿Por qué elegir Skyline?
               </h3>
-              
-              <div className="space-y-4 mb-8">
+
+              <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
                 {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-green-300 flex-shrink-0" />
-                    <span>{benefit}</span>
+                  <div key={index} className="flex items-center space-x-2 md:space-x-3">
+                    <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-300 flex-shrink-0" />
+                    <span className="text-sm md:text-base">{benefit}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 {contactInfo.map((item, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="flex items-start space-x-4"
+                    className="flex items-start space-x-3 md:space-x-4"
                   >
-                    <div className="bg-white/10 p-3 rounded-lg">
+                    <div className="bg-white/10 p-2 md:p-3 rounded-lg">
                       {item.icon}
                     </div>
                     <div>
-                      <h4 className="font-semibold">{item.title}</h4>
-                      <p className="text-lg">{item.info}</p>
-                      <p className="text-sm opacity-80">{item.subtitle}</p>
+                      <h4 className="font-semibold text-sm md:text-base">{item.title}</h4>
+                      <p className="text-base md:text-lg">{item.info}</p>
+                      <p className="text-xs md:text-sm opacity-80">{item.subtitle}</p>
                     </div>
                   </motion.div>
                 ))}
               </div>
 
-              <div className="mt-8 p-4 bg-white/10 rounded-lg">
+              <div className="mt-6 md:mt-8 p-3 md:p-4 bg-white/10 rounded-lg">
                 <div className="flex items-center space-x-2 mb-2">
-                  <Clock className="w-5 h-5" />
-                  <span className="font-semibold">Respuesta Rápida</span>
+                  <Clock className="w-4 h-4 md:w-5 md:h-5" />
+                  <span className="font-semibold text-sm md:text-base">Respuesta Rápida</span>
                 </div>
-                <p className="text-sm opacity-90">
-                  Nos comunicamos contigo en menos de 24 horas para programar 
+                <p className="text-xs md:text-sm opacity-90">
+                  Nos comunicamos contigo en menos de 24 horas para programar
                   tu análisis gratuito.
                 </p>
               </div>
@@ -182,15 +182,15 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="bg-gray-50 rounded-2xl p-8">
-              <div className="flex items-center space-x-3 mb-6">
-                <MessageSquare className="w-8 h-8 text-primary-600" />
-                <h3 className="text-2xl font-bold text-gray-900">
+            <div className="bg-gray-50 rounded-2xl p-6 md:p-8">
+              <div className="flex items-center space-x-2 md:space-x-3 mb-4 md:mb-6">
+                <MessageSquare className="w-6 h-6 md:w-8 md:h-8 text-primary-600" />
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900">
                   Solicita tu Análisis Gratuito
                 </h3>
               </div>
 
-              <form className="space-y-6" onSubmit={handleSubmit}>
+              <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                 {/* Mostrar mensaje de éxito */}
                 {isSuccess && (
                   <motion.div
@@ -223,9 +223,9 @@ const Contact = () => {
                   </motion.div>
                 )}
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
                       Nombre *
                     </label>
                     <input
@@ -233,14 +233,14 @@ const Contact = () => {
                       name="nombre"
                       value={formData.nombre}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                      className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
                       placeholder="Tu nombre completo"
                       required
                       disabled={isLoading}
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
                       Empresa *
                     </label>
                     <input
@@ -248,7 +248,7 @@ const Contact = () => {
                       name="empresa"
                       value={formData.empresa}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                      className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
                       placeholder="Nombre de tu empresa"
                       required
                       disabled={isLoading}
@@ -256,9 +256,9 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
                       Email *
                     </label>
                     <input
@@ -266,14 +266,14 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                      className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
                       placeholder="tu@email.com"
                       required
                       disabled={isLoading}
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
                       Teléfono
                     </label>
                     <input
@@ -281,7 +281,7 @@ const Contact = () => {
                       name="telefono"
                       value={formData.telefono}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                      className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
                       placeholder="+1 (555) 123-4567"
                       disabled={isLoading}
                     />
@@ -289,14 +289,14 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
                     Tamaño de la empresa
                   </label>
-                  <select 
+                  <select
                     name="tamanoEmpresa"
                     value={formData.tamanoEmpresa}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                    className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
                     disabled={isLoading}
                   >
                     <option value="">Selecciona el tamaño</option>
@@ -308,15 +308,15 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
                     Cuéntanos sobre tu negocio *
                   </label>
                   <textarea
-                    rows={4}
+                    rows={3}
                     name="mensaje"
                     value={formData.mensaje}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
+                    className="w-full px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
                     placeholder="Describe brevemente tu negocio y los principales desafíos que enfrentas..."
                     required
                     disabled={isLoading}
@@ -345,26 +345,26 @@ const Contact = () => {
 
                 <motion.button
                   type="submit"
-                  className="w-full bg-gradient-to-br from-blue-300 to-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-700 transition-colors duration-200 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-br from-blue-300 to-blue-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-primary-700 transition-colors duration-200 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   whileHover={!isLoading ? { scale: 1.02 } : {}}
                   whileTap={!isLoading ? { scale: 0.98 } : {}}
                   disabled={isLoading}
                 >
                   {isLoading ? (
                     <>
-                      <Loader className="w-5 h-5 animate-spin" />
+                      <Loader className="w-4 h-4 md:w-5 md:h-5 animate-spin" />
                       <span>Enviando...</span>
                     </>
                   ) : (
                     <>
                       <span>Solicitar Análisis Gratuito</span>
-                      <Send size={20} />
+                      <Send size={18} className="md:w-5 md:h-5" />
                     </>
                   )}
                 </motion.button>
               </form>
 
-              <p className="text-sm text-gray-500 text-center mt-4">
+              <p className="text-xs md:text-sm text-gray-500 text-center mt-3 md:mt-4">
                 * Campos obligatorios. Tu información está 100% protegida.
               </p>
             </div>
@@ -375,17 +375,17 @@ const Contact = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mt-16"
+          className="text-center mt-8 md:mt-16"
         >
-          <div className="bg-gray-50 rounded-xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className="bg-gray-50 rounded-xl p-6 md:p-8 max-w-4xl mx-auto">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">
               ¿Prefieres hablar directamente?
             </h3>
-            <p className="text-gray-600 mb-6">
-              Llámanos o envíanos un WhatsApp para programar una videollamada 
+            <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6 px-2">
+              Llámanos o envíanos un WhatsApp para programar una videollamada
               y conocer más sobre tu proyecto.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <motion.a
                 href="https://wa.me/528447704939?text=Hola%2C%20me%20interesa%20el%20análisis%20gratuito%20de%207%20días%20para%20mi%20empresa"
                 target="_blank"

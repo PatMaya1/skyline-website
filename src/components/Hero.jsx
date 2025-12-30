@@ -183,102 +183,102 @@ const AnimatedBackground = () => {
 
 const Hero = () => {
   return (
-    <section id="inicio" className="min-h-screen flex items-center bg-blue-100 to-indigo-100 pt-20 relative">
+    <section id="inicio" className="min-h-[calc(100vh-80px)] md:min-h-screen flex items-center bg-blue-100 to-indigo-100 pt-20 relative">
       <AnimatedBackground />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-20 relative z-20">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="bg-primary-100 text-primary-600 px-3 py-1 rounded-full text-sm font-medium">
+            <div className="flex items-center space-x-2 mb-4 md:mb-6">
+              <div className="bg-primary-100 text-primary-600 px-3 py-1 rounded-full text-xs md:text-sm font-medium">
                 ✨ Consultoría GRATUITA por tiempo limitado
               </div>
             </div>
-            
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
+
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-3 md:mb-4">
               Transformamos tu{' '}
               <span className="text-primary-600">negocio</span>{' '}
               con tecnología
             </h1>
-            
-            
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Automatizamos procesos y optimizamos operaciones para impulsar la productividad 
+
+
+            <p className="text-base md:text-xl text-gray-600 mb-6 md:mb-8 leading-relaxed">
+              Automatizamos procesos y optimizamos operaciones para impulsar la productividad
               de tu empresa. Comenzamos con una semana de análisis completamente gratuita.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-12">
               <motion.button
-                className="bg-primary-600 text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-700 transition-colors duration-200 flex items-center justify-center space-x-2"
+                className="bg-primary-600 text-black px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-primary-700 transition-colors duration-200 flex items-center justify-center space-x-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => {
-                  document.getElementById('contacto')?.scrollIntoView({ 
-                    behavior: 'smooth' 
+                  document.getElementById('contacto')?.scrollIntoView({
+                    behavior: 'smooth'
                   });
                 }}
               >
                 <span>Análisis Gratuito</span>
-                <ArrowRight size={20} />
+                <ArrowRight size={18} className="md:w-5 md:h-5" />
               </motion.button>
-              
+
               <motion.button
-                className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg hover:border-primary-600 hover:text-primary-600 transition-colors duration-200"
+                className="border-2 border-gray-300 text-gray-700 px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:border-primary-600 hover:text-primary-600 transition-colors duration-200"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => {
-                  document.getElementById('servicios')?.scrollIntoView({ 
-                    behavior: 'smooth' 
+                  document.getElementById('servicios')?.scrollIntoView({
+                    behavior: 'smooth'
                   });
                 }}
               >
                 Ver Servicios
               </motion.button>
             </div>
-            
-            <div className="flex items-center space-x-8">
+
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-8">
               <div className="flex items-center space-x-2">
-                <TrendingUp className="text-green-500" size={24} />
-                <span className="text-gray-700 font-medium">+40% Productividad</span>
+                <TrendingUp className="text-green-500" size={20} />
+                <span className="text-sm md:text-base text-gray-700 font-medium">+40% Productividad</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Target className="text-blue-500" size={24} />
-                <span className="text-gray-700 font-medium">100% Personalizado</span>
+                <Target className="text-blue-500" size={20} />
+                <span className="text-sm md:text-base text-gray-700 font-medium">100% Personalizado</span>
               </div>
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            className="relative hidden lg:block"
           >
-            <div className="bg-gradient-to-r from-white-600 to-blue-300 rounded-2xl shadow-2xl p-8 relative overflow-hidden">
-              
+            <div className="bg-gradient-to-r from-white-600 to-blue-300 rounded-2xl shadow-2xl p-6 md:p-8 relative overflow-hidden">
+
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">
                   ¿Listo para revolucionar tu negocio?
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-3 md:space-y-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span className="text-gray-700">Análisis completo de 7 días</span>
+                    <span className="text-sm md:text-base text-gray-700">Análisis completo de 7 días</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span className="text-gray-700">Propuesta personalizada</span>
+                    <span className="text-sm md:text-base text-gray-700">Propuesta personalizada</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span className="text-gray-700">Sin compromiso inicial</span>
+                    <span className="text-sm md:text-base text-gray-700">Sin compromiso inicial</span>
                   </div>
                 </div>
-              
+
               </div>
             </div>
           </motion.div>

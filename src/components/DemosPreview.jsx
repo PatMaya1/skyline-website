@@ -22,7 +22,7 @@ const DemosPreview = () => {
   const currentPlans = selectedCategory === 'websites' ? websitePlans : ecommercePlans;
 
   return (
-    <section id="demos" className="py-20 bg-white-100 to-indigo-100">
+    <section id="demos" className="py-10 md:py-20 bg-white-100 to-indigo-100">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-32 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl"></div>
@@ -36,30 +36,30 @@ const DemosPreview = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
-          <h2 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-blue-800 via-gray-800 to-blue-800 bg-clip-text text-transparent mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold bg-gradient-to-r from-blue-800 via-gray-800 to-blue-800 bg-clip-text text-transparent mb-4 md:mb-6 leading-tight">
             Planes Skyline
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 mb-8">
+          <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-2 md:px-4 mb-6 md:mb-8">
             Soluciones digitales completas para tu negocio.
             <span className="text-blue-600 font-semibold"> Elige la categoría y encuentra tu plan ideal.</span>
           </p>
 
           {/* Filtro de categorías */}
-          <div className="flex justify-center gap-4 flex-wrap">
+          <div className="flex justify-center gap-2 md:gap-4 flex-wrap">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-3 rounded-xl font-semibold text-base transition-all duration-300 flex items-center gap-2 ${
+                className={`px-4 md:px-6 py-2 md:py-3 rounded-xl font-semibold text-sm md:text-base transition-all duration-300 flex items-center gap-1 md:gap-2 ${
                   selectedCategory === category.id
                     ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg transform scale-105'
                     : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-blue-500 hover:text-blue-600'
                 }`}
               >
-                <span className="text-xl">{category.icon}</span>
-                {category.label}
+                <span className="text-lg md:text-xl">{category.icon}</span>
+                <span className="hidden sm:inline">{category.label}</span>
               </button>
             ))}
           </div>
@@ -67,7 +67,7 @@ const DemosPreview = () => {
 
         {/* Grid de planes resumidos */}
         {currentPlans.length > 0 ? (
-          <div className={`grid grid-cols-1 gap-8 mb-12 ${
+          <div className={`grid grid-cols-1 gap-6 md:gap-8 mb-8 md:mb-12 ${
             currentPlans.length === 1 ? 'md:grid-cols-1 max-w-md mx-auto' :
             currentPlans.length === 2 ? 'md:grid-cols-2 max-w-4xl mx-auto' :
             'md:grid-cols-3'
