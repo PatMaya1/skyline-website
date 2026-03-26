@@ -2,7 +2,10 @@
   {
     "id": "manufacturing-automation",
     "client": "Empresa manufacturera en Monterrey",
+    "title": "Automatización industrial reduce errores de producción en 85%",
+    "description": "Diagnóstico operativo y automatización de flujos de producción con dashboard de control en tiempo real para empresa manufacturera.",
     "industry": "Manufactura",
+    "image": "operations.jpg",
     "challenge": "Procesos de producción manuales generaban errores del 12% y retrasos de 3 días en entregas",
     "solution": "Diagnóstico operativo + automatización de flujos de producción + dashboard de control en tiempo real",
     "results": [
@@ -17,7 +20,10 @@
   {
     "id": "retail-analytics",
     "client": "Cadena de retail con 15 sucursales",
+    "title": "Analítica centralizada transforma operación de cadena retail",
+    "description": "Integración de sistemas POS y plataforma de BI centralizada con alertas automáticas de reabasto para cadena de retail.",
     "industry": "Retail",
+    "image": "data-analytics.jpg",
     "challenge": "Sin visibilidad unificada de inventario ni datos de venta, causando sobre-stock y desabasto simultáneo",
     "solution": "Integración de sistemas POS + plataforma de BI centralizada + alertas automáticas de reabasto",
     "results": [
@@ -30,9 +36,31 @@
     "duration": "3 meses"
   },
   {
+    "id": "sneaker-repair",
+    "client": "Sneaker Repair",
+    "title": "Cuando tu negocio crece más rápido que tus procesos",
+    "description": "Sistema integral de gestión operativa, comunicación automatizada y analítica para negocio de restauración de calzado en pleno crecimiento.",
+    "industry": "Servicios",
+    "image": "sneaker-repair",
+    "products": ["Sistema de tickets", "WhatsApp automatizado", "Portal de rastreo", "Dashboard analítico"],
+    "challenge": "Procesos manuales, comunicación reactiva por WhatsApp y cero visibilidad operativa en un negocio que no paraba de crecer",
+    "solution": "Sistema de tickets digital + WhatsApp automatizado + portal de rastreo para clientes + dashboard de analítica completo",
+    "results": [
+      { "metric": "100%", "label": "Visibilidad operativa en tiempo real" },
+      { "metric": "0", "label": "Pares extraviados desde implementación" },
+      { "metric": "16 sem", "label": "De idea a producción" }
+    ],
+    "quote": "Ya no puedo seguir así — y no tuve que hacerlo.",
+    "quoteAuthor": "Iker Mendoza, Fundador",
+    "duration": "16 semanas"
+  },
+  {
     "id": "fintech-cloud",
     "client": "Empresa fintech en Ciudad de México",
+    "title": "Migración cloud permite cumplimiento regulatorio sin frenar innovación",
+    "description": "Migración a AWS con arquitectura serverless e implementación de controles de seguridad regulatorios para fintech.",
     "industry": "Servicios Financieros",
+    "image": "cloud-security.jpg",
     "challenge": "Infraestructura legacy no cumplía requisitos regulatorios y frenaba el lanzamiento de nuevos productos",
     "solution": "Migración a AWS + arquitectura serverless + implementación de controles de seguridad regulatorios",
     "results": [

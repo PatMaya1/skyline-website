@@ -1,5 +1,16 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import caseStudies from '../../data/caseStudies.json';
+import readMoreArrow from '../../assets/figma/icons/read-more-arrow.svg';
+import sneakerRepairImg from '../../assets/sneaker_repair_landing.png';
+
+const serviceImages = import.meta.glob('../../assets/figma/services/*.jpg', { eager: true });
+
+function getCaseImage(filename) {
+  if (filename === 'sneaker-repair') return sneakerRepairImg;
+  const key = Object.keys(serviceImages).find(k => k.endsWith(filename));
+  return key ? serviceImages[key].default : '';
+}
 
 export default function CaseStudies() {
   return (
@@ -7,7 +18,7 @@ export default function CaseStudies() {
       <div className="max-w-[1076px] mx-auto px-4 xl:px-0">
         {/* Section Header */}
         <motion.div
-          className="flex flex-col gap-5 mb-10 md:mb-14 text-center"
+          className="flex flex-col gap-5 mb-10 md:mb-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -24,58 +35,37 @@ export default function CaseStudies() {
         {/* Cards */}
         <div className="grid grid-cols-12 gap-6 md:gap-8">
           {caseStudies.map((study, i) => (
-            <motion.div
+            <motion.article
               key={study.id}
-              className="col-span-12 md:col-span-4 bg-white shadow-sm flex flex-col"
+              className="col-span-12 md:col-span-6 flex flex-col"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
             >
-              {/* Industry badge + duration */}
-              <div className="px-8 pt-8 pb-4 flex items-center justify-between">
-                <span className="bg-accent/10 text-accent text-sm font-medium px-3 py-1">
-                  {study.industry}
-                </span>
-                <span className="text-navy/40 text-sm">
-                  {study.duration}
-                </span>
+              <div className="h-[240px] md:h-[320px] w-full relative overflow-hidden">
+                <img
+                  src={getCaseImage(study.image)}
+                  alt={study.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
               </div>
-
-              {/* Client + Challenge */}
-              <div className="px-8 pb-6 flex flex-col gap-3">
-                <h3 className="text-navy font-semibold text-lg">
-                  {study.client}
+              <div className="bg-white flex flex-col gap-4 p-6">
+                <h3 className="text-navy font-semibold text-lg md:text-xl leading-snug">
+                  {study.title}
                 </h3>
                 <p className="text-navy/60 text-sm leading-relaxed">
-                  {study.challenge}
+                  {study.description}
                 </p>
+                <Link
+                  to={`/casos/${study.id}`}
+                  className="flex items-center gap-2 text-navy/60 text-base hover:text-navy transition-colors group mt-1"
+                >
+                  <span>Leer más</span>
+                  <img src={readMoreArrow} alt="" className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                </Link>
               </div>
-
-              {/* Results metrics */}
-              <div className="px-8 py-6 bg-navy/[0.03] grid grid-cols-3 gap-2">
-                {study.results.map((result, j) => (
-                  <div key={j} className="flex flex-col gap-1 text-center">
-                    <span className="text-accent font-bold text-xl md:text-2xl">
-                      {result.metric}
-                    </span>
-                    <span className="text-navy/50 text-xs leading-tight">
-                      {result.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Quote */}
-              <div className="px-8 py-6 mt-auto border-t border-navy/5">
-                <p className="text-navy/50 text-sm italic mb-2">
-                  "{study.quote}"
-                </p>
-                <p className="text-navy/40 text-xs font-medium">
-                  — {study.quoteAuthor}
-                </p>
-              </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

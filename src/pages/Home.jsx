@@ -18,8 +18,8 @@ export default function Home() {
       <RightAdvice />
       <Methodology />
       <CaseStudies />
-      <Testimonials />
-      <LatestNews />
+      {/* <Testimonials /> */}
+      {/* <LatestNews /> */}
       <HomeContact />
       <HomeFooter />
     </div>
