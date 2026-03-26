@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import HomeHeader from './HomeHeader';
-import geometricShapes from '../../assets/figma/hero/geometric-shapes.svg';
-import businessWoman from '../../assets/figma/hero/business-woman.png';
+import logoBg from '../../assets/logos_skyline/logoblanco.png';
 import checkIcon from '../../assets/figma/icons/check-icon.svg';
 import data from '../../data/homepage.json';
 
@@ -12,9 +11,9 @@ export default function HomeHero() {
     <section className="bg-navy relative overflow-hidden min-h-[500px] lg:h-[680px]">
       <HomeHeader />
 
-      {/* Geometric shapes background */}
-      <div className="absolute -top-[95px] right-[40%] w-[500px] h-[500px] lg:w-[680px] lg:h-[680px] opacity-10 lg:opacity-30 rotate-[24deg] pointer-events-none">
-        <img src={geometricShapes} alt="" className="w-full h-full" />
+      {/* Logo background */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <img src={logoBg} alt="" className="w-[500px] lg:w-[680px] opacity-5" />
       </div>
 
       {/* Content */}
@@ -22,7 +21,7 @@ export default function HomeHero() {
         <div className="grid grid-cols-12 gap-6 items-center">
           {/* Text Content */}
           <motion.div
-            className="col-span-12 lg:col-span-5 flex flex-col gap-[60px] z-10"
+            className="col-span-12 lg:col-span-7 flex flex-col gap-[60px] z-10"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -72,19 +71,6 @@ export default function HomeHero() {
             </div>
           </motion.div>
 
-          {/* Business Woman Image */}
-          <motion.div
-            className="hidden lg:block lg:col-span-7 relative h-[471px] rounded-[80px] overflow-hidden z-10"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <img
-              src={businessWoman}
-              alt="Business professional"
-              className="absolute top-[-42px] left-[35px] w-[453px] h-[582px] object-cover"
-            />
-          </motion.div>
         </div>
       </div>
     </section>

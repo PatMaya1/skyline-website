@@ -1,5 +1,4 @@
 import HomeHero from '../components/home/HomeHero';
-import Counter from '../components/home/Counter';
 import HomeServices from '../components/home/HomeServices';
 import RightAdvice from '../components/home/RightAdvice';
 import Sectors from '../components/home/Sectors';
@@ -13,7 +12,6 @@ export default function Home() {
   return (
     <div className="bg-page min-h-screen">
       <HomeHero />
-      <Counter />
       <HomeServices />
       <RightAdvice />
       <Sectors />
