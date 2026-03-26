@@ -10,34 +10,34 @@ export default function HomeServices() {
       <div className="max-w-[1076px] mx-auto px-4 xl:px-0">
         {/* Section Header */}
         <motion.div
-          className="flex flex-col gap-5 mb-10 md:mb-[43px]"
+          className="grid grid-cols-12 gap-6 mb-10 md:mb-[43px]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-navy/60 text-base uppercase">
+          <p className="col-span-12 text-navy/60 text-base uppercase">
             {services.label}
           </p>
-          <div className="flex flex-col lg:flex-row items-start justify-between gap-6">
-            <h2 className="text-navy font-semibold text-3xl md:text-[40px] leading-tight max-w-[531px]">
-              {services.heading}
-            </h2>
-            <div className="flex flex-col gap-3 items-end max-w-[448px]">
-              <p className="text-navy/60 text-base leading-relaxed">
-                {services.description}
-              </p>
-              <a href="#" className="text-navy font-semibold text-base underline underline-offset-2 hover:text-accent transition-colors">
-                All services
-              </a>
-            </div>
+          <h2 className="col-span-12 lg:col-span-7 text-navy font-semibold text-3xl md:text-[40px] leading-tight">
+            {services.heading}
+          </h2>
+          <div className="col-span-12 lg:col-span-5 flex flex-col gap-3 lg:items-end">
+            <p className="text-navy/60 text-base leading-relaxed">
+              {services.description}
+            </p>
+            <a href="#" className="text-navy font-semibold text-base underline underline-offset-2 hover:text-accent transition-colors">
+              Todos los servicios
+            </a>
           </div>
         </motion.div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-10">
+        <div className="grid grid-cols-12 gap-6 md:gap-10">
           {services.cards.map((card, i) => (
-            <ServiceCard key={card.title} card={card} index={i} />
+            <div key={card.title} className="col-span-12 md:col-span-6 xl:col-span-4">
+              <ServiceCard card={card} index={i} />
+            </div>
           ))}
         </div>
       </div>

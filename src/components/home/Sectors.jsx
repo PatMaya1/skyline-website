@@ -18,34 +18,32 @@ export default function Sectors() {
       <div className="max-w-[1076px] mx-auto px-4 xl:px-0">
         {/* Section Header */}
         <motion.div
-          className="flex flex-col gap-5 mb-10"
+          className="grid grid-cols-12 gap-6 mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-navy/60 text-base uppercase">
+          <p className="col-span-12 text-navy/60 text-base uppercase">
             {sectors.label}
           </p>
-          <div className="flex flex-col lg:flex-row items-start justify-between gap-6">
-            <h2 className="text-navy font-semibold text-3xl md:text-[40px] leading-tight max-w-[531px]">
-              {sectors.heading}
-            </h2>
-            <div className="flex items-start gap-5 max-w-[526px]">
-              <img src={sectorsIcon} alt="" className="w-[60px] h-[60px] shrink-0" />
-              <p className="text-navy/60 text-base leading-relaxed">
-                {sectors.description}
-              </p>
-            </div>
+          <h2 className="col-span-12 lg:col-span-6 text-navy font-semibold text-3xl md:text-[40px] leading-tight">
+            {sectors.heading}
+          </h2>
+          <div className="col-span-12 lg:col-span-6 flex items-start gap-5">
+            <img src={sectorsIcon} alt="" className="w-[60px] h-[60px] shrink-0" />
+            <p className="text-navy/60 text-base leading-relaxed">
+              {sectors.description}
+            </p>
           </div>
         </motion.div>
 
         {/* Sectors Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-12 gap-4 md:gap-6">
           {sectors.items.map((item, i) => (
             <motion.div
               key={item.title}
-              className="relative size-full aspect-square overflow-hidden group cursor-pointer"
+              className="col-span-6 md:col-span-4 xl:col-span-3 relative aspect-square overflow-hidden group cursor-pointer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

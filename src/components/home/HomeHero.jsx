@@ -18,11 +18,11 @@ export default function HomeHero() {
       </div>
 
       {/* Content */}
-      <div className="max-w-[1076px] mx-auto px-4 xl:px-0 pt-28 md:pt-36 lg:pt-[140px] pb-12 lg:pb-0 flex items-center">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between w-full gap-8 lg:gap-0">
+      <div className="max-w-[1076px] mx-auto px-4 xl:px-0 pt-28 md:pt-36 lg:pt-[140px] pb-12 lg:pb-0">
+        <div className="grid grid-cols-12 gap-6 items-center">
           {/* Text Content */}
           <motion.div
-            className="w-full lg:w-[474px] flex flex-col gap-[60px] z-10"
+            className="col-span-12 lg:col-span-5 flex flex-col gap-[60px] z-10"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -74,7 +74,7 @@ export default function HomeHero() {
 
           {/* Business Woman Image */}
           <motion.div
-            className="hidden lg:block relative w-[524px] h-[471px] rounded-[80px] overflow-hidden shrink-0 z-10"
+            className="hidden lg:block lg:col-span-7 relative h-[471px] rounded-[80px] overflow-hidden z-10"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}

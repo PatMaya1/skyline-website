@@ -8,11 +8,11 @@ export default function Counter() {
 
   return (
     <section ref={ref} className="bg-white">
-      <div className="max-w-[1076px] mx-auto px-4 xl:px-0 py-12 md:py-[52px] flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4">
+      <div className="max-w-[1076px] mx-auto px-4 xl:px-0 py-12 md:py-[52px] grid grid-cols-12 gap-6">
         {data.counter.stats.map((stat, i) => (
           <motion.div
             key={stat.label}
-            className="flex flex-col items-center text-center"
+            className="col-span-6 md:col-span-3 flex flex-col items-center text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: i * 0.15 }}

@@ -7,10 +7,10 @@ export default function ProgressiveSolutions() {
 
   return (
     <section className="bg-navy overflow-hidden">
-      <div className="max-w-[1076px] mx-auto px-4 xl:px-0 py-16 md:py-[120px] flex flex-col lg:flex-row items-center justify-between gap-10">
+      <div className="max-w-[1076px] mx-auto px-4 xl:px-0 py-16 md:py-[120px] grid grid-cols-12 gap-6 items-center">
         {/* Text */}
         <motion.div
-          className="flex flex-col gap-6 w-full lg:max-w-[526px]"
+          className="col-span-12 lg:col-span-7 flex flex-col gap-6"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -34,7 +34,7 @@ export default function ProgressiveSolutions() {
 
         {/* Image */}
         <motion.div
-          className="relative w-[300px] h-[300px] md:w-[416px] md:h-[416px] shrink-0"
+          className="col-span-12 lg:col-span-5 relative aspect-square max-w-[416px] mx-auto lg:mx-0 lg:ml-auto"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
