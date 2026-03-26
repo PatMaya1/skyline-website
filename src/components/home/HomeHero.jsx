@@ -1,0 +1,92 @@
+import { motion } from 'framer-motion';
+import HomeHeader from './HomeHeader';
+import geometricShapes from '../../assets/figma/hero/geometric-shapes.svg';
+import businessWoman from '../../assets/figma/hero/business-woman.png';
+import checkIcon from '../../assets/figma/icons/check-icon.svg';
+import data from '../../data/homepage.json';
+
+export default function HomeHero() {
+  const { hero } = data;
+
+  return (
+    <section className="bg-navy relative overflow-hidden min-h-[500px] lg:h-[680px]">
+      <HomeHeader />
+
+      {/* Geometric shapes background */}
+      <div className="absolute -top-[95px] right-[40%] w-[500px] h-[500px] lg:w-[680px] lg:h-[680px] opacity-10 lg:opacity-30 rotate-[24deg] pointer-events-none">
+        <img src={geometricShapes} alt="" className="w-full h-full" />
+      </div>
+
+      {/* Content */}
+      <div className="max-w-[1076px] mx-auto px-4 xl:px-0 pt-28 md:pt-36 lg:pt-[140px] pb-12 lg:pb-0 flex items-center">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between w-full gap-8 lg:gap-0">
+          {/* Text Content */}
+          <motion.div
+            className="w-full lg:w-[474px] flex flex-col gap-[60px] z-10"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex flex-col gap-5">
+              <p className="text-white/80 text-base uppercase tracking-wide">
+                {hero.label}
+              </p>
+              <h1 className="text-white font-semibold text-3xl md:text-[40px] leading-tight">
+                {hero.heading}
+              </h1>
+              <p className="text-white/80 text-base leading-relaxed">
+                {hero.description}
+              </p>
+            </div>
+
+            {/* Feature Tags */}
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-wrap gap-5">
+                {hero.features.slice(0, 2).map((feature) => (
+                  <div key={feature} className="flex items-center gap-2">
+                    <div className="w-11 h-11 flex items-center justify-center p-2">
+                      <img src={checkIcon} alt="" className="w-7 h-7" />
+                    </div>
+                    <span className="text-white font-semibold text-base">{feature}</span>
+                  </div>
+                ))}
+              </div>
+              {hero.features[2] && (
+                <div className="flex items-center gap-2">
+                  <div className="w-11 h-11 flex items-center justify-center p-2">
+                    <img src={checkIcon} alt="" className="w-7 h-7" />
+                  </div>
+                  <span className="text-white font-semibold text-base">{hero.features[2]}</span>
+                </div>
+              )}
+            </div>
+
+            {/* Buttons */}
+            <div className="flex gap-5">
+              <button className="bg-accent text-white font-semibold text-lg md:text-xl h-[50px] w-[192px] flex items-center justify-center hover:bg-accent/90 transition-colors">
+                {hero.cta.primary}
+              </button>
+              <button className="border-2 border-accent text-accent font-semibold text-lg md:text-xl h-[50px] w-[192px] flex items-center justify-center hover:bg-accent/10 transition-colors">
+                {hero.cta.secondary}
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Business Woman Image */}
+          <motion.div
+            className="hidden lg:block relative w-[524px] h-[471px] rounded-[80px] overflow-hidden shrink-0 z-10"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <img
+              src={businessWoman}
+              alt="Business professional"
+              className="absolute top-[-42px] left-[35px] w-[453px] h-[582px] object-cover"
+            />
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}

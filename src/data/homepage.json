@@ -1,0 +1,130 @@
+{
+  "hero": {
+    "label": "Business consulting",
+    "heading": "Ultimate Solutions for Modern Businesses",
+    "description": "We provide expert consulting services to help businesses navigate complex challenges, optimize operations, and achieve sustainable growth in today's competitive landscape.",
+    "features": ["Business consulting", "Strategic excellence", "Innovation"],
+    "cta": { "primary": "Learn more", "secondary": "Get started" }
+  },
+  "counter": {
+    "stats": [
+      { "value": "10k+", "label": "Supported businesses" },
+      { "value": "12k+", "label": "Projects done" },
+      { "value": "4k+", "label": "Clients worldwide" }
+    ]
+  },
+  "services": {
+    "label": "Business consulting",
+    "heading": "What services do we offer for your business",
+    "description": "We offer a comprehensive range of consulting services designed to address the unique needs of modern businesses, from strategy and finance to technology and human resources.",
+    "cards": [
+      {
+        "title": "Marketing Strategy",
+        "description": "Develop data-driven marketing strategies that increase brand visibility and drive measurable business growth."
+      },
+      {
+        "title": "Financial management",
+        "description": "Optimize your financial operations with expert guidance on budgeting, forecasting, and investment strategies."
+      },
+      {
+        "title": "Business Strategy",
+        "description": "Create actionable roadmaps that align your business goals with market opportunities for sustainable success."
+      },
+      {
+        "title": "Sales and Marketing",
+        "description": "Transform your sales pipeline with proven methodologies that convert prospects into loyal customers."
+      },
+      {
+        "title": "Digital Technology",
+        "description": "Leverage cutting-edge technology solutions to streamline operations and gain competitive advantages."
+      },
+      {
+        "title": "Human Resources",
+        "description": "Build high-performing teams with strategic HR practices that attract, develop, and retain top talent."
+      }
+    ]
+  },
+  "rightAdvice": {
+    "label": "Business consulting",
+    "heading": "The right advice for a brighter financial future",
+    "features": [
+      {
+        "title": "Advisory services",
+        "description": "Expert guidance on complex business decisions, mergers and acquisitions, and organizational restructuring."
+      },
+      {
+        "title": "Financing",
+        "description": "Comprehensive financing solutions including debt structuring, equity planning, and capital optimization."
+      },
+      {
+        "title": "Capital",
+        "description": "Strategic capital management to maximize returns and ensure long-term financial stability for your business."
+      }
+    ]
+  },
+  "sectors": {
+    "label": "Business consulting",
+    "heading": "What sectors of the economy do we serve",
+    "description": "We provide specialized consulting services across diverse industries, leveraging deep sector expertise to deliver tailored solutions.",
+    "items": [
+      { "title": "Real Estate", "image": "real-estate.png" },
+      { "title": "Agriculture", "image": "agriculture.png" },
+      { "title": "Travel", "image": "travel.png" },
+      { "title": "Automotive", "image": "automotive.png" },
+      { "title": "Financial Services", "image": "financial.png" },
+      { "title": "Construction", "image": "construction.png" },
+      { "title": "Retail", "image": "retail.png" },
+      { "title": "Logistic", "image": "logistic.png" }
+    ]
+  },
+  "progressive": {
+    "label": "Business consulting",
+    "heading": "Progressive solutions for progressive businesses.",
+    "description": "Our forward-thinking approach combines innovation with proven methodologies to deliver transformative results. We partner with ambitious organizations to build resilient strategies that adapt to evolving market conditions and drive sustainable growth.",
+    "cta": "Learn more"
+  },
+  "testimonials": {
+    "heading": "Testimonials",
+    "quote": "Working with Business Consulting has been transformative for our organization. Their strategic insights and hands-on approach helped us navigate complex market challenges and achieve growth we didn't think was possible. The team's expertise and dedication are truly exceptional.",
+    "author": "Lorene Hudson",
+    "role": "CEO / Ritchie Group"
+  },
+  "news": {
+    "label": "Business consulting",
+    "heading": "Latest news",
+    "articles": [
+      {
+        "date": "25.01.24",
+        "category": "Business consulting",
+        "title": "Building business agility begins with culture",
+        "image": "article-1.png"
+      },
+      {
+        "date": "25.01.24",
+        "category": "Business consulting",
+        "title": "Strategies to protect your profits",
+        "image": "article-2.png"
+      },
+      {
+        "date": "25.01.24",
+        "category": "Business consulting",
+        "title": "We Bring Flexibility & Cost Efficiency",
+        "image": "article-3.png"
+      }
+    ]
+  },
+  "footer": {
+    "description": "We provide expert business consulting services to help organizations achieve sustainable growth and navigate complex challenges with confidence.",
+    "services": ["Marketing Strategy", "Financial management", "Business Strategy", "Sales and Marketing", "Human Resources"],
+    "links": ["Home", "About", "Blog", "Contact", "F.A.Q"],
+    "newsletter": {
+      "title": "Subscribe for our newsletter",
+      "subtitle": "Get the latest insights delivered to your inbox"
+    },
+    "contact": {
+      "address": "8592 Fairground St. Tallahassee, FL 32303",
+      "email": "contact@businessconsulting.com",
+      "phone": "(863) 267-3634"
+    }
+  }
+}

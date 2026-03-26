@@ -3,6 +3,11 @@ export default {
   theme: {
     extend: {
       colors: {
+        navy: '#000d51',
+        accent: '#2460fd',
+        'accent-dark': '#0d4ae6',
+        page: '#f3f3f3',
+        light: '#f7f6f6',
         primary: {
           50: '#eff6ff',
           100: '#dbeafe',
@@ -17,7 +22,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Albert Sans', 'system-ui', 'sans-serif'],
+        nav: ['Inter', 'system-ui', 'sans-serif'],
       },
     },
   },

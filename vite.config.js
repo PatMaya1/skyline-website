@@ -82,9 +82,9 @@ export default defineConfig({
           'lucide-react': ['lucide-react'],
           // Agrupar componentes grandes
           'components': [
-            './src/components/Technologies.jsx',
-            './src/components/Hero.jsx',
-            './src/components/Process.jsx'
+            './src/components/home/HomeHero.jsx',
+            './src/components/home/HomeServices.jsx',
+            './src/components/home/Sectors.jsx'
           ]
         }
       }

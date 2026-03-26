@@ -1,25 +1,27 @@
-import Header from '../components/Header';
-import Hero from '../components/Hero';
-import Services from '../components/Services';
-import Technologies from '../components/Technologies';
-import Process from '../components/Process';
-import DemosPreview from '../components/DemosPreview';
-import Contact from '../components/Contact';
-import Footer from '../components/Footer';
+import HomeHero from '../components/home/HomeHero';
+import Counter from '../components/home/Counter';
+import HomeServices from '../components/home/HomeServices';
+import RightAdvice from '../components/home/RightAdvice';
+import Sectors from '../components/home/Sectors';
+import ProgressiveSolutions from '../components/home/ProgressiveSolutions';
+import Testimonials from '../components/home/Testimonials';
+import LatestNews from '../components/home/LatestNews';
+import LogoBar from '../components/home/LogoBar';
+import HomeFooter from '../components/home/HomeFooter';
 
-function Home() {
+export default function Home() {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <Hero />
-      <Services />
-      <Technologies />
-      <Process />
-      <DemosPreview />
-      <Contact />
-      <Footer />
+    <div className="bg-page min-h-screen">
+      <HomeHero />
+      <Counter />
+      <HomeServices />
+      <RightAdvice />
+      <Sectors />
+      <ProgressiveSolutions />
+      <Testimonials />
+      <LatestNews />
+      <LogoBar />
+      <HomeFooter />
     </div>
   );
 }
-
-export default Home;
