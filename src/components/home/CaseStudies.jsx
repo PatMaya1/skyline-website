@@ -3,14 +3,12 @@ import { Link } from 'react-router-dom';
 import caseStudies from '../../data/caseStudies.json';
 import readMoreArrow from '../../assets/figma/icons/read-more-arrow.svg';
 import sneakerRepairImg from '../../assets/sneaker_repair_landing.png';
+import directSteelImg from '../../assets/direct_steel_landing.png';
 
-const serviceImages = import.meta.glob('../../assets/figma/services/*.jpg', { eager: true });
-
-function getCaseImage(filename) {
-  if (filename === 'sneaker-repair') return sneakerRepairImg;
-  const key = Object.keys(serviceImages).find(k => k.endsWith(filename));
-  return key ? serviceImages[key].default : '';
-}
+const imageMap = {
+  'sneaker-repair': sneakerRepairImg,
+  'direct-steel': directSteelImg,
+};
 
 export default function CaseStudies() {
   return (
@@ -45,7 +43,7 @@ export default function CaseStudies() {
             >
               <div className="h-[240px] md:h-[320px] w-full relative overflow-hidden">
                 <img
-                  src={getCaseImage(study.image)}
+                  src={imageMap[study.image]}
                   alt={study.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />

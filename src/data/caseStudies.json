@@ -1,41 +1,5 @@
 [
   {
-    "id": "manufacturing-automation",
-    "client": "Empresa manufacturera en Monterrey",
-    "title": "Automatización industrial reduce errores de producción en 85%",
-    "description": "Diagnóstico operativo y automatización de flujos de producción con dashboard de control en tiempo real para empresa manufacturera.",
-    "industry": "Manufactura",
-    "image": "operations.jpg",
-    "challenge": "Procesos de producción manuales generaban errores del 12% y retrasos de 3 días en entregas",
-    "solution": "Diagnóstico operativo + automatización de flujos de producción + dashboard de control en tiempo real",
-    "results": [
-      { "metric": "85%", "label": "Reducción en errores de producción" },
-      { "metric": "40%", "label": "Mejora en tiempo de entrega" },
-      { "metric": "3x", "label": "ROI en los primeros 6 meses" }
-    ],
-    "quote": "Skyline no solo nos implementó tecnología — nos ayudó a repensar cómo operamos.",
-    "quoteAuthor": "Director de Operaciones",
-    "duration": "4 meses"
-  },
-  {
-    "id": "retail-analytics",
-    "client": "Cadena de retail con 15 sucursales",
-    "title": "Analítica centralizada transforma operación de cadena retail",
-    "description": "Integración de sistemas POS y plataforma de BI centralizada con alertas automáticas de reabasto para cadena de retail.",
-    "industry": "Retail",
-    "image": "data-analytics.jpg",
-    "challenge": "Sin visibilidad unificada de inventario ni datos de venta, causando sobre-stock y desabasto simultáneo",
-    "solution": "Integración de sistemas POS + plataforma de BI centralizada + alertas automáticas de reabasto",
-    "results": [
-      { "metric": "28%", "label": "Reducción en costos de inventario" },
-      { "metric": "95%", "label": "Disponibilidad de producto en tienda" },
-      { "metric": "$2.1M", "label": "Ahorro anual en sobre-stock" }
-    ],
-    "quote": "Por primera vez tenemos datos reales para tomar decisiones de negocio.",
-    "quoteAuthor": "CEO",
-    "duration": "3 meses"
-  },
-  {
     "id": "sneaker-repair",
     "client": "Sneaker Repair",
     "title": "Cuando tu negocio crece más rápido que tus procesos",
@@ -55,21 +19,22 @@
     "duration": "16 semanas"
   },
   {
-    "id": "fintech-cloud",
-    "client": "Empresa fintech en Ciudad de México",
-    "title": "Migración cloud permite cumplimiento regulatorio sin frenar innovación",
-    "description": "Migración a AWS con arquitectura serverless e implementación de controles de seguridad regulatorios para fintech.",
-    "industry": "Servicios Financieros",
-    "image": "cloud-security.jpg",
-    "challenge": "Infraestructura legacy no cumplía requisitos regulatorios y frenaba el lanzamiento de nuevos productos",
-    "solution": "Migración a AWS + arquitectura serverless + implementación de controles de seguridad regulatorios",
+    "id": "direct-steel",
+    "client": "Direct Steel",
+    "title": "Presencia digital profesional para empresa industrial internacional",
+    "description": "Sitio web corporativo bilingüe y configuración de Google Workspace para empresa de producción y comercialización de lingotes de aluminio.",
+    "industry": "Manufactura Industrial",
+    "image": "direct-steel",
+    "products": ["Sitio web corporativo", "Google Workspace"],
+    "challenge": "Una empresa industrial consolidada necesitaba una presencia digital a la altura de su operación y herramientas de comunicación profesionales",
+    "solution": "Diseño y desarrollo del sitio web corporativo bilingüe + configuración de Google Workspace con dominio propio",
     "results": [
-      { "metric": "99.9%", "label": "Disponibilidad del servicio" },
-      { "metric": "60%", "label": "Reducción en costos de infraestructura" },
-      { "metric": "2x", "label": "Velocidad de lanzamiento de productos" }
+      { "metric": "2", "label": "Idiomas: sitio completamente bilingüe" },
+      { "metric": "100%", "label": "Comunicación corporativa profesionalizada" },
+      { "metric": "1", "label": "Plataforma digital lista para operar" }
     ],
-    "quote": "Nos ayudaron a cumplir regulación sin sacrificar velocidad de innovación.",
-    "quoteAuthor": "CTO",
-    "duration": "5 meses"
+    "quote": "",
+    "quoteAuthor": "",
+    "duration": ""
   }
 ]

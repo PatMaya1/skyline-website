@@ -4,13 +4,13 @@ import { ArrowLeft } from 'lucide-react';
 import caseStudies from '../data/caseStudies.json';
 import HomeHeader from '../components/home/HomeHeader';
 import HomeFooter from '../components/home/HomeFooter';
+import sneakerRepairImg from '../assets/sneaker_repair_landing.png';
+import directSteelImg from '../assets/direct_steel_landing.png';
 
-const caseImages = import.meta.glob('../assets/figma/services/*.jpg', { eager: true });
-
-function getCaseImage(filename) {
-  const key = Object.keys(caseImages).find(k => k.endsWith(filename));
-  return key ? caseImages[key].default : '';
-}
+const imageMap = {
+  'sneaker-repair': sneakerRepairImg,
+  'direct-steel': directSteelImg,
+};
 
 export default function CaseStudyDetail() {
   const { id } = useParams();
@@ -38,7 +38,7 @@ export default function CaseStudyDetail() {
       {/* Hero Image */}
       <div className="w-full h-[300px] md:h-[420px] relative overflow-hidden">
         <img
-          src={getCaseImage(study.image)}
+          src={imageMap[study.image]}
           alt={study.title}
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -109,15 +109,17 @@ export default function CaseStudyDetail() {
             </motion.div>
 
             {/* Quote */}
-            <motion.blockquote
-              className="border-l-4 border-accent pl-6 py-2"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.4 }}
-            >
-              <p className="text-navy/70 text-lg italic mb-3">"{study.quote}"</p>
-              <cite className="text-navy/40 text-sm font-medium not-italic">— {study.quoteAuthor}</cite>
-            </motion.blockquote>
+            {study.quote && (
+              <motion.blockquote
+                className="border-l-4 border-accent pl-6 py-2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
+              >
+                <p className="text-navy/70 text-lg italic mb-3">"{study.quote}"</p>
+                <cite className="text-navy/40 text-sm font-medium not-italic">— {study.quoteAuthor}</cite>
+              </motion.blockquote>
+            )}
           </div>
 
           {/* Results Sidebar */}

@@ -1,9 +1,20 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, Ticket, MessageSquare, Eye, BarChart3 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Ticket, MessageSquare, Eye, BarChart3 } from 'lucide-react';
 import HomeHeader from '../components/home/HomeHeader';
 import HomeFooter from '../components/home/HomeFooter';
 import sneakerHero from '../assets/sneaker_repair_landing.png';
+import carouselPanel from '../assets/sneaker_carousel/sneaker_repair_panel.png';
+import carouselTracking from '../assets/sneaker_carousel/sneaker_repair_tracking.png';
+import carouselWhatsapp from '../assets/sneaker_carousel/sneaker_repair_whatsapp.png';
+
+const carouselSlides = [
+  { src: sneakerHero, alt: 'Página principal', label: 'Página principal', mobile: false },
+  { src: carouselPanel, alt: 'Panel de administración', label: 'Panel de administración', mobile: false },
+  { src: carouselTracking, alt: 'Portal de rastreo', label: 'Portal de rastreo', mobile: false },
+  { src: carouselWhatsapp, alt: 'WhatsApp automatizado', label: 'WhatsApp automatizado', mobile: true },
+];
 
 const fade = {
   initial: { opacity: 0, y: 20 },
@@ -25,15 +36,6 @@ function ImagePlaceholder({ children, className = '' }) {
 function SectionDivider() {
   return <div className="w-16 h-px bg-navy/10 mx-auto my-16 md:my-24" />;
 }
-
-const sprintData = [
-  { sprints: '1–2', label: 'Núcleo del sistema', desc: 'Check-in digital, cola de trabajo, priorización automática' },
-  { sprints: '3–4', label: 'Comunicación automatizada', desc: 'WhatsApp integrado, notificaciones por etapa' },
-  { sprints: '5–6', label: 'Portal y analítica', desc: 'Rastreo en tiempo real, dashboard operativo' },
-  { sprints: '7–8', label: 'Optimización y lanzamiento', desc: 'Programa de lealtad, alertas, refinamiento' },
-];
-
-const afterSteps = ['Check-in digital', 'Priorización automática', 'WhatsApp automático', 'Rastreo en portal', 'Entrega a tiempo', 'Datos al dashboard'];
 
 const snapshotInfo = [
   { label: 'Cliente', value: 'Sneaker Repair (Iker Mendoza, Fundador)' },
@@ -64,33 +66,107 @@ const compareData = [
   { dim: 'Datos para decisiones', before: 'Cero', after: 'Ingresos por servicio, top clientes, capacidad' },
 ];
 
+function ScreenshotCarousel() {
+  const [current, setCurrent] = useState(0);
+  const slide = carouselSlides[current];
+
+  const prev = () => setCurrent((c) => (c === 0 ? carouselSlides.length - 1 : c - 1));
+  const next = () => setCurrent((c) => (c === carouselSlides.length - 1 ? 0 : c + 1));
+
+  return (
+    <motion.div {...fade}>
+      <p className="text-navy/40 text-xs uppercase tracking-wider mb-5">La plataforma</p>
+
+      <div className="relative bg-white rounded-sm shadow-sm overflow-hidden">
+        {/* Image area */}
+        <div className={`relative flex items-center justify-center overflow-hidden ${slide.mobile ? 'py-8 md:py-12 bg-navy/[0.02]' : ''}`}>
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={current}
+              src={slide.src}
+              alt={slide.alt}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className={slide.mobile
+                ? 'h-[480px] md:h-[600px] w-auto object-contain rounded-xl shadow-lg'
+                : 'w-full h-auto'
+              }
+            />
+          </AnimatePresence>
+        </div>
+
+        {/* Controls */}
+        <div className="flex items-center justify-between p-4 border-t border-navy/5">
+          <button
+            onClick={prev}
+            className="w-9 h-9 flex items-center justify-center text-navy/40 hover:text-navy transition-colors"
+            aria-label="Anterior"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          <div className="flex items-center gap-4">
+            <span className="text-navy font-medium text-sm">{slide.label}</span>
+            <span className="text-navy/30 text-xs">{current + 1} / {carouselSlides.length}</span>
+          </div>
+
+          <button
+            onClick={next}
+            className="w-9 h-9 flex items-center justify-center text-navy/40 hover:text-navy transition-colors"
+            aria-label="Siguiente"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+
+      {/* Dots + link */}
+      <div className="flex items-center justify-between mt-4">
+        <div className="flex gap-2">
+          {carouselSlides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-2 h-2 rounded-full transition-colors ${i === current ? 'bg-accent' : 'bg-navy/15'}`}
+              aria-label={`Slide ${i + 1}`}
+            />
+          ))}
+        </div>
+        <a
+          href="https://www.sneakerrepair.mx/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-accent text-sm font-medium hover:text-accent/80 transition-colors inline-flex items-center gap-1.5"
+        >
+          Visitar sneakerrepair.mx
+          <ArrowRight className="w-3.5 h-3.5" />
+        </a>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function SneakerRepairCase() {
   return (
     <div className="bg-page min-h-screen">
       <HomeHeader />
 
       {/* ── 1. Hero ── */}
-      <div className="w-full h-[340px] md:h-[480px] relative overflow-hidden">
-        <img
-          src={sneakerHero}
-          alt="Sneaker Repair"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/30 to-transparent" />
-        <div className="absolute inset-0 flex items-end">
-          <div className="max-w-[1076px] mx-auto px-4 xl:px-0 w-full pb-10 md:pb-14">
-            <motion.div {...fade}>
-              <span className="bg-accent text-white text-sm font-medium px-3 py-1 inline-block mb-4">
-                Servicios | Restauración de calzado
-              </span>
-              <h1 className="text-white font-semibold text-2xl md:text-[44px] leading-tight max-w-3xl">
-                De libretas y caos a control total en 16 semanas
-              </h1>
-              <p className="text-white/70 text-lg md:text-xl mt-4 max-w-2xl">
-                Sneaker Repair × Skyline IT Consulting
-              </p>
-            </motion.div>
-          </div>
+      <div className="w-full bg-navy py-20 md:py-28">
+        <div className="max-w-[1076px] mx-auto px-4 xl:px-0">
+          <motion.div {...fade}>
+            <span className="bg-accent text-white text-sm font-medium px-3 py-1 inline-block mb-4">
+              Servicios | Restauración de calzado
+            </span>
+            <h1 className="text-white font-semibold text-2xl md:text-[44px] leading-tight max-w-3xl">
+              De libretas y caos a control total en 16 semanas
+            </h1>
+            <p className="text-white/70 text-lg md:text-xl mt-4 max-w-2xl">
+              Sneaker Repair × Skyline IT Consulting
+            </p>
+          </motion.div>
         </div>
       </div>
 
@@ -161,45 +237,34 @@ export default function SneakerRepairCase() {
         <SectionDivider />
 
         {/* ── 4. La solución ── */}
-        <motion.div {...fade}>
-          <h2 className="text-navy font-semibold text-2xl md:text-3xl mb-4">La solución</h2>
-          <p className="text-navy/60 leading-relaxed mb-8">
-            Diseñamos un plan de 16 semanas en 8 sprints. Cada dos semanas Iker veía avances reales y nos daba retroalimentación. Nada se desarrolló en un vacío.
+        <motion.div className="text-center" {...fade}>
+          <p className="text-navy/40 text-xs uppercase tracking-wider mb-4">La solución</p>
+          <h2 className="text-navy font-semibold text-2xl md:text-3xl mb-4">
+            Un plan de 16 semanas en 8 sprints
+          </h2>
+          <p className="text-navy/60 leading-relaxed max-w-2xl mx-auto">
+            Cada dos semanas Iker veía avances reales y nos daba retroalimentación. Nada se desarrolló en un vacío.
           </p>
         </motion.div>
 
-        {/* Sprint timeline */}
-        <motion.div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10" {...fade}>
-          {sprintData.map((s, i) => (
-            <div key={i} className="bg-white p-5 border-t-[3px] border-accent">
-              <p className="text-accent font-bold text-sm mb-1">Sprint {s.sprints}</p>
-              <p className="text-navy font-semibold text-sm mb-2">{s.label}</p>
-              <p className="text-navy/50 text-xs leading-relaxed">{s.desc}</p>
+        {/* Feature cards — Figma-style centered grid */}
+        <motion.div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-navy/5 mt-12" {...fade}>
+          {features.map((f) => (
+            <div key={f.title} className="bg-page p-8 md:p-10 flex flex-col items-center text-center gap-4">
+              <div className="w-12 h-12 flex items-center justify-center">
+                <f.icon className="w-7 h-7 text-navy" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-navy font-semibold text-lg">{f.title}</h3>
+              <p className="text-navy/50 text-sm leading-relaxed max-w-xs">{f.desc}</p>
             </div>
           ))}
         </motion.div>
 
-        {/* Feature grid + dashboard image side by side */}
-        <div className="grid grid-cols-12 gap-6 md:gap-12">
-          <motion.div className="col-span-12 md:col-span-7 grid grid-cols-1 gap-4" {...fade}>
-            {features.map((f) => (
-              <div key={f.title} className="bg-white p-6 flex gap-4">
-                <div className="w-10 h-10 bg-accent/10 flex items-center justify-center shrink-0">
-                  <f.icon className="w-5 h-5 text-accent" />
-                </div>
-                <div>
-                  <h3 className="text-navy font-semibold text-sm mb-1">{f.title}</h3>
-                  <p className="text-navy/50 text-sm leading-relaxed">{f.desc}</p>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-          <motion.div className="col-span-12 md:col-span-5" {...fade}>
-            <ImagePlaceholder className="h-full min-h-[300px]">
-              Mockup del dashboard: gráfica de tendencia de órdenes, métricas clave, alerta de capacidad visible.
-            </ImagePlaceholder>
-          </motion.div>
-        </div>
+
+        <SectionDivider />
+
+        {/* ── Screenshot Carousel ── */}
+        <ScreenshotCarousel />
 
         <SectionDivider />
 
@@ -256,57 +321,31 @@ export default function SneakerRepairCase() {
           ))}
         </motion.div>
 
-        {/* After flow diagram */}
-        <motion.div className="bg-white p-6 md:p-8" {...fade}>
-          <p className="text-navy/40 text-xs uppercase tracking-wider mb-5">Flujo actual</p>
-          <div className="flex flex-wrap items-center gap-2">
-            {afterSteps.map((step, i) => (
-              <div key={step} className="flex items-center gap-2">
-                <span className="bg-accent/10 text-accent text-sm font-medium px-3 py-1.5 whitespace-nowrap">
-                  {step}
-                </span>
-                {i < afterSteps.length - 1 && (
-                  <ArrowRight className="w-3.5 h-3.5 text-accent/40 shrink-0" />
-                )}
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        <SectionDivider />
-
-        {/* ── 6. Resultados ── */}
-        <motion.div {...fade}>
-          <h2 className="text-navy font-semibold text-2xl md:text-3xl mb-8">Resultados</h2>
-          <div className="grid grid-cols-3 gap-6 text-center mb-8">
-            {metrics.map((m) => (
-              <div key={m.label}>
-                <p className="text-accent font-bold text-3xl md:text-[56px] leading-none mb-2">{m.value}</p>
-                <p className="text-navy/50 text-sm leading-tight">{m.label}</p>
-              </div>
-            ))}
-          </div>
-          <p className="text-navy/60 leading-relaxed">
-            Hoy, Sneaker Repair opera con un nivel de control que antes era impensable para un negocio de su tamaño. No necesitó un ERP genérico de miles de dólares. Necesitó una solución diseñada para su realidad.
-          </p>
-        </motion.div>
-
         <SectionDivider />
 
         {/* ── 7. Testimonial ── */}
-        <motion.div className="grid grid-cols-12 gap-0 overflow-hidden" {...fade}>
-          <div className="col-span-12 md:col-span-4">
-            <ImagePlaceholder className="h-full min-h-[240px]">
+        <motion.div className="bg-white p-6 md:p-12 grid grid-cols-12 gap-6 md:gap-12 items-center" {...fade}>
+          {/* Photo placeholder */}
+          <div className="col-span-12 md:col-span-5">
+            <ImagePlaceholder className="aspect-square w-full">
               Foto de Iker Mendoza
             </ImagePlaceholder>
           </div>
-          <div className="col-span-12 md:col-span-8 bg-accent text-white p-8 md:p-12 flex flex-col justify-center">
-            <p className="text-white/90 text-lg md:text-xl italic mb-4 max-w-lg">
-              "Ya no puedo seguir así — y no tuve que hacerlo."
+
+          {/* Quote content */}
+          <div className="col-span-12 md:col-span-7 relative">
+            <p className="text-navy/60 leading-relaxed mb-6">
+              "Antes perdíamos pares, los clientes me escribían diario preguntando por sus tenis y yo no tenía respuestas. Hoy todo está en el sistema — cada par tiene su ticket, el cliente rastrea su orden solo y yo por fin puedo ver qué está pasando en el negocio. Skyline entendió cómo operábamos antes de proponer cualquier cosa."
             </p>
-            <p className="text-white/50 text-sm font-medium">
-              — Iker Mendoza, Fundador de Sneaker Repair
-            </p>
+            <div>
+              <p className="text-navy font-semibold text-sm">Iker Mendoza</p>
+              <p className="text-navy/40 text-sm">Fundador / Sneaker Repair</p>
+            </div>
+
+            {/* Decorative quote mark */}
+            <svg className="absolute bottom-0 right-0 w-16 h-16 md:w-20 md:h-20 text-navy/10" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
+            </svg>
           </div>
         </motion.div>
 
