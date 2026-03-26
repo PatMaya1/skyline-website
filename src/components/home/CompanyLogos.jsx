@@ -23,7 +23,7 @@ export default function CompanyLogos() {
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          Nuestros consultores han colaborado con empresas líderes a nivel global
+          Nuestro equipo ha trabajado con organizaciones como
         </motion.p>
 
         <div className="grid grid-cols-12 gap-6 items-center">

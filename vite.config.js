@@ -12,7 +12,7 @@ export default defineConfig({
       manifest: {
         name: 'SkyLine',
         short_name: 'SkyLine',
-        description: 'SkyLine - Soluciones web y tecnológicas',
+        description: 'Skyline IT — Consultoría tecnológica para empresas en crecimiento',
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',

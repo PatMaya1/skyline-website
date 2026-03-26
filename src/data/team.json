@@ -1,0 +1,25 @@
+{
+  "label": "Nuestro equipo",
+  "heading": "Consultores con experiencia en industria y tecnología",
+  "description": "No somos solo técnicos. Nuestro equipo combina experiencia en consultoría de negocios, ingeniería y gestión de proyectos en empresas líderes.",
+  "members": [
+    {
+      "name": "Sebastián Martínez",
+      "role": "Socio Director / Estrategia",
+      "bio": "Liderando transformación digital en empresas medianas. Certificación AWS Solutions Architect Professional. Especialista en estrategia tecnológica y adopción de IA.",
+      "specialties": ["Estrategia Digital", "Cloud Architecture", "AI/ML"]
+    },
+    {
+      "name": "Consultor Senior",
+      "role": "Consultor Senior / Datos & BI",
+      "bio": "Especialista en inteligencia de negocios y analítica avanzada. Ha implementado soluciones de BI en más de 20 empresas de manufactura y retail.",
+      "specialties": ["Business Intelligence", "Data Analytics", "Power BI"]
+    },
+    {
+      "name": "Consultor",
+      "role": "Consultor / Operaciones & Automatización",
+      "bio": "Ingeniero industrial con experiencia en optimización de procesos. Certificado en Lean Six Sigma y automatización con Python.",
+      "specialties": ["Automatización", "Lean Six Sigma", "Python"]
+    }
+  ]
+}

@@ -32,7 +32,7 @@ export default function NewsCard({ article, index }) {
           {article.title}
         </h3>
         <a href="#" className="flex items-center gap-2 text-navy/60 text-base hover:text-navy transition-colors group">
-          <span>Read more</span>
+          <span>Leer más</span>
           <img src={readMoreArrow} alt="" className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
         </a>
       </div>

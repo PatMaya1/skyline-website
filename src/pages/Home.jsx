@@ -2,11 +2,11 @@ import HomeHero from '../components/home/HomeHero';
 import CompanyLogos from '../components/home/CompanyLogos';
 import HomeServices from '../components/home/HomeServices';
 import RightAdvice from '../components/home/RightAdvice';
-import Sectors from '../components/home/Sectors';
-import ProgressiveSolutions from '../components/home/ProgressiveSolutions';
+import Methodology from '../components/home/Methodology';
+import CaseStudies from '../components/home/CaseStudies';
 import Testimonials from '../components/home/Testimonials';
 import LatestNews from '../components/home/LatestNews';
-import LogoBar from '../components/home/LogoBar';
+import HomeContact from '../components/home/HomeContact';
 import HomeFooter from '../components/home/HomeFooter';
 
 export default function Home() {
@@ -16,11 +16,11 @@ export default function Home() {
       <CompanyLogos />
       <HomeServices />
       <RightAdvice />
-      <Sectors />
-      <ProgressiveSolutions />
+      <Methodology />
+      <CaseStudies />
       <Testimonials />
       <LatestNews />
-      <LogoBar />
+      <HomeContact />
       <HomeFooter />
     </div>
   );

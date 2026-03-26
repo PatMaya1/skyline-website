@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
-import { Cog, BarChart3, Zap, ShieldCheck, Users, Smartphone, ArrowRight } from 'lucide-react';
+import { Compass, BarChart3, Settings2, Brain, Cloud, Shield, ArrowRight } from 'lucide-react';
 
-const iconMap = [Cog, BarChart3, Zap, ShieldCheck, Users, Smartphone];
+const iconMap = [Compass, BarChart3, Settings2, Brain, Cloud, Shield];
 
 export default function ServiceCard({ card, index }) {
   const Icon = iconMap[index] || Cog;
 
   return (
     <motion.div
-      className="group flex flex-col px-8 md:px-12 py-12 h-[420px] w-full shadow-sm bg-white hover:bg-navy transition-colors duration-300 cursor-pointer"
+      className="group flex flex-col px-8 md:px-12 py-12 min-h-[420px] w-full shadow-sm bg-white hover:bg-navy transition-colors duration-300 cursor-pointer"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -28,7 +28,7 @@ export default function ServiceCard({ card, index }) {
       </div>
 
       <button className="bg-accent flex gap-2.5 items-center justify-center h-10 w-[160px] hover:bg-accent/90 transition-colors mt-auto shrink-0">
-        <span className="font-semibold text-xl text-light">Detalles</span>
+        <span className="font-semibold text-xl text-light">Conocer más</span>
         <ArrowRight className="w-5 h-5 text-light" />
       </button>
     </motion.div>

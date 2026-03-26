@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import adviceIcon from '../../assets/figma/icons/advice-icon.svg';
-import adviceBg from '../../assets/figma/sectors/advice-bg.png';
+import adviceBg from '../../assets/figma/sectors/advice-bg.jpg';
 import data from '../../data/homepage.json';
 
 export default function RightAdvice() {
@@ -13,7 +13,7 @@ export default function RightAdvice() {
         <div className="col-span-12 lg:col-span-6 h-[300px] lg:h-auto relative min-h-[400px]">
           <img
             src={adviceBg}
-            alt="Financial advice"
+            alt="Strategic consulting partner"
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>

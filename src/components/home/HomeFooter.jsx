@@ -114,7 +114,7 @@ export default function HomeFooter() {
         {/* Copyright */}
         <div className="border-t border-white/10 pt-5 text-center">
           <p className="text-white/50 text-base">
-            &copy; 2025 Skyline Consulting. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} Skyline IT Consulting. Todos los derechos reservados.
           </p>
         </div>
       </div>

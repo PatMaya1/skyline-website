@@ -1,130 +1,159 @@
 {
   "hero": {
-    "label": "Business consulting",
-    "heading": "Ultimate Solutions for Modern Businesses",
-    "description": "We provide expert consulting services to help businesses navigate complex challenges, optimize operations, and achieve sustainable growth in today's competitive landscape.",
-    "features": ["Business consulting", "Strategic excellence", "Innovation"],
-    "cta": { "primary": "Learn more", "secondary": "Get started" }
-  },
-  "counter": {
-    "stats": [
-      { "value": "10k+", "label": "Supported businesses" },
-      { "value": "12k+", "label": "Projects done" },
-      { "value": "4k+", "label": "Clients worldwide" }
-    ]
+    "label": "Consultoría IT para empresas en crecimiento",
+    "heading": "Tu empresa crece. Tu tecnología debería crecer con ella.",
+    "description": "Asesoramos a empresas medianas en México y EE.UU. a tomar decisiones tecnológicas estratégicas: desde optimizar operaciones hasta adoptar IA. Sin venderte productos — analizamos, recomendamos e implementamos junto a tu equipo.",
+    "features": ["Diagnóstico estratégico gratuito", "Resultados medibles desde el primer mes", "Equipo certificado AWS y especialistas en industria"],
+    "cta": { "primary": "Agendar Diagnóstico", "secondary": "Ver Casos de Éxito" }
   },
   "services": {
-    "label": "Business consulting",
-    "heading": "What services do we offer for your business",
-    "description": "We offer a comprehensive range of consulting services designed to address the unique needs of modern businesses, from strategy and finance to technology and human resources.",
+    "label": "Áreas de consultoría",
+    "heading": "Resolvemos los desafíos que frenan tu crecimiento",
+    "description": "No vendemos tecnología por separado. Cada recomendación nace de un diagnóstico profundo de tu operación, tu mercado y tus metas de negocio.",
     "cards": [
       {
-        "title": "Marketing Strategy",
-        "description": "Develop data-driven marketing strategies that increase brand visibility and drive measurable business growth."
+        "title": "Estrategia de Transformación Digital",
+        "description": "Evaluamos la madurez digital de tu empresa y diseñamos una hoja de ruta realista: qué digitalizar primero, qué automatizar después y cómo medir el impacto en ingresos y eficiencia."
       },
       {
-        "title": "Financial management",
-        "description": "Optimize your financial operations with expert guidance on budgeting, forecasting, and investment strategies."
+        "title": "Inteligencia de Datos y BI",
+        "description": "Convertimos tus datos dispersos en un sistema de decisiones: dashboards ejecutivos, predicciones de demanda y alertas operativas que tu equipo directivo realmente usa."
       },
       {
-        "title": "Business Strategy",
-        "description": "Create actionable roadmaps that align your business goals with market opportunities for sustainable success."
+        "title": "Optimización de Operaciones",
+        "description": "Identificamos cuellos de botella en tus procesos y diseñamos flujos automatizados que reducen costos, errores y tiempos de entrega sin reemplazar tu equipo."
       },
       {
-        "title": "Sales and Marketing",
-        "description": "Transform your sales pipeline with proven methodologies that convert prospects into loyal customers."
+        "title": "Adopción de Inteligencia Artificial",
+        "description": "Te guiamos en la implementación práctica de IA: desde asistentes internos hasta modelos predictivos, priorizando casos de uso con retorno demostrable en menos de 90 días."
       },
       {
-        "title": "Digital Technology",
-        "description": "Leverage cutting-edge technology solutions to streamline operations and gain competitive advantages."
+        "title": "Arquitectura y Seguridad en la Nube",
+        "description": "Diseñamos o migramos tu infraestructura a la nube con estándares de seguridad empresarial: cumplimiento regulatorio, respaldos automatizados y costos predecibles."
       },
       {
-        "title": "Human Resources",
-        "description": "Build high-performing teams with strategic HR practices that attract, develop, and retain top talent."
+        "title": "Gobierno de TI y Gestión del Cambio",
+        "description": "Implementamos marcos de gobierno tecnológico y acompañamos a tu equipo en la adopción de nuevas herramientas para que la inversión en tecnología realmente se aproveche."
       }
     ]
   },
   "rightAdvice": {
-    "label": "Business consulting",
-    "heading": "The right advice for a brighter financial future",
+    "label": "Nuestro enfoque",
+    "heading": "No somos tu proveedor de tecnología. Somos tu socio estratégico.",
     "features": [
       {
-        "title": "Advisory services",
-        "description": "Expert guidance on complex business decisions, mergers and acquisitions, and organizational restructuring."
+        "title": "Pensamos como consultores, no como desarrolladores",
+        "description": "Antes de proponer cualquier solución, invertimos en entender tu modelo de negocio, tu mercado y tus métricas clave. La tecnología viene después del diagnóstico."
       },
       {
-        "title": "Financing",
-        "description": "Comprehensive financing solutions including debt structuring, equity planning, and capital optimization."
+        "title": "Medimos resultados, no entregables",
+        "description": "Nuestros compromisos se miden en KPIs de negocio: reducción de costos, aumento de ingresos, mejora en tiempos de respuesta. No en líneas de código o features entregados."
       },
       {
-        "title": "Capital",
-        "description": "Strategic capital management to maximize returns and ensure long-term financial stability for your business."
+        "title": "Transferimos conocimiento a tu equipo",
+        "description": "No creamos dependencia. Capacitamos a tu equipo, documentamos procesos y te dejamos con la capacidad de operar y evolucionar las soluciones de forma independiente."
       }
     ]
   },
-  "sectors": {
-    "label": "Business consulting",
-    "heading": "What sectors of the economy do we serve",
-    "description": "We provide specialized consulting services across diverse industries, leveraging deep sector expertise to deliver tailored solutions.",
-    "items": [
-      { "title": "Real Estate", "image": "real-estate.png" },
-      { "title": "Agriculture", "image": "agriculture.png" },
-      { "title": "Travel", "image": "travel.png" },
-      { "title": "Automotive", "image": "automotive.png" },
-      { "title": "Financial Services", "image": "financial.png" },
-      { "title": "Construction", "image": "construction.png" },
-      { "title": "Retail", "image": "retail.png" },
-      { "title": "Logistic", "image": "logistic.png" }
+  "methodology": {
+    "label": "Nuestra metodología",
+    "heading": "Un proceso probado en más de 50 empresas",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Diagnóstico",
+        "subtitle": "Semana 1-2",
+        "description": "Analizamos tu operación, entrevistamos a tu equipo directivo y mapeamos tus procesos críticos. Entregamos un informe con hallazgos y oportunidades priorizadas por impacto.",
+        "deliverable": "Informe de diagnóstico + mapa de oportunidades"
+      },
+      {
+        "number": "02",
+        "title": "Estrategia",
+        "subtitle": "Semana 3-4",
+        "description": "Diseñamos una hoja de ruta con recomendaciones específicas, análisis costo-beneficio y cronograma de implementación. Presentamos opciones al equipo directivo para decidir juntos.",
+        "deliverable": "Hoja de ruta estratégica + business case"
+      },
+      {
+        "number": "03",
+        "title": "Implementación",
+        "subtitle": "Mes 2-4",
+        "description": "Ejecutamos las iniciativas aprobadas con metodología ágil. Tu equipo participa activamente para garantizar transferencia de conocimiento y adopción real.",
+        "deliverable": "Soluciones implementadas + capacitación de equipo"
+      },
+      {
+        "number": "04",
+        "title": "Medición y Optimización",
+        "subtitle": "Continuo",
+        "description": "Medimos resultados contra los KPIs definidos en la etapa de estrategia. Ajustamos, optimizamos y planificamos las siguientes iniciativas de la hoja de ruta.",
+        "deliverable": "Dashboard de resultados + reporte mensual de impacto"
+      }
     ]
   },
   "progressive": {
-    "label": "Business consulting",
-    "heading": "Progressive solutions for progressive businesses.",
-    "description": "Our forward-thinking approach combines innovation with proven methodologies to deliver transformative results. We partner with ambitious organizations to build resilient strategies that adapt to evolving market conditions and drive sustainable growth.",
-    "cta": "Learn more"
+    "label": "Para empresas en crecimiento",
+    "heading": "Consultoría IT diseñada para empresas de 50 a 500 empleados",
+    "description": "Las empresas medianas enfrentan un desafío único: necesitan soluciones de nivel enterprise pero sin la burocracia ni los costos de las grandes consultoras. En Skyline combinamos la profundidad estratégica de una firma de consultoría con la agilidad y cercanía de un equipo local. Operamos en México y Estados Unidos, con consultores que entienden ambos mercados.",
+    "cta": "Conocer nuestra metodología"
   },
   "testimonials": {
-    "heading": "Testimonials",
-    "quote": "Working with Business Consulting has been transformative for our organization. Their strategic insights and hands-on approach helped us navigate complex market challenges and achieve growth we didn't think was possible. The team's expertise and dedication are truly exceptional.",
-    "author": "Lorene Hudson",
-    "role": "CEO / Ritchie Group"
+    "heading": "Lo que dicen nuestros clientes",
+    "items": [
+      {
+        "quote": "Skyline no llegó a vendernos software. Llegó a entender nuestro negocio. Tres meses después, nuestros costos operativos bajaron un 30% y nuestro equipo por fin tiene datos para tomar decisiones.",
+        "author": "María Elena Rodríguez",
+        "role": "CEO",
+        "company": "Grupo Industrial del Norte"
+      },
+      {
+        "quote": "Lo que más valoramos es que nos transfirieron el conocimiento. No nos hicieron dependientes. Hoy nuestro equipo interno puede operar y mantener todo lo que implementaron.",
+        "author": "Carlos Mendoza",
+        "role": "Director de TI",
+        "company": "Distribuidora Nacional"
+      },
+      {
+        "quote": "Habíamos trabajado con otras consultoras que nos dejaron con proyectos a medias. Skyline se comprometió con resultados medibles y los cumplió en el plazo acordado.",
+        "author": "Ana Lucía Torres",
+        "role": "COO",
+        "company": "Cadena de Restaurantes"
+      }
+    ]
   },
   "news": {
-    "label": "Business consulting",
-    "heading": "Latest news",
+    "label": "Insights y análisis",
+    "heading": "Perspectivas para líderes de empresa",
     "articles": [
       {
-        "date": "25.01.24",
-        "category": "Business consulting",
-        "title": "Building business agility begins with culture",
+        "date": "20.03.26",
+        "category": "Estrategia",
+        "title": "5 señales de que tu empresa necesita un CTO fraccional (y cómo elegir uno)",
         "image": "article-1.png"
       },
       {
-        "date": "25.01.24",
-        "category": "Business consulting",
-        "title": "Strategies to protect your profits",
+        "date": "12.03.26",
+        "category": "Inteligencia Artificial",
+        "title": "IA para empresas medianas: dónde está el ROI real (y dónde no)",
         "image": "article-2.png"
       },
       {
-        "date": "25.01.24",
-        "category": "Business consulting",
-        "title": "We Bring Flexibility & Cost Efficiency",
+        "date": "03.03.26",
+        "category": "Operaciones",
+        "title": "El costo oculto de no automatizar: cómo calcular cuánto pierde tu empresa",
         "image": "article-3.png"
       }
     ]
   },
   "footer": {
-    "description": "We provide expert business consulting services to help organizations achieve sustainable growth and navigate complex challenges with confidence.",
-    "services": ["Marketing Strategy", "Financial management", "Business Strategy", "Sales and Marketing", "Human Resources"],
-    "links": ["Home", "About", "Blog", "Contact", "F.A.Q"],
+    "description": "Skyline IT es una firma de consultoría tecnológica que asesora a empresas medianas en México y Estados Unidos en estrategia digital, optimización de operaciones y adopción de tecnología.",
+    "services": ["Estrategia Digital", "Inteligencia de Datos", "Optimización de Operaciones", "Adopción de IA", "Arquitectura en la Nube"],
+    "links": ["Inicio", "Metodología", "Casos de Éxito", "Blog", "Contacto"],
     "newsletter": {
-      "title": "Subscribe for our newsletter",
-      "subtitle": "Get the latest insights delivered to your inbox"
+      "title": "Insights para líderes de empresa",
+      "subtitle": "Recibe análisis mensuales sobre tecnología, operaciones y tendencias para empresas en crecimiento"
     },
     "contact": {
-      "address": "8592 Fairground St. Tallahassee, FL 32303",
-      "email": "contact@businessconsulting.com",
-      "phone": "(863) 267-3634"
+      "address": "Ciudad de México | Monterrey | Remoto",
+      "email": "contacto@skylineit.mx",
+      "phone": "+52 (844) 770 4939"
     }
   }
 }
