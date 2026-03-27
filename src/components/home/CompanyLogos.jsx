@@ -20,7 +20,7 @@ export default function CompanyLogos() {
           className="text-navy/50 text-base uppercase text-center mb-10 md:mb-14"
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.4 }}
         >
           Nuestro equipo ha trabajado con organizaciones como
@@ -33,7 +33,7 @@ export default function CompanyLogos() {
               className="col-span-6 md:col-span-3 flex items-center justify-center"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0 }}
               transition={{ duration: 0.3, delay: i * 0.08 }}
             >
               <img

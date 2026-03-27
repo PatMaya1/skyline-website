@@ -6,6 +6,7 @@ import Methodology from '../components/home/Methodology';
 import CaseStudies from '../components/home/CaseStudies';
 import Testimonials from '../components/home/Testimonials';
 import LatestNews from '../components/home/LatestNews';
+import Technologies from '../components/home/Technologies';
 import HomeContact from '../components/home/HomeContact';
 import HomeFooter from '../components/home/HomeFooter';
 
@@ -20,6 +21,7 @@ export default function Home() {
       <CaseStudies />
       {/* <Testimonials /> */}
       {/* <LatestNews /> */}
+      <Technologies />
       <HomeContact />
       <HomeFooter />
     </div>
