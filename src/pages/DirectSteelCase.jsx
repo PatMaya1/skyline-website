@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Globe, Mail, Shield, Palette, Languages, Users } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Globe, Mail, Shield, Palette, Languages, Users } from 'lucide-react';
 import HomeHeader from '../components/home/HomeHeader';
 import HomeFooter from '../components/home/HomeFooter';
 import directSteelHero from '../assets/direct_steel_landing.png';
@@ -177,6 +177,17 @@ export default function DirectSteelCase() {
               alt="Direct Steel — sitio web"
               className="w-full h-auto"
             />
+          </div>
+          <div className="flex justify-end mt-4">
+            <a
+              href="https://directsteel.mx/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent text-sm font-medium hover:text-accent/80 transition-colors inline-flex items-center gap-1.5"
+            >
+              Visitar directsteel.mx
+              <ArrowRight className="w-3.5 h-3.5" />
+            </a>
           </div>
         </motion.div>
 

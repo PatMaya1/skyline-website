@@ -325,7 +325,8 @@ export default function HomeContact() {
                     </>
                   ) : (
                     <>
-                      <span>Solicitar Diagnóstico Estratégico</span>
+                      <span className="hidden sm:inline">Solicitar Diagnóstico Estratégico</span>
+                      <span className="sm:hidden">Solicitar Diagnóstico</span>
                       <Send className="w-5 h-5" />
                     </>
                   )}

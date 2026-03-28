@@ -23,15 +23,6 @@ const fade = {
   transition: { duration: 0.5 },
 };
 
-function ImagePlaceholder({ children, className = '' }) {
-  return (
-    <div className={`bg-navy/[0.04] border-2 border-dashed border-navy/10 flex items-center justify-center p-8 text-center ${className}`}>
-      <p className="text-navy/30 text-sm leading-relaxed max-w-md italic">
-        {children}
-      </p>
-    </div>
-  );
-}
 
 function SectionDivider() {
   return <div className="w-16 h-px bg-navy/10 mx-auto my-16 md:my-24" />;
@@ -212,27 +203,20 @@ export default function SneakerRepairCase() {
         </Link>
 
         {/* ── 3. El desafío ── */}
-        <div className="grid grid-cols-12 gap-6 md:gap-12">
-          <motion.div className="col-span-12 md:col-span-7" {...fade}>
-            <h2 className="text-navy font-semibold text-2xl md:text-3xl mb-6">El desafío</h2>
-            <div className="flex flex-col gap-4 text-navy/60 leading-relaxed">
-              <p>
-                Iker Mendoza construyó Sneaker Repair desde cero — de limpiar tenis entre conocidos a un negocio real con clientes recurrentes y un equipo en crecimiento. Pero con la demanda llegó el caos.
-              </p>
-              <p>
-                Los pedidos se registraban en libretas. Los clientes preguntaban por WhatsApp cuándo estarían listos sus tenis y nadie tenía respuesta clara. El equipo perdía tiempo buscando pares en el taller. Al final del mes, Iker no sabía cuánto había ganado por servicio, quiénes eran sus mejores clientes, ni si su capacidad daba para más.
-              </p>
-              <p>
-                Cuando nos contactó, no pidió "un sistema". Dijo: <strong className="text-navy">"ya no puedo seguir así"</strong>. Nos sentamos con él, recorrimos su taller, y entendimos que el problema no era tecnológico — era operativo. La tecnología iba a ser la herramienta, pero primero necesitábamos entender el negocio a fondo.
-              </p>
-            </div>
-          </motion.div>
-          <motion.div className="col-span-12 md:col-span-5" {...fade}>
-            <ImagePlaceholder className="h-full min-h-[240px]">
-              Fotografía: libreta con anotaciones, mensajes de WhatsApp acumulados, desorden controlado en el taller.
-            </ImagePlaceholder>
-          </motion.div>
-        </div>
+        <motion.div className="max-w-3xl" {...fade}>
+          <h2 className="text-navy font-semibold text-2xl md:text-3xl mb-6">El desafío</h2>
+          <div className="flex flex-col gap-4 text-navy/60 leading-relaxed">
+            <p>
+              Iker Mendoza construyó Sneaker Repair desde cero — de limpiar tenis entre conocidos a un negocio real con clientes recurrentes y un equipo en crecimiento. Pero con la demanda llegó el caos.
+            </p>
+            <p>
+              Los pedidos se registraban en libretas. Los clientes preguntaban por WhatsApp cuándo estarían listos sus tenis y nadie tenía respuesta clara. El equipo perdía tiempo buscando pares en el taller. Al final del mes, Iker no sabía cuánto había ganado por servicio, quiénes eran sus mejores clientes, ni si su capacidad daba para más.
+            </p>
+            <p>
+              Cuando nos contactó, no pidió "un sistema". Dijo: <strong className="text-navy">"ya no puedo seguir así"</strong>. Nos sentamos con él, recorrimos su taller, y entendimos que el problema no era tecnológico — era operativo. La tecnología iba a ser la herramienta, pero primero necesitábamos entender el negocio a fondo.
+            </p>
+          </div>
+        </motion.div>
 
         <SectionDivider />
 
@@ -324,29 +308,19 @@ export default function SneakerRepairCase() {
         <SectionDivider />
 
         {/* ── 7. Testimonial ── */}
-        <motion.div className="bg-white p-6 md:p-12 grid grid-cols-12 gap-6 md:gap-12 items-center" {...fade}>
-          {/* Photo placeholder */}
-          <div className="col-span-12 md:col-span-5">
-            <ImagePlaceholder className="aspect-square w-full">
-              Foto de Iker Mendoza
-            </ImagePlaceholder>
+        <motion.div className="bg-white p-8 md:p-12 relative" {...fade}>
+          <p className="text-navy/60 leading-relaxed mb-6 max-w-3xl">
+            "Antes perdíamos pares, los clientes me escribían diario preguntando por sus tenis y yo no tenía respuestas. Hoy todo está en el sistema — cada par tiene su ticket, el cliente rastrea su orden solo y yo por fin puedo ver qué está pasando en el negocio. Skyline entendió cómo operábamos antes de proponer cualquier cosa."
+          </p>
+          <div>
+            <p className="text-navy font-semibold text-sm">Iker Mendoza</p>
+            <p className="text-navy/40 text-sm">Fundador / Sneaker Repair</p>
           </div>
 
-          {/* Quote content */}
-          <div className="col-span-12 md:col-span-7 relative">
-            <p className="text-navy/60 leading-relaxed mb-6">
-              "Antes perdíamos pares, los clientes me escribían diario preguntando por sus tenis y yo no tenía respuestas. Hoy todo está en el sistema — cada par tiene su ticket, el cliente rastrea su orden solo y yo por fin puedo ver qué está pasando en el negocio. Skyline entendió cómo operábamos antes de proponer cualquier cosa."
-            </p>
-            <div>
-              <p className="text-navy font-semibold text-sm">Iker Mendoza</p>
-              <p className="text-navy/40 text-sm">Fundador / Sneaker Repair</p>
-            </div>
-
-            {/* Decorative quote mark */}
-            <svg className="absolute bottom-0 right-0 w-16 h-16 md:w-20 md:h-20 text-navy/10" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
-            </svg>
-          </div>
+          {/* Decorative quote mark */}
+          <svg className="absolute bottom-6 right-6 md:bottom-8 md:right-8 w-16 h-16 md:w-20 md:h-20 text-navy/10" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
+          </svg>
         </motion.div>
 
         <SectionDivider />

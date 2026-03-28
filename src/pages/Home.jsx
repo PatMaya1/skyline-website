@@ -2,6 +2,7 @@ import HomeHero from '../components/home/HomeHero';
 import CompanyLogos from '../components/home/CompanyLogos';
 import HomeServices from '../components/home/HomeServices';
 import RightAdvice from '../components/home/RightAdvice';
+import ManagedServices from '../components/home/ManagedServices';
 import Methodology from '../components/home/Methodology';
 import CaseStudies from '../components/home/CaseStudies';
 import Testimonials from '../components/home/Testimonials';
@@ -17,6 +18,7 @@ export default function Home() {
       <CompanyLogos />
       <HomeServices />
       <RightAdvice />
+      <ManagedServices />
       <Methodology />
       <CaseStudies />
       {/* <Testimonials /> */}

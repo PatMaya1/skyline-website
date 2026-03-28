@@ -55,6 +55,54 @@
       }
     ]
   },
+  "managedServices": {
+    "label": "Servicios Administrados",
+    "heading": "Tu operación no puede parar. Nosotros nos encargamos.",
+    "description": "Somos tu departamento de TI en Monterrey y Saltillo. Monitoreamos, protegemos y mantenemos tu infraestructura para que tu equipo se enfoque en producir, vender y crecer.",
+    "badge": "Soporte local en Monterrey y Saltillo",
+    "cta": {
+      "text": "Solicitar cotización de soporte",
+      "href": "#contact"
+    },
+    "cards": [
+      {
+        "icon": "Headset",
+        "title": "Soporte Técnico y Help Desk",
+        "description": "Tu equipo necesita resolver problemas de tecnología sin perder horas productivas. Ofrecemos mesa de ayuda con atención presencial y remota, tiempos de respuesta garantizados y escalamiento a especialistas cuando se requiere.",
+        "highlight": "Respuesta en menos de 30 minutos"
+      },
+      {
+        "icon": "Activity",
+        "title": "Monitoreo Proactivo 24/7",
+        "description": "Vigilamos tus servidores, redes y aplicaciones críticas las 24 horas. Detectamos y resolvemos problemas antes de que impacten tu operación: alertas en tiempo real, mantenimiento preventivo y reportes mensuales de disponibilidad.",
+        "highlight": "99.9% de disponibilidad garantizada"
+      },
+      {
+        "icon": "ShieldCheck",
+        "title": "Ciberseguridad Administrada",
+        "description": "Protegemos tu empresa contra ransomware, phishing y amenazas avanzadas. Administramos firewalls, antivirus empresarial, detección de intrusos y políticas de seguridad alineadas a la industria manufacturera y automotriz.",
+        "highlight": "Protección contra ransomware y amenazas"
+      },
+      {
+        "icon": "Network",
+        "title": "Administración de Redes y Conectividad",
+        "description": "Diseñamos, configuramos y mantenemos la red que conecta tu planta, oficinas y sucursales. WiFi industrial, VPN para trabajo remoto, segmentación de red y optimización de ancho de banda para que tu operación nunca se detenga.",
+        "highlight": "Conectividad para planta y oficinas"
+      },
+      {
+        "icon": "DatabaseBackup",
+        "title": "Respaldos y Recuperación ante Desastres",
+        "description": "Implementamos respaldos automáticos en la nube y en sitio con pruebas periódicas de restauración. Si ocurre un desastre — falla de hardware, ataque o error humano — tu información está protegida y tu operación se recupera en horas, no en días.",
+        "highlight": "Recuperación garantizada en menos de 4 horas"
+      },
+      {
+        "icon": "CloudCog",
+        "title": "Administración de Nube y Plataformas",
+        "description": "Gestionamos tu entorno en Microsoft 365, Google Workspace, AWS o Azure. Altas y bajas de usuarios, configuración de correo empresarial, almacenamiento en la nube, licenciamiento y optimización de costos mensuales.",
+        "highlight": "Microsoft 365 | Google | AWS | Azure"
+      }
+    ]
+  },
   "methodology": {
     "label": "Nuestra metodología",
     "heading": "Un proceso probado en más de 50 empresas",
@@ -144,12 +192,7 @@
   },
   "footer": {
     "description": "Skyline IT es una firma de consultoría tecnológica que asesora a empresas medianas en México y Estados Unidos en estrategia digital, optimización de operaciones y adopción de tecnología.",
-    "services": ["Estrategia Digital", "Inteligencia de Datos", "Optimización de Operaciones", "Adopción de IA", "Arquitectura en la Nube"],
-    "links": ["Inicio", "Metodología", "Casos de Éxito", "Blog", "Contacto"],
-    "newsletter": {
-      "title": "Insights para líderes de empresa",
-      "subtitle": "Recibe análisis mensuales sobre tecnología, operaciones y tendencias para empresas en crecimiento"
-    },
+    "services": ["Estrategia Digital", "Inteligencia de Datos", "Optimización de Operaciones", "Adopción de IA", "Arquitectura en la Nube", "Soporte Técnico", "Ciberseguridad", "Monitoreo 24/7", "Redes y Conectividad"],
     "contact": {
       "address": "Ciudad de México | Monterrey | Remoto",
       "email": "contacto@skylineit.mx",

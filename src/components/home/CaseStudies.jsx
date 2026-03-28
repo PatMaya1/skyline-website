@@ -26,7 +26,7 @@ export default function CaseStudies() {
             Casos de éxito
           </p>
           <h2 className="text-navy font-semibold text-3xl md:text-[40px] leading-tight">
-            Resultados que hablan por sí mismos
+            Así ayudamos a nuestros clientes
           </h2>
         </motion.div>
 

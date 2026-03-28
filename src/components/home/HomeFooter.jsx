@@ -49,41 +49,8 @@ export default function HomeFooter() {
             </ul>
           </div>
 
-          {/* Column 3: Useful Links */}
-          <div className="col-span-6 md:col-span-2 flex flex-col gap-6">
-            <h4 className="text-light font-bold text-base">Enlaces útiles</h4>
-            <ul className="flex flex-col gap-6">
-              {footer.links.map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-white/80 text-base hover:text-white transition-colors">
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4: Newsletter + Contact */}
+          {/* Column 3: Contact */}
           <div className="col-span-12 md:col-span-4 flex flex-col justify-between gap-8">
-            <div className="flex flex-col gap-2">
-              <h4 className="text-light font-bold text-base">
-                {footer.newsletter.title}
-              </h4>
-              <p className="text-white/80 text-base">
-                {footer.newsletter.subtitle}
-              </p>
-              <div className="flex gap-2 mt-1">
-                <input
-                  type="email"
-                  placeholder="Tu correo electrónico"
-                  className="bg-white h-10 px-3 text-base text-navy/60 w-full max-w-[274px] outline-none"
-                />
-                <button className="bg-accent text-white font-semibold text-base h-10 px-5 flex-1 min-w-[100px] hover:bg-accent/90 transition-colors">
-                  Suscribirse
-                </button>
-              </div>
-            </div>
-
             <div className="flex gap-0">
               {/* Address */}
               <div className="flex flex-col gap-2 flex-1">

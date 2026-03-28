@@ -5,6 +5,7 @@ import skylineLogo from '../../assets/logos_skyline/SKY2blanco.png';
 const navItems = [
   { label: 'Inicio', id: 'home' },
   { label: 'Consultoría', id: 'services' },
+  { label: 'Servicios TI', id: 'managed-services' },
   { label: 'Metodología', id: 'methodology' },
   { label: 'Casos de Éxito', id: 'casos' },
   { label: 'Contacto', id: 'contact' },
