@@ -1,0 +1,86 @@
+[
+  {
+    "id": "catalogo-digital",
+    "name": "Plan Catalogo Digital",
+    "subtitle": "Hecho para restaurantes, tiendas y negocios",
+    "description": "Muestra tu catalogo o menu sin complicaciones.",
+    "price": "$8,500 MXN",
+    "priceNote": "pago unico",
+    "delivery": "1-2 semanas",
+    "icon": "LayoutGrid",
+    "popular": true,
+    "features": [
+      {
+        "title": "Menu o catalogo digital completo",
+        "description": "Con fotos, precios y descripciones de todos tus productos"
+      },
+      {
+        "title": "Codigo QR personalizado",
+        "description": "Para colocar en mesas, empaques o redes sociales"
+      },
+      {
+        "title": "Actualizable facilmente",
+        "description": "Cambia precios o productos sin ayuda tecnica"
+      },
+      {
+        "title": "Version web optimizada",
+        "description": "Opcion de integracion a tu sitio existente"
+      },
+      {
+        "title": "Boton directo a WhatsApp",
+        "description": "Los clientes pueden hacer pedidos o reservaciones al instante"
+      },
+      {
+        "title": "Optimizacion para Google",
+        "description": "Aparece cuando busquen tu negocio o productos"
+      }
+    ],
+    "benefit": "Tus clientes ven todo tu menu desde su celular y pueden pedir o reservar al instante."
+  },
+  {
+    "id": "tienda-online",
+    "name": "Plan Tienda en Linea",
+    "subtitle": "Ideal para marcas, boutiques o negocios",
+    "description": "Vende directamente en internet con todo lo necesario.",
+    "price": "$25,000 MXN",
+    "priceNote": "pago unico",
+    "delivery": "3-4 semanas",
+    "icon": "ShoppingCart",
+    "popular": false,
+    "features": [
+      {
+        "title": "Tienda en linea completa",
+        "description": "Productos, carrito y pasarela de pago (Stripe o MercadoPago)"
+      },
+      {
+        "title": "Diseno moderno y profesional",
+        "description": "Transmite confianza desde la primera visita"
+      },
+      {
+        "title": "Gestion de inventario y pedidos",
+        "description": "Administra tus ventas facilmente desde un panel"
+      },
+      {
+        "title": "Notificaciones automaticas",
+        "description": "Confirma pedidos y envios por correo o WhatsApp"
+      },
+      {
+        "title": "Pagos seguros multiples",
+        "description": "Tarjeta, transferencia o efectivo (Oxxo)"
+      },
+      {
+        "title": "Integracion con servicios de envio",
+        "description": "Estafeta, DHL o manual segun tu preferencia"
+      },
+      {
+        "title": "Reporte de ventas y trafico",
+        "description": "Dashboard simplificado con metricas mensuales"
+      },
+      {
+        "title": "SEO para ecommerce",
+        "description": "Aparece cuando busquen tus productos en Google"
+      }
+    ],
+    "benefit": "Empiezas a vender en linea en cuestion de dias, con una tienda facil de usar, profesional y segura."
+  }
+]

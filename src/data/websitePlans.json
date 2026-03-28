@@ -1,0 +1,121 @@
+[
+  {
+    "id": "presencia",
+    "name": "Plan Presencia",
+    "subtitle": "Ideal para emprendedores o negocios locales",
+    "description": "Necesitas verte profesional en internet y ser facil de encontrar.",
+    "price": "$6,000 MXN",
+    "priceNote": "pago unico",
+    "delivery": "1 semana",
+    "icon": "Globe",
+    "popular": false,
+    "features": [
+      {
+        "title": "Diseno web atractivo y adaptable",
+        "description": "Se ve perfecto en celulares, tablets y computadoras"
+      },
+      {
+        "title": "Textos que transmiten confianza",
+        "description": "Redactados para que tus clientes entiendan quien eres y que ofreces"
+      },
+      {
+        "title": "Aparece en Google y Maps",
+        "description": "Tus clientes te encuentran al buscar tu negocio o servicio"
+      },
+      {
+        "title": "Boton directo a WhatsApp y redes sociales",
+        "description": "Convierte visitantes en conversaciones reales"
+      },
+      {
+        "title": "Galeria o seccion de servicios",
+        "description": "Muestra tu trabajo de forma visual y profesional"
+      },
+      {
+        "title": "Dominio, hosting y seguridad incluidos",
+        "description": "Todo listo, sin pagos ocultos"
+      }
+    ],
+    "benefit": "Tu negocio aparece en Google, se ve confiable y genera contactos reales sin complicaciones tecnicas.",
+    "example": "https://happycoffe.life"
+  },
+  {
+    "id": "impulso",
+    "name": "Plan Impulso",
+    "subtitle": "Perfecto para negocios que quieren destacar",
+    "description": "Atraer mas clientes y aumentar ventas.",
+    "price": "$10,000 MXN",
+    "priceNote": "pago unico",
+    "delivery": "2 semanas",
+    "icon": "Rocket",
+    "popular": true,
+    "includesPrevious": "Plan Presencia",
+    "features": [
+      {
+        "title": "Optimizacion para aparecer primero en Google",
+        "description": "Se la primera opcion cuando te busquen por nombre, servicio o zona"
+      },
+      {
+        "title": "Copywriting enfocado en ventas",
+        "description": "Cada palabra esta pensada para que tus visitantes te contacten"
+      },
+      {
+        "title": "Integracion con Google Analytics y Meta Pixel",
+        "description": "Mide cuantas personas visitan tu sitio y que hacen"
+      },
+      {
+        "title": "Estrategia SEO local",
+        "description": "Tus clientes veran tu negocio antes que el de la competencia en busquedas cercanas"
+      },
+      {
+        "title": "Blog o seccion de articulos",
+        "description": "Demuestra tu experiencia y mejora tu posicion en Google"
+      },
+      {
+        "title": "Capacitacion personalizada",
+        "description": "Aprende a actualizar textos, fotos y precios sin depender de nadie"
+      }
+    ],
+    "benefit": "Tu pagina trabaja por ti 24/7, atrayendo nuevos clientes y ayudandote a entender que funciona mejor.",
+    "example": "https://directsteel.mx"
+  },
+  {
+    "id": "expansion",
+    "name": "Plan Expansion",
+    "subtitle": "Para empresas que quieren escalar digitalmente",
+    "description": "Automatizar procesos y dominar su mercado.",
+    "price": "$16,000 MXN",
+    "priceNote": "pago unico",
+    "delivery": "3-4 semanas",
+    "icon": "Zap",
+    "popular": false,
+    "includesPrevious": "Plan Impulso",
+    "features": [
+      {
+        "title": "Diseno premium a medida",
+        "description": "Basado en tu marca, tus clientes ideales y lo que hace tu competencia"
+      },
+      {
+        "title": "Automatizacion de contactos",
+        "description": "Conecta tu sitio con tu CRM, agenda de citas o cotizador para responder incluso mientras duermes"
+      },
+      {
+        "title": "Landing pages para campanas",
+        "description": "Paginas disenadas para captar prospectos desde anuncios en redes o Google"
+      },
+      {
+        "title": "SEO avanzado",
+        "description": "Optimizacion tecnica y de contenido para que tu marca aparezca en la primera pagina de Google"
+      },
+      {
+        "title": "Sistema de newsletter y base de clientes",
+        "description": "Convierte visitantes en contactos recurrentes"
+      },
+      {
+        "title": "Panel de resultados",
+        "description": "Te mostramos en un tablero claro cuantas visitas, clics y contactos generas cada mes"
+      }
+    ],
+    "benefit": "Tu sitio se convierte en una maquina de marketing: atrae, convierte y fideliza clientes mientras tu te enfocas en tu negocio.",
+    "example": "https://enefcoah.com"
+  }
+]
