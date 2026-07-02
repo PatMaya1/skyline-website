@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import caseStudies from '../../data/caseStudies.json';
 import readMoreArrow from '../../assets/figma/icons/read-more-arrow.svg';
-import sneakerRepairImg from '../../assets/sneaker_repair_landing.png';
-import directSteelImg from '../../assets/direct_steel_landing.png';
+import sneakerRepairImg from '../../assets/sneaker_repair_landing.webp';
+import directSteelImg from '../../assets/direct_steel_landing.webp';
 
 const imageMap = {
   'sneaker-repair': sneakerRepairImg,

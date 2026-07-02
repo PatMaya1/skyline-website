@@ -1,7 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -11,22 +14,101 @@
     <!-- Apple Touch Icons (Safari/iOS) -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json" />
+    <!-- PWA Manifest (lo inyecta vite-plugin-pwa como /manifest.webmanifest) -->
 
-    <!-- Theme Color (Safari/iOS) -->
-    <meta name="theme-color" content="#ffffff" />
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000d51" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="SkyLine" />
+    <meta name="apple-mobile-web-app-title" content="Skyline IT" />
 
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- Geo -->
+    <meta name="geo.region" content="MX" />
+    <meta name="geo.placename" content="México" />
 
-    <!-- SEO -->
-    <meta name="description" content="Skyline IT — Consultoría tecnológica para empresas en crecimiento en México y EE.UU." />
+    <!-- Fonts: preconnect + carga optimizada -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    />
 
-    <title>Skyline IT | Consultoría Tecnológica</title>
+    <!--
+      Título, descripción, canonical, Open Graph y Twitter Cards se gestionan
+      por página con el componente <Seo /> (metadata nativa de React 19) y se
+      hornean en el HTML de cada ruta durante el prerender (npm run build).
+    -->
+
+    <!-- Datos estructurados globales: Organización + Sitio web + Servicio -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://skylineit.mx/#organization",
+            "name": "Skyline IT",
+            "legalName": "Skyline IT Consulting",
+            "url": "https://skylineit.mx/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://skylineit.mx/icon-512x512.png",
+              "width": 512,
+              "height": 512
+            },
+            "image": "https://skylineit.mx/og-image.jpg",
+            "description": "Firma de consultoría tecnológica que asesora a empresas medianas en México y Estados Unidos en estrategia digital, optimización de operaciones y adopción de tecnología.",
+            "email": "contacto@skylineit.mx",
+            "telephone": "+52-844-770-4939",
+            "areaServed": [
+              { "@type": "Country", "name": "México" },
+              { "@type": "Country", "name": "Estados Unidos" }
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "MX",
+              "addressLocality": "Ciudad de México"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/company/skyline-it-mx/",
+              "https://www.instagram.com/skylineit.mx/"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://skylineit.mx/#website",
+            "url": "https://skylineit.mx/",
+            "name": "Skyline IT",
+            "publisher": { "@id": "https://skylineit.mx/#organization" },
+            "inLanguage": "es-MX"
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://skylineit.mx/#service",
+            "name": "Skyline IT — Consultoría Tecnológica",
+            "url": "https://skylineit.mx/",
+            "image": "https://skylineit.mx/og-image.jpg",
+            "priceRange": "$$",
+            "telephone": "+52-844-770-4939",
+            "email": "contacto@skylineit.mx",
+            "parentOrganization": { "@id": "https://skylineit.mx/#organization" },
+            "areaServed": [
+              { "@type": "Country", "name": "México" },
+              { "@type": "Country", "name": "Estados Unidos" }
+            ],
+            "knowsAbout": [
+              "Transformación Digital",
+              "Inteligencia de Datos y Business Intelligence",
+              "Adopción de Inteligencia Artificial",
+              "Optimización de Operaciones",
+              "Arquitectura y Seguridad en la Nube",
+              "Gobierno de TI"
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

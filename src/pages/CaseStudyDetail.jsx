@@ -4,8 +4,10 @@ import { ArrowLeft } from 'lucide-react';
 import caseStudies from '../data/caseStudies.json';
 import HomeHeader from '../components/home/HomeHeader';
 import HomeFooter from '../components/home/HomeFooter';
-import sneakerRepairImg from '../assets/sneaker_repair_landing.png';
-import directSteelImg from '../assets/direct_steel_landing.png';
+import Seo from '../components/Seo';
+import { SITE_URL, ORG_ID, breadcrumbLd } from '../seo/siteConfig';
+import sneakerRepairImg from '../assets/sneaker_repair_landing.webp';
+import directSteelImg from '../assets/direct_steel_landing.webp';
 
 const imageMap = {
   'sneaker-repair': sneakerRepairImg,
@@ -19,6 +21,12 @@ export default function CaseStudyDetail() {
   if (!study) {
     return (
       <div className="bg-page min-h-screen">
+        <Seo
+          title="Caso no encontrado"
+          description="El caso de éxito que buscas no está disponible. Explora los proyectos de Skyline IT."
+          path={`/casos/${id}`}
+          noindex
+        />
         <HomeHeader />
         <div className="max-w-[1076px] mx-auto px-4 xl:px-0 py-32 text-center">
           <h1 className="text-navy font-semibold text-3xl mb-4">Caso no encontrado</h1>
@@ -31,8 +39,34 @@ export default function CaseStudyDetail() {
     );
   }
 
+  const caseLd = [
+    breadcrumbLd([
+      { name: 'Inicio', path: '/' },
+      { name: 'Casos de éxito', path: '/#casos' },
+      { name: study.client, path: `/casos/${study.id}` },
+    ]),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: study.title,
+      description: study.description,
+      image: `${SITE_URL}/og-image.jpg`,
+      author: { '@id': ORG_ID },
+      publisher: { '@id': ORG_ID },
+      mainEntityOfPage: `${SITE_URL}/casos/${study.id}`,
+      about: study.industry,
+    },
+  ];
+
   return (
     <div className="bg-page min-h-screen">
+      <Seo
+        title={`Caso de éxito: ${study.client}`}
+        description={study.description}
+        path={`/casos/${study.id}`}
+        type="article"
+        jsonLd={caseLd}
+      />
       <HomeHeader />
 
       {/* Hero Image */}

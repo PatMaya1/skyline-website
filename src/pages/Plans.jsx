@@ -7,11 +7,32 @@ import {
 } from 'lucide-react';
 import HomeHeader from '../components/home/HomeHeader';
 import HomeFooter from '../components/home/HomeFooter';
+import Seo from '../components/Seo';
+import { ORG_ID, breadcrumbLd } from '../seo/siteConfig';
 import websitePlans from '../data/websitePlans.json';
 import ecommercePlans from '../data/ecommercePlans.json';
 import maintenance from '../data/maintenance.json';
 
 const iconMap = { Globe, Rocket, Zap, LayoutGrid, ShoppingCart, TrendingUp };
+
+const plansBreadcrumbLd = breadcrumbLd([
+  { name: 'Inicio', path: '/' },
+  { name: 'Planes', path: '/planes' },
+]);
+
+const plansCatalogLd = {
+  '@context': 'https://schema.org',
+  '@type': 'OfferCatalog',
+  name: 'Planes de desarrollo web y e-commerce — Skyline IT',
+  provider: { '@id': ORG_ID },
+  itemListElement: [...websitePlans, ...ecommercePlans].map((plan) => ({
+    '@type': 'Offer',
+    name: plan.name,
+    description: plan.subtitle || undefined,
+    category: 'Desarrollo Web',
+    priceCurrency: 'MXN',
+  })),
+};
 
 function PlanCard({ plan, index }) {
   const [expanded, setExpanded] = useState(false);
@@ -143,6 +164,12 @@ export default function Plans() {
 
   return (
     <div className="bg-page min-h-screen">
+      <Seo
+        title="Planes de Desarrollo Web y E-commerce"
+        description="Planes de desarrollo web, e-commerce y mantenimiento para cada etapa de tu negocio. Incluyen dominio y hosting en la nube el primer año. Encuentra el plan perfecto con Skyline IT."
+        path="/planes"
+        jsonLd={[plansBreadcrumbLd, plansCatalogLd]}
+      />
       <HomeHeader />
 
       {/* Hero */}

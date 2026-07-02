@@ -4,10 +4,32 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Ticket, MessageSquare, Eye, BarChart3 } from 'lucide-react';
 import HomeHeader from '../components/home/HomeHeader';
 import HomeFooter from '../components/home/HomeFooter';
-import sneakerHero from '../assets/sneaker_repair_landing.png';
-import carouselPanel from '../assets/sneaker_carousel/sneaker_repair_panel.png';
-import carouselTracking from '../assets/sneaker_carousel/sneaker_repair_tracking.png';
-import carouselWhatsapp from '../assets/sneaker_carousel/sneaker_repair_whatsapp.png';
+import Seo from '../components/Seo';
+import { SITE_URL, ORG_ID, breadcrumbLd } from '../seo/siteConfig';
+import sneakerHero from '../assets/sneaker_repair_landing.webp';
+
+const sneakerLd = [
+  breadcrumbLd([
+    { name: 'Inicio', path: '/' },
+    { name: 'Casos de éxito', path: '/#casos' },
+    { name: 'Sneaker Repair', path: '/casos/sneaker-repair' },
+  ]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Cuando tu negocio crece más rápido que tus procesos',
+    description:
+      'Sistema integral de gestión operativa, comunicación automatizada por WhatsApp y analítica para Sneaker Repair, negocio de restauración de calzado en crecimiento.',
+    image: `${SITE_URL}/og-image.jpg`,
+    author: { '@id': ORG_ID },
+    publisher: { '@id': ORG_ID },
+    mainEntityOfPage: `${SITE_URL}/casos/sneaker-repair`,
+    about: 'Servicios',
+  },
+];
+import carouselPanel from '../assets/sneaker_carousel/sneaker_repair_panel.webp';
+import carouselTracking from '../assets/sneaker_carousel/sneaker_repair_tracking.webp';
+import carouselWhatsapp from '../assets/sneaker_carousel/sneaker_repair_whatsapp.webp';
 
 const carouselSlides = [
   { src: sneakerHero, alt: 'Página principal', label: 'Página principal', mobile: false },
@@ -142,6 +164,13 @@ function ScreenshotCarousel() {
 export default function SneakerRepairCase() {
   return (
     <div className="bg-page min-h-screen">
+      <Seo
+        title="Caso de éxito: Sneaker Repair — Sistema de gestión y WhatsApp automatizado"
+        description="Cómo Skyline IT digitalizó a Sneaker Repair: sistema de tickets, WhatsApp automatizado, portal de rastreo y dashboard analítico. 100% de visibilidad operativa en 16 semanas."
+        path="/casos/sneaker-repair"
+        type="article"
+        jsonLd={sneakerLd}
+      />
       <HomeHeader />
 
       {/* ── 1. Hero ── */}

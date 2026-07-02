@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import adviceIcon from '../../assets/figma/icons/advice-icon.svg';
-import adviceBg from '../../assets/figma/sectors/advice-bg.jpg';
+import adviceBg from '../../assets/figma/sectors/advice-bg.webp';
 import data from '../../data/homepage.json';
 
 export default function RightAdvice() {

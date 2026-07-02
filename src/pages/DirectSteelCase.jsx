@@ -3,7 +3,29 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Globe, Mail, Shield, Palette, Languages, Users } from 'lucide-react';
 import HomeHeader from '../components/home/HomeHeader';
 import HomeFooter from '../components/home/HomeFooter';
-import directSteelHero from '../assets/direct_steel_landing.png';
+import Seo from '../components/Seo';
+import { SITE_URL, ORG_ID, breadcrumbLd } from '../seo/siteConfig';
+import directSteelHero from '../assets/direct_steel_landing.webp';
+
+const directSteelLd = [
+  breadcrumbLd([
+    { name: 'Inicio', path: '/' },
+    { name: 'Casos de éxito', path: '/#casos' },
+    { name: 'Direct Steel', path: '/casos/direct-steel' },
+  ]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Presencia digital profesional para empresa industrial internacional',
+    description:
+      'Sitio web corporativo bilingüe y configuración de Google Workspace para Direct Steel, empresa de producción y comercialización de lingotes de aluminio.',
+    image: `${SITE_URL}/og-image.jpg`,
+    author: { '@id': ORG_ID },
+    publisher: { '@id': ORG_ID },
+    mainEntityOfPage: `${SITE_URL}/casos/direct-steel`,
+    about: 'Manufactura Industrial',
+  },
+];
 
 const fade = {
   initial: { opacity: 0, y: 20 },
@@ -56,6 +78,13 @@ const compareData = [
 export default function DirectSteelCase() {
   return (
     <div className="bg-page min-h-screen">
+      <Seo
+        title="Caso de éxito: Direct Steel — Sitio web corporativo bilingüe"
+        description="Cómo Skyline IT desarrolló la presencia digital de Direct Steel: sitio corporativo bilingüe y Google Workspace para una empresa industrial de aluminio con operación internacional."
+        path="/casos/direct-steel"
+        type="article"
+        jsonLd={directSteelLd}
+      />
       <HomeHeader />
 
       {/* ── 1. Hero ── */}

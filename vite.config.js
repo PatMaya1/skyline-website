@@ -10,10 +10,11 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'favicon-32x32.png', 'favicon-16x16.png'],
       manifest: {
-        name: 'SkyLine',
-        short_name: 'SkyLine',
-        description: 'Skyline IT — Consultoría tecnológica para empresas en crecimiento',
-        theme_color: '#ffffff',
+        name: 'Skyline IT — Consultoría Tecnológica',
+        short_name: 'Skyline IT',
+        description: 'Consultoría IT para empresas medianas en México y EE.UU.: transformación digital, datos, IA, nube y optimización de operaciones.',
+        lang: 'es-MX',
+        theme_color: '#000d51',
         background_color: '#ffffff',
         display: 'standalone',
         start_url: '/',
@@ -83,8 +84,7 @@ export default defineConfig({
           // Agrupar componentes grandes
           'components': [
             './src/components/home/HomeHero.jsx',
-            './src/components/home/HomeServices.jsx',
-            './src/components/home/Sectors.jsx'
+            './src/components/home/HomeServices.jsx'
           ]
         }
       }
