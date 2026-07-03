@@ -5,6 +5,7 @@ import RightAdvice from '../components/home/RightAdvice';
 import ManagedServices from '../components/home/ManagedServices';
 import Methodology from '../components/home/Methodology';
 import CaseStudies from '../components/home/CaseStudies';
+import Projects from '../components/home/Projects';
 import Technologies from '../components/home/Technologies';
 import HomeContact from '../components/home/HomeContact';
 import HomeFooter from '../components/home/HomeFooter';
@@ -61,6 +62,7 @@ export default function Home() {
       <ManagedServices />
       <Methodology />
       <CaseStudies />
+      <Projects />
       <Technologies />
       <HomeContact />
       <HomeFooter />

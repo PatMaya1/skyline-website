@@ -1,0 +1,26 @@
+[
+  {
+    "id": "tornillos-del-sur",
+    "name": "Tornillos del Sur",
+    "category": "E-commerce",
+    "image": "tornillos-del-sur",
+    "description": "Tienda en línea para una ferretería y tornillería de Saltillo: catálogo de más de 179 productos, entrega a domicilio y gestión de sus dos sucursales.",
+    "url": "https://tornillosdelsur.com.mx"
+  },
+  {
+    "id": "breo",
+    "name": "BREO",
+    "category": "Punto de venta",
+    "image": "breo",
+    "description": "Sistema digital integral para la cafetería BREO: tienda en línea, punto de venta y panel de administración para su café de especialidad, matcha y nieves.",
+    "url": "https://breo.life"
+  },
+  {
+    "id": "enef",
+    "name": "ENEF Coahuila",
+    "category": "Educación",
+    "image": "enef",
+    "description": "Sitio institucional para la Escuela Normal de Educación Física de Coahuila: oferta educativa, proceso de admisión y difusión de su trayectoria formando profesionales.",
+    "url": "https://enefcoah.com"
+  }
+]
