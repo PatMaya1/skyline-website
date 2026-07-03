@@ -50,7 +50,7 @@ export default function Home() {
     <div className="bg-page min-h-screen">
       <Seo
         title="Skyline IT"
-        description="Consultoría IT para empresas medianas en México y EE.UU. Transformación digital, inteligencia de datos, adopción de IA, optimización de operaciones y nube. Diagnóstico estratégico gratuito."
+        description="Consultoría IT para empresas medianas en México y EE.UU.: transformación digital, datos, IA, nube y optimización de operaciones. Diagnóstico gratuito."
         path="/"
         jsonLd={[homeWebPageLd, servicesCatalogLd]}
       />

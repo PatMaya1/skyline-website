@@ -13,7 +13,7 @@ export default function HomeHero() {
 
       {/* Logo background */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <img src={logoBg} alt="" className="w-[500px] lg:w-[680px] opacity-5" />
+        <img src={logoBg} alt="Skyline IT — Consultoría Tecnológica" className="w-[500px] lg:w-[680px] opacity-5" />
       </div>
 
       {/* Content */}
