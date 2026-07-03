@@ -8,10 +8,16 @@ import Seo from '../components/Seo';
 import { SITE_URL, ORG_ID, breadcrumbLd } from '../seo/siteConfig';
 import sneakerRepairImg from '../assets/sneaker_repair_landing.webp';
 import directSteelImg from '../assets/direct_steel_landing.webp';
+import breoImg from '../assets/projects/breo.webp';
+import tornillosImg from '../assets/projects/tornillos-del-sur.webp';
+import enefImg from '../assets/projects/enef.webp';
 
 const imageMap = {
   'sneaker-repair': sneakerRepairImg,
   'direct-steel': directSteelImg,
+  'breo': breoImg,
+  'tornillos-del-sur': tornillosImg,
+  'enef': enefImg,
 };
 
 export default function CaseStudyDetail() {
@@ -116,8 +122,25 @@ export default function CaseStudyDetail() {
               transition={{ duration: 0.4, delay: 0.1 }}
             >
               <span className="text-navy font-medium">{study.client}</span>
-              <span className="text-navy/30">|</span>
-              <span className="text-navy/50 text-sm">{study.duration}</span>
+              {study.duration && (
+                <>
+                  <span className="text-navy/30">|</span>
+                  <span className="text-navy/50 text-sm">{study.duration}</span>
+                </>
+              )}
+              {study.url && (
+                <>
+                  <span className="text-navy/30">|</span>
+                  <a
+                    href={study.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent text-sm font-medium hover:text-accent-dark transition-colors"
+                  >
+                    Visitar sitio
+                  </a>
+                </>
+              )}
             </motion.div>
 
             {/* Challenge */}

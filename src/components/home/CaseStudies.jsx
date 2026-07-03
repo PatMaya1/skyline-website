@@ -4,10 +4,16 @@ import caseStudies from '../../data/caseStudies.json';
 import readMoreArrow from '../../assets/figma/icons/read-more-arrow.svg';
 import sneakerRepairImg from '../../assets/sneaker_repair_landing.webp';
 import directSteelImg from '../../assets/direct_steel_landing.webp';
+import breoImg from '../../assets/projects/breo.webp';
+import tornillosImg from '../../assets/projects/tornillos-del-sur.webp';
+import enefImg from '../../assets/projects/enef.webp';
 
 const imageMap = {
   'sneaker-repair': sneakerRepairImg,
   'direct-steel': directSteelImg,
+  'breo': breoImg,
+  'tornillos-del-sur': tornillosImg,
+  'enef': enefImg,
 };
 
 export default function CaseStudies() {
