@@ -1,0 +1,12 @@
+# Redirección 301 de www -> dominio raíz (evita contenido duplicado con/sin www).
+# Requiere que www.skylineit.mx esté agregado como dominio personalizado en el
+# proyecto de Cloudflare Pages (apuntando al mismo deployment).
+https://www.skylineit.mx/*    https://skylineit.mx/:splat    301!
+
+# Fallback SPA para Cloudflare Pages.
+# Cloudflare sirve PRIMERO los archivos estáticos existentes, así que las rutas
+# prerenderizadas (/, /planes, /casos/sneaker-repair, /casos/direct-steel) se
+# sirven directo con su HTML y meta correctos. Solo las rutas sin archivo
+# (p. ej. /casos/:id dinámicas o URLs desconocidas) caen a index.html y las
+# resuelve el router de React.
+/*    /index.html    200

@@ -1,0 +1,8 @@
+# robots.txt — Skyline IT
+User-agent: *
+Allow: /
+
+# Bloquea rutas de API/servicios que no deben indexarse
+Disallow: /backend/
+
+Sitemap: https://skylineit.mx/sitemap.xml

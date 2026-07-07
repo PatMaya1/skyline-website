@@ -1,0 +1,100 @@
+[
+  {
+    "id": "sneaker-repair",
+    "client": "Sneaker Repair",
+    "title": "Cuando tu negocio crece más rápido que tus procesos",
+    "description": "Sistema integral de gestión operativa, comunicación automatizada y analítica para negocio de restauración de calzado en pleno crecimiento.",
+    "industry": "Servicios",
+    "image": "sneaker-repair",
+    "products": ["Sistema de tickets", "WhatsApp automatizado", "Portal de rastreo", "Dashboard analítico"],
+    "challenge": "Procesos manuales, comunicación reactiva por WhatsApp y cero visibilidad operativa en un negocio que no paraba de crecer",
+    "solution": "Sistema de tickets digital + WhatsApp automatizado + portal de rastreo para clientes + dashboard de analítica completo",
+    "results": [
+      { "metric": "100%", "label": "Visibilidad operativa en tiempo real" },
+      { "metric": "0", "label": "Pares extraviados desde implementación" },
+      { "metric": "16 sem", "label": "De idea a producción" }
+    ],
+    "quote": "Ya no puedo seguir así — y no tuve que hacerlo.",
+    "quoteAuthor": "Iker Mendoza, Fundador",
+    "duration": "16 semanas"
+  },
+  {
+    "id": "direct-steel",
+    "client": "Direct Steel",
+    "title": "Presencia digital profesional para empresa industrial internacional",
+    "description": "Sitio web corporativo bilingüe y configuración de Google Workspace para empresa de producción y comercialización de lingotes de aluminio.",
+    "industry": "Manufactura Industrial",
+    "image": "direct-steel",
+    "products": ["Sitio web corporativo", "Google Workspace"],
+    "challenge": "Una empresa industrial consolidada necesitaba una presencia digital a la altura de su operación y herramientas de comunicación profesionales",
+    "solution": "Diseño y desarrollo del sitio web corporativo bilingüe + configuración de Google Workspace con dominio propio",
+    "results": [
+      { "metric": "2", "label": "Idiomas: sitio completamente bilingüe" },
+      { "metric": "100%", "label": "Comunicación corporativa profesionalizada" },
+      { "metric": "1", "label": "Plataforma digital lista para operar" }
+    ],
+    "quote": "",
+    "quoteAuthor": "",
+    "duration": ""
+  },
+  {
+    "id": "breo",
+    "client": "BREO",
+    "title": "Un sistema completo para operar la cafetería, del mostrador a la cocina",
+    "description": "Sistema digital integral para la cafetería BREO: tienda en línea, punto de venta, autocobro, comandas de cocina y administración de inventario.",
+    "industry": "Alimentos y Bebidas",
+    "image": "breo",
+    "url": "https://breo.life",
+    "products": ["Punto de venta (POS)", "Autocobro en tablet", "Comandas de cocina", "Panel de administración", "Tienda en línea"],
+    "challenge": "BREO —café de especialidad, matcha y nieves— necesitaba dejar atrás los procesos manuales y unificar su operación: tomar pedidos, cobrar, coordinar la cocina y controlar el inventario en una sola plataforma.",
+    "solution": "Desarrollo a la medida de un sistema completo: punto de venta para baristas con carrito, cálculo de cambio y pagos divididos; autocobro en tablet para el cliente; pantalla de comandas en cocina (pendiente, en preparación y listo); panel de administración con recetas, inventario por sucursal, promociones y auditoría; y la tienda en línea breo.life.",
+    "results": [
+      { "metric": "5", "label": "Módulos: POS, autocobro, cocina, admin y tienda" },
+      { "metric": "100%", "label": "Operación digitalizada del mostrador a la cocina" },
+      { "metric": "1", "label": "Plataforma unificada para toda la cafetería" }
+    ],
+    "quote": "",
+    "quoteAuthor": "",
+    "duration": ""
+  },
+  {
+    "id": "tornillos-del-sur",
+    "client": "Tornillos del Sur",
+    "title": "Una ferretería tradicional lista para vender en línea",
+    "description": "Tienda en línea para una ferretería y tornillería de Saltillo: catálogo navegable de más de 179 productos, búsqueda inteligente y entrega a domicilio.",
+    "industry": "E-commerce",
+    "image": "tornillos-del-sur",
+    "url": "https://tornillosdelsur.com.mx",
+    "products": ["Catálogo en línea", "Buscador con sugerencias", "Categorías y subcategorías", "Entrega a domicilio"],
+    "challenge": "Tornillos del Sur, ferretería y tornillería con dos sucursales en Saltillo, necesitaba llevar su amplio catálogo al mundo digital para que sus clientes encontraran productos y pidieran a domicilio sin acudir a la tienda.",
+    "solution": "Desarrollo de una tienda en línea con catálogo organizado en categorías y subcategorías, más de 179 productos con ficha por código, buscador con sugerencias en tiempo real, sección de seguridad industrial y páginas optimizadas para SEO local.",
+    "results": [
+      { "metric": "179+", "label": "Productos en el catálogo en línea" },
+      { "metric": "2", "label": "Sucursales con entrega a domicilio" },
+      { "metric": "3", "label": "Ciudades cubiertas: Saltillo, Ramos Arizpe y Arteaga" }
+    ],
+    "quote": "",
+    "quoteAuthor": "",
+    "duration": ""
+  },
+  {
+    "id": "enef",
+    "client": "ENEF Coahuila",
+    "title": "Presencia digital para una escuela con trayectoria",
+    "description": "Sitio institucional para la Escuela Normal de Educación Física de Coahuila: oferta educativa, proceso de admisión e identidad de la institución.",
+    "industry": "Educación",
+    "image": "enef",
+    "url": "https://enefcoah.com",
+    "products": ["Sitio institucional", "Oferta educativa", "Módulo de admisiones", "Formulario de contacto"],
+    "challenge": "La ENEF Coahuila necesitaba una presencia digital moderna que comunicara su oferta educativa, guiara a los aspirantes por el proceso de admisión y reflejara la trayectoria de la institución.",
+    "solution": "Diseño y desarrollo de un sitio institucional con secciones de oferta educativa (malla curricular y perfiles de ingreso y egreso), admisiones (requisitos, fechas y costos), información institucional (historia, misión y directorio) y contacto con mapa interactivo.",
+    "results": [
+      { "metric": "45", "label": "Años de trayectoria comunicados" },
+      { "metric": "+2000", "label": "Egresados de la institución" },
+      { "metric": "5", "label": "Secciones: oferta, admisiones, institución y más" }
+    ],
+    "quote": "",
+    "quoteAuthor": "",
+    "duration": ""
+  }
+]

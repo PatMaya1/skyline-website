@@ -1,6 +1,17 @@
+/* Las fuentes se cargan desde index.html con preconnect para evitar bloqueo de render */
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@config '../tailwind.config.js';
+
+@theme {
+  --color-navy: #000d51;
+  --color-accent: #2460fd;
+  --color-accent-dark: #0d4ae6;
+  --color-page: #f3f3f3;
+  --color-light: #f7f6f6;
+  --font-sans: 'Albert Sans', system-ui, sans-serif;
+  --font-nav: 'Inter', system-ui, sans-serif;
+}
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Albert Sans', 'Inter', sans-serif;
 }
